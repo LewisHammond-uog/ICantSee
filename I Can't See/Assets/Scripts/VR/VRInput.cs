@@ -11,6 +11,7 @@ public class VRInput : MonoBehaviour
 {
 
     private SteamVR_Behaviour_Pose pose = null;
+    public SteamVR_Behaviour_Pose CurrentPose { get { return pose; } }
 
     [SerializeField]
     private SteamVR_Action_Boolean grabAction;

@@ -2,11 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody))]
 public class Holdable : Interactable
 {
 
     private bool isHeld = false;
     private VRHand currentHolder = null;
+    public VRHand CurrentHolder
+    {
+        get { return currentHolder;  }
+        set { currentHolder = value; }
+    }
 
     public override void DoAction(VRHand hand)
     {
@@ -16,12 +22,14 @@ public class Holdable : Interactable
         //Check if we should pickup or drop object
         if (vr.GetActionState(vr.GrabAction) && !isHeld && currentHolder == null)
         {
-           //Pickup
+            //Pickup
+            hand.AttachObject(this);
 
         }else if(isHeld && currentHolder == this)
         {
             //Drop
-
+            hand.DetachObject(this);
         }
     }
+
 }
