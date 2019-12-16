@@ -18,6 +18,12 @@ public class VRInput : MonoBehaviour
     public SteamVR_Action_Boolean GrabAction { get { return grabAction; } }
 
 
+    // generic action to be used when a special interation is available
+    [SerializeField]
+    private SteamVR_Action_Boolean specialDpadAction;
+
+    public SteamVR_Action_Boolean SpecialDpadAction { get { return specialDpadAction; } }
+
     //Set to not destory on load
     private void Start()
     {
@@ -37,6 +43,4 @@ public class VRInput : MonoBehaviour
     {
         return action.GetState(pose.inputSource);
     }
-
-
 }
