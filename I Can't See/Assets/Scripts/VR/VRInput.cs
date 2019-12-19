@@ -17,6 +17,10 @@ public class VRInput : MonoBehaviour
     private SteamVR_Action_Boolean grabAction;
     public SteamVR_Action_Boolean GrabAction { get { return grabAction; } }
 
+    [SerializeField]
+    private SteamVR_Action_Boolean moveAction;
+    public SteamVR_Action_Boolean MoveAction { get { return moveAction; } }
+
 
     // generic action to be used when a special interation is available
     [SerializeField]
@@ -32,6 +36,7 @@ public class VRInput : MonoBehaviour
 
         //Get VR Pose
         pose = GetComponent<SteamVR_Behaviour_Pose>();
+
     }
 
     /// <summary>
