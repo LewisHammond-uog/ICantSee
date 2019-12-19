@@ -7,7 +7,7 @@ using Valve.VR;
 /// <summary>
 /// Class for handiling player Hands in VR
 /// </summary>
-[RequireComponent(typeof(Joint))]
+[RequireComponent(typeof(ConfigurableJoint))]
 public class VRHand : MonoBehaviour
 {
 
@@ -25,7 +25,7 @@ public class VRHand : MonoBehaviour
     public Holdable HeldObject { get { return heldObject;  } }
 
     [SerializeField]
-    private Joint holdJoint = null;
+    private ConfigurableJoint holdJoint = null;
 
     private void Start()
     {
@@ -72,7 +72,7 @@ public class VRHand : MonoBehaviour
     /// Attach and object to the hand
     /// </summary>
     /// <param name="obj"></param>
-    public void AttachObject(Holdable obj)
+    public void AttachObject(Holdable obj, bool a_FixedX = false, bool a_FixedY = false, bool a_FixedZ = false)
     {
         //null Check
         if(obj == null || heldObject != null)

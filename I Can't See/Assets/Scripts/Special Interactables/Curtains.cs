@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Clock : Holdable
+public class Curtains : Holdable
 {
     [SerializeField]
-    private AudioSource alarmAudioSource;
+    private AudioSource curtainAudioSource;
+    [SerializeField]
+    private AudioClip curtainRailSound;
 
     public override void DoAction(VRHand hand)
     {
@@ -13,10 +15,11 @@ public class Clock : Holdable
         base.DoAction(hand);
 
         //Check if D-Pad has been pressed to turn off alarm
-        if(hand.VRInputController.GetActionState(hand.VRInputController.SpecialDpadAction))
+        if (hand.VRInputController.GetActionState(hand.VRInputController.SpecialDpadAction))
         {
             // turn off the alarm
-            alarmAudioSource.Stop();
+            curtainAudioSource.PlayOneShot(curtainRailSound);
+            // call job manager
         }
     }
 }
