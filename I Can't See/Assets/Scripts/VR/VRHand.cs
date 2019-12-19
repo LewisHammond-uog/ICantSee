@@ -18,7 +18,7 @@ public class VRHand : MonoBehaviour
     public VRInput VRInputController { get { return vrInputController; } }
 
     //List of interactable that we are colliding with
-    private List<Interactable> colldingIteractables;
+    private List<Interactable> collidingIteractables;
 
     //Info about objects we are holding
     private Holdable heldObject = null;
@@ -30,14 +30,14 @@ public class VRHand : MonoBehaviour
     private void Start()
     {
         //Intialise list of colliding iteractables
-        colldingIteractables = new List<Interactable>();
+        collidingIteractables = new List<Interactable>();
     }
 
     // Update is called once per frame
     void Update()
     {
         //Do Actions for each action that we are collding with
-        foreach(Interactable obj in colldingIteractables)
+        foreach(Interactable obj in collidingIteractables)
         {
             obj.DoAction(this);
         }
@@ -51,7 +51,7 @@ public class VRHand : MonoBehaviour
         //Add items on collision enter to our update list
         if (collidedInteractable != null)
         {
-            colldingIteractables.Add(collidedInteractable);
+            collidingIteractables.Add(collidedInteractable);
         }
     }
 
@@ -63,7 +63,7 @@ public class VRHand : MonoBehaviour
         //Add items on collision enter to our update list
         if (collidedInteractable != null)
         {
-            colldingIteractables.Remove(collidedInteractable);
+            collidingIteractables.Remove(collidedInteractable);
         }
     }
 
