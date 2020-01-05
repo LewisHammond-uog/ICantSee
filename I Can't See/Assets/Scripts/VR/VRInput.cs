@@ -10,9 +10,6 @@ using Valve.VR;
 public class VRInput : MonoBehaviour
 {
 
-    private SteamVR_Behaviour_Pose pose = null;
-    public SteamVR_Behaviour_Pose CurrentPose { get { return pose; } }
-
     [SerializeField]
     private SteamVR_Action_Boolean grabAction;
     public SteamVR_Action_Boolean GrabAction { get { return grabAction; } }
@@ -33,19 +30,6 @@ public class VRInput : MonoBehaviour
     {
         //Don't Destory on Load
         DontDestroyOnLoad(this);
-
-        //Get VR Pose
-        pose = GetComponent<SteamVR_Behaviour_Pose>();
-
     }
 
-    /// <summary>
-    /// Gets the state of a steam VR action
-    /// </summary>
-    /// <param name="action"></param>
-    /// <returns></returns>
-    public bool GetActionState(SteamVR_Action_Boolean action)
-    {
-        return action.GetState(pose.inputSource);
-    }
 }

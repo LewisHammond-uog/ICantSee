@@ -15,7 +15,7 @@ public class Curtains : Holdable
         base.DoAction(hand);
 
         //Check if D-Pad has been pressed to turn off alarm
-        if (hand.VRInputController.GetActionState(hand.VRInputController.SpecialDpadAction))
+        if (hand.GetActionState(hand.VRInputController.SpecialDpadAction))
         {
             // turn off the alarm
             curtainAudioSource.PlayOneShot(curtainRailSound);

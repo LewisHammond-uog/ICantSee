@@ -20,7 +20,7 @@ public class Holdable : Interactable
         VRInput vr = hand.VRInputController;
 
         //Check if we should pickup or drop object
-        if (vr.GetActionState(vr.GrabAction) && !isHeld && currentHolder == null)
+        if (hand.GetActionState(vr.GrabAction) && !isHeld && currentHolder == null)
         {
             //Pickup
             hand.AttachObject(this);

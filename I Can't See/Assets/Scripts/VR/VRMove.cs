@@ -12,24 +12,22 @@ public class VRMove : MonoBehaviour
     [SerializeField]
     private GameObject vrRig;
 
+    [SerializeField]
+    private VRInput vrInputController;
+
 
     private bool moveButtonClicked = false;
-
-    private VRInput vrR;
-    private VRInput vrL;
 
     // Start is called before the first frame update
     void Start()
     {
-        VRInput vrR = rightHand.VRInputController;
-        VRInput vrL = leftHand.VRInputController;
     }
 
     // Update is called once per frame
     void Update()
     {
-        //Check if move button has been clicked
-        if(vrR.GetActionState(vrR.MoveAction) || vrL.GetActionState(vrL.MoveAction))
+
+        if (rightHand.GetActionState(vrInputController.MoveAction) || leftHand.GetActionState(vrInputController.MoveAction))
         {
             moveButtonClicked = true;
         }
@@ -39,8 +37,8 @@ public class VRMove : MonoBehaviour
         }
 
         //Get the velocity of both controllers
-        Vector3 rightVel = vrR.CurrentPose.GetVelocity();
-        Vector3 leftVel = vrL.CurrentPose.GetVelocity();
+        Vector3 rightVel = rightHand.CurrentPose.GetVelocity();
+        Vector3 leftVel = leftHand.CurrentPose.GetVelocity();
 
         //If move button is clicked...
         if(moveButtonClicked)

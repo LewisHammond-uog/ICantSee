@@ -17,6 +17,9 @@ public class VRHand : MonoBehaviour
     private VRInput vrInputController;
     public VRInput VRInputController { get { return vrInputController; } }
 
+    private SteamVR_Behaviour_Pose pose = null;
+    public SteamVR_Behaviour_Pose CurrentPose { get { return pose; } }
+
     //List of interactable that we are colliding with
     private List<Interactable> collidingIteractables;
 
@@ -31,6 +34,20 @@ public class VRHand : MonoBehaviour
     {
         //Intialise list of colliding iteractables
         collidingIteractables = new List<Interactable>();
+
+        //Assign Pose
+        pose = GetComponent<SteamVR_Behaviour_Pose>();
+
+        //Make sure that we have connected a joint and vr input controller
+        if(vrInputController == null)
+        {
+            Debug.LogWarning("WARNING: VR Input Controller not assigned to: " + gameObject.name);
+        }
+        if (holdJoint == null)
+        {
+            Debug.LogWarning("WARNING: Hold Joint not assigned to: " + gameObject.name);
+        }
+
     }
 
     // Update is called once per frame
@@ -117,11 +134,21 @@ public class VRHand : MonoBehaviour
 
         //Apply Velocity
         Rigidbody objRB = obj.GetComponent<Rigidbody>();
-        objRB.velocity = vrInputController.CurrentPose.GetVelocity();
-        objRB.angularVelocity = vrInputController.CurrentPose.GetAngularVelocity();
+        objRB.velocity = CurrentPose.GetVelocity();
+        objRB.angularVelocity = CurrentPose.GetAngularVelocity();
 
         //Null out vars
         heldObject = null;
         heldObject.CurrentHolder = null;
+    }
+
+    /// <summary>
+    /// Gets the state of a steam VR action
+    /// </summary>
+    /// <param name="action"></param>
+    /// <returns></returns>
+    public bool GetActionState(SteamVR_Action_Boolean action)
+    {
+        return action.GetState(pose.inputSource);
     }
 }
