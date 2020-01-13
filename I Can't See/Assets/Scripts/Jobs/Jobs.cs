@@ -3,10 +3,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+/// <summary>
+/// Class has infomation about the job within the world:
+/// Action, Room and Assossicated Object Type
+/// </summary>
+[Serializable]
+public class JobActionInfo
+{
+    public Job.JOB_ACTIONS action;
+    public Job.JOB_OBJECTS objectType;
+    public Job.JOB_ROOMS room;
+}
+
 public class Job
 {
     //Enum for types of actions that jobs can have
-    public enum ACTION_TYPE
+    public enum JOB_ACTIONS
     {
         TURN_OFF,
         TURN_ON,
@@ -19,7 +32,7 @@ public class Job
     }
 
     //Enum for the rooms that jobs can happen in
-    public enum ROOMS
+    public enum JOB_ROOMS
     {
         BEDROOM,
         BATHROOM,
@@ -28,13 +41,19 @@ public class Job
         PORCH
     }
 
+    //Enum for the types of objects that jobs can happen in
+    public enum JOB_OBJECTS
+    {
+        ALARM_CLOCK
+    }
+
     private AudioClip voiceClip;
-    private ACTION_TYPE action;
-    private ROOMS requiredRoom;
+    private JobActionInfo jobInfo;
 
     //Properties for actions and room
-    public ACTION_TYPE JobAction { get { return action; } }
-    public ROOMS JobRoom { get { return requiredRoom; } }
+    public JOB_ACTIONS JobAction { get { return jobInfo.action; } }
+    public JOB_OBJECTS JobObject { get { return jobInfo.objectType; } }
+    public JOB_ROOMS JobRoom { get { return jobInfo.room; } }
 
     /// <summary>
     /// Create a Job and add it to the required jobs
@@ -42,11 +61,13 @@ public class Job
     /// <param name="a_action"></param>
     /// <param name="a_room"></param>
     /// <param name="a_voiceline"></param>
-    public Job(ACTION_TYPE a_action, ROOMS a_room, AudioClip a_voiceline)
+    public Job(JOB_ACTIONS a_action, JOB_ROOMS a_room, JOB_OBJECTS a_objectType, AudioClip a_voiceline)
     {
         //Assign properties of the job
-        action = a_action;
-        requiredRoom = a_room;
+        jobInfo = new JobActionInfo();
+        jobInfo.action = a_action;
+        jobInfo.room = a_room;
+        jobInfo.objectType = a_objectType;
         voiceClip = a_voiceline;
 
         //Add to Stack
@@ -59,11 +80,11 @@ public class Job
         throw new NotImplementedException();
     }
 
-
 }
 
-static class JobManager
+public static class JobManager
 {
+    //Stacks for remaining and completed jobs
     private static Stack<Job> remainingJobs;
     private static Stack<Job> completedJobs;
 
@@ -78,15 +99,14 @@ static class JobManager
     /// <summary>
     /// Register an action that may be a job that the player has to complete
     /// </summary>
-    /// <param name="actionType">Type of action completed</param>
-    /// <param name="completedRoom">Room that the action was completed in</param>
+    /// <param name="a_jobInfo">Job info from the action that was completed</param>
     /// <returns>If action and room were for the next job in the stack</returns>
-    public static bool RegisterJobAction(Job.ACTION_TYPE a_actionType, Job.ROOMS a_completedRoom)
+    public static bool RegisterJobAction(JobActionInfo a_jobInfo)
     {
         //Check if the action completed is the same as the next job, if it is
         //then register that job as completed
         Job currentJob = remainingJobs.Peek();
-        if (currentJob.JobAction == a_actionType && currentJob.JobRoom == a_completedRoom)
+        if (currentJob.JobAction == a_jobInfo.action && currentJob.JobRoom == a_jobInfo.room && currentJob.JobObject == a_jobInfo.objectType)
         {
             CompleteJob(currentJob);
             return true;
@@ -125,6 +145,4 @@ static class JobManager
             nextJob.PlayJobAudio();
         }
     }
-
-
 }
