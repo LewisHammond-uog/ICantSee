@@ -16,7 +16,10 @@ public class Clock : Holdable
 
     private void Start()
     {
-        alarmAudioSource.Play();
+        if (alarmAudioSource != null)
+        {
+            alarmAudioSource.Play();
+        }
     }
 
     public override void DoAction(VRHand hand)
@@ -27,14 +30,19 @@ public class Clock : Holdable
         //Check if D-Pad has been pressed to turn off alarm
         if(hand.GetActionState(hand.VRInputController.SpecialDpadAction))
         {
-            // turn off the alarm
-            alarmAudioSource.Stop();
 
-            // play alarm cancel sound
-            alarmAudioSource.PlayOneShot(alarmAudioEndClip);
+            if (alarmAudioSource != null)
+            {
+                // turn off the alarm
+                alarmAudioSource.Stop();
+
+                // play alarm cancel sound
+                alarmAudioSource.PlayOneShot(alarmAudioEndClip);
+            }
+
 
             // call job manager
-            //JobManager.RegisterJobAction(objectJobAction, objectJobRoom, objectJobType);
+            JobManager.RegisterJobAction(jobInfo);
         }
     }
 }

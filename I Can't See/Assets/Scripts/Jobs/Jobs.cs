@@ -85,8 +85,8 @@ public class Job
 public static class JobManager
 {
     //Stacks for remaining and completed jobs
-    private static Stack<Job> remainingJobs;
-    private static Stack<Job> completedJobs;
+    private static Stack<Job> remainingJobs = new Stack<Job>();
+    private static Stack<Job> completedJobs = new Stack<Job>();
 
     /// <summary>
     /// Adds a job that the player has to complete to the manager list
