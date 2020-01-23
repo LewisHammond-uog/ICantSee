@@ -140,6 +140,7 @@ public class VRHand : MonoBehaviour
         //Null out vars
         heldObject = null;
         heldObject.CurrentHolder = null;
+        
     }
 
     /// <summary>

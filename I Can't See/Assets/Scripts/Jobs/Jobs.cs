@@ -44,11 +44,16 @@ public class Job
     //Enum for the types of objects that jobs can happen in
     public enum JOB_OBJECTS
     {
-        ALARM_CLOCK
+        ALARM_CLOCK,
+
+        //Clothing
+        CLOTHING_SHIRT,
+        CLOTHING_TROUSERS,
     }
 
     private AudioClip voiceClip;
     private JobActionInfo jobInfo;
+    public JobActionInfo JobInfo { get { return jobInfo; } }
 
     //Properties for actions and room
     public JOB_ACTIONS JobAction { get { return jobInfo.action; } }
