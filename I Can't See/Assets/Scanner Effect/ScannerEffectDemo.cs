@@ -1,6 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/*
+USE FOR LOOPS FOR POSTIONS USE OBJECT ATTACHED TO THE CAMERA AND PASS ARRAY OF POSISITIONS TO DO IT
+*/
+
+
 [ExecuteInEditMode]
 public class ScannerEffectDemo : MonoBehaviour
 {
@@ -16,7 +21,7 @@ public class ScannerEffectDemo : MonoBehaviour
 
 	void Start()
 	{
-		//_scannables = FindObjectsOfType<Scannable>();
+        //_scannables = FindObjectsOfType<Scannable>();
     }
 
 	void Update()
@@ -39,23 +44,23 @@ public class ScannerEffectDemo : MonoBehaviour
 
 		if (Input.GetMouseButtonDown(0))
 		{
-			Ray ray = _camera.ScreenPointToRay(Input.mousePosition);
-			RaycastHit hit;
+			//Ray ray = _camera.ScreenPointToRay(Input.mousePosition);
+			//RaycastHit hit;
 
-			if (Physics.Raycast(ray, out hit))
-			{
+			//if (Physics.Raycast(ray, out hit))
+			//{
 				_scanning = true;
 				ScanDistance = 0;
-				ScannerOrigin.position = hit.point;
-			}
+				ScannerOrigin.position = ScannerOrigin.position;
+			//}
 		}
 	}
 	// End Demo Code
 
 	void OnEnable()
 	{
-		_camera = GetComponent<Camera>();
-		_camera.depthTextureMode = DepthTextureMode.Depth;
+        _camera = Camera.main;
+        _camera.depthTextureMode = DepthTextureMode.Depth;
 	}
 
 	[ImageEffectOpaque]
