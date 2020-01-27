@@ -65,7 +65,7 @@ Shader "Hidden/ScannerEffect"
 			sampler2D _MainTex;
 			sampler2D _DetailTex;
 			sampler2D_float _CameraDepthTexture;
-			float4 _WorldSpaceScannerPos[1];
+			float4 _WorldSpaceScannerPos[2];
 			float _ScanDistance;
 			float _ScanWidth;
 			float _LeadSharp;
@@ -84,6 +84,31 @@ Shader "Hidden/ScannerEffect"
 				return tex2D(_DetailTex, float2(p.x * 30, p.y * 40));
 			}
 
+			float test() {
+				for (int i = 0; i < 100;i++) {
+
+				}
+			}
+
+			half4 calcScannerCol(float a_rawDepth, float a_linearDepth, float4 a_wsDir, float3 a_wsPos, half4 a_scannerCol, VertOut i) {
+
+				for (int j = 0; j < 2; j++) {
+
+					float dist = distance(a_wsPos, _WorldSpaceScannerPos[j]);
+
+					if (dist < _ScanDistance && dist > _ScanDistance - _ScanWidth && a_linearDepth < 1)
+					{
+						float diff = 1 - (_ScanDistance - dist) / (_ScanWidth);
+						half4 edge = lerp(_MidColor, _LeadColor, pow(diff, _LeadSharp));
+						a_scannerCol = lerp(_TrailColor, edge, diff) + horizBars(i.uv) * _HBarColor;
+						a_scannerCol *= diff;
+					}
+				}
+
+				return a_scannerCol;
+
+			}
+
 			half4 frag (VertOut i) : SV_Target
 			{
 				half4 col = tex2D(_MainTex, i.uv);
@@ -94,15 +119,7 @@ Shader "Hidden/ScannerEffect"
 				float3 wsPos = _WorldSpaceCameraPos + wsDir;
 				half4 scannerCol = half4(0, 0, 0, 0);
 
-				float dist = distance(wsPos, _WorldSpaceScannerPos[0]);
-
-				if (dist < _ScanDistance && dist > _ScanDistance - _ScanWidth && linearDepth < 1)
-				{
-					float diff = 1 - (_ScanDistance - dist) / (_ScanWidth);
-					half4 edge = lerp(_MidColor, _LeadColor, pow(diff, _LeadSharp));
-					scannerCol = lerp(_TrailColor, edge, diff) + horizBars(i.uv) * _HBarColor;
-					scannerCol *= diff;
-				}
+				scannerCol = calcScannerCol(rawDepth, linearDepth, wsDir, wsPos, scannerCol, i);
 
 				return col + scannerCol;
 			}
