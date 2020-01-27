@@ -9,7 +9,7 @@ USE FOR LOOPS FOR POSTIONS USE OBJECT ATTACHED TO THE CAMERA AND PASS ARRAY OF P
 [ExecuteInEditMode]
 public class ScannerEffectDemo : MonoBehaviour
 {
-	public Transform ScannerOrigin;
+	public Transform[] ScannerOrigin;
 	public Material EffectMaterial;
 	public float ScanDistance;
 
@@ -44,9 +44,11 @@ public class ScannerEffectDemo : MonoBehaviour
 
 			//if (Physics.Raycast(ray, out hit))
 			//{
+			
 				_scanning = true;
 				ScanDistance = 0;
-				ScannerOrigin.position = ScannerOrigin.position;
+				//ScannerOrigin.position = ScannerOrigin.position;
+				
 			//}
 		}
 	}
@@ -61,7 +63,10 @@ public class ScannerEffectDemo : MonoBehaviour
 	[ImageEffectOpaque]
 	void OnRenderImage(RenderTexture src, RenderTexture dst)
 	{
-		EffectMaterial.SetVector("_WorldSpaceScannerPos", ScannerOrigin.position);
+		Vector4[] list = new Vector4[1];
+		list[0] = ScannerOrigin[0].position;
+
+		EffectMaterial.SetVectorArray("_WorldSpaceScannerPos", list);
 		EffectMaterial.SetFloat("_ScanDistance", ScanDistance);
 		RaycastCornerBlit(src, dst, EffectMaterial);
 	}

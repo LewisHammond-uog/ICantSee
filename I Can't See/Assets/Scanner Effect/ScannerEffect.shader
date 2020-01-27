@@ -6,7 +6,7 @@ Shader "Hidden/ScannerEffect"
 	{
 		_MainTex("Texture", 2D) = "white" {}
 		_DetailTex("Texture", 2D) = "white" {}
-		_ScanDistance("Scan Distance", float) = 0
+		//_ScanDistance("Scan Distance", float) = 0
 		_ScanWidth("Scan Width", float) = 20
 		_LeadSharp("Leading Edge Sharpness", float) = 10
 		_LeadColor("Leading Edge Color", Color) = (1, 1, 1, 0)
@@ -65,7 +65,7 @@ Shader "Hidden/ScannerEffect"
 			sampler2D _MainTex;
 			sampler2D _DetailTex;
 			sampler2D_float _CameraDepthTexture;
-			float4 _WorldSpaceScannerPos;
+			float4 _WorldSpaceScannerPos[1];
 			float _ScanDistance;
 			float _ScanWidth;
 			float _LeadSharp;
@@ -94,7 +94,7 @@ Shader "Hidden/ScannerEffect"
 				float3 wsPos = _WorldSpaceCameraPos + wsDir;
 				half4 scannerCol = half4(0, 0, 0, 0);
 
-				float dist = distance(wsPos, _WorldSpaceScannerPos);
+				float dist = distance(wsPos, _WorldSpaceScannerPos[0]);
 
 				if (dist < _ScanDistance && dist > _ScanDistance - _ScanWidth && linearDepth < 1)
 				{
