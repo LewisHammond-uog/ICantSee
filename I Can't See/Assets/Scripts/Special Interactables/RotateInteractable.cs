@@ -26,14 +26,15 @@ public class RotateInteractable : Interactable
         //Check if trigger has been pressed to grab sliding Interactable
         if (hand.GetActionState(hand.VRInputController.GrabAction))
         {
-
             //Get the velocity of the hand
-            rotateAmount = hand.CurrentPose.GetVelocity();
+            Quaternion handRot = hand.CurrentPose.poseAction.localRotation;
+            
+
             //Check if the rotation of the Interactable is less than the rotation limit
-            if (Vector3.Distance(this.transform.position + Vector3.Scale(moveAmount, chosenAxis), startPos) < movementLimit)
+            if (handRot.z - startRot.z < rotateLimit)
             {
                 //Rotate the Interactable with the player's controller
-                
+                this.transform.rotation = new Quaternion(this.transform.rotation.x, this.transform.rotation.y, handRot.z, 0);
             }
 
             //Check if audio source is not null
