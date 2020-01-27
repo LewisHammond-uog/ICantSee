@@ -30,3 +30,5 @@ public class ClothingConnector : MonoBehaviour
         }
     }
 }
+
+//Lewis Hammond

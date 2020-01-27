@@ -153,3 +153,5 @@ public class VRHand : MonoBehaviour
         return action.GetState(pose.inputSource);
     }
 }
+
+//Lewis Hammond

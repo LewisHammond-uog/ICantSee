@@ -8,3 +8,5 @@ public class ClothingItem : Holdable
     [SerializeField]
     public JobActionInfo jobInfo;
 }
+
+//Lewis Hammond
