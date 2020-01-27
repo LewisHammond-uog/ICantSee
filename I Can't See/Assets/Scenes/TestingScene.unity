@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -170,7 +170,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 235b22f8445b0d648bf124f1d137b38a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -233,9 +233,8 @@ MonoBehaviour:
   ScannerOrigin: {fileID: 778937676}
   EffectMaterial: {fileID: 2100000, guid: 508499fbba94ff64fa8d4b31d7edaf3e, type: 2}
   ScanDistance: 0
---- !u!21 &606681812
-Material:
-  serializedVersion: 6
+--- !u!43 &352474774
+Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -501,12 +500,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29cad80f71281b446a6e7407ed2d9d1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  alarmAudioSource: {fileID: 0}
-  alarmAudioEndClip: {fileID: 0}
-  jobInfo:
-    action: 0
-    objectType: 0
-    room: 0
 --- !u!1 &778937675
 GameObject:
   m_ObjectHideFlags: 0
@@ -595,8 +588,9 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 785956151959014992}
   m_PrefabAsset: {fileID: 0}
---- !u!43 &1346938294
-Mesh:
+--- !u!21 &1578284790
+Material:
+  serializedVersion: 6
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -639,6 +633,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: VR Rig
+      objectReference: {fileID: 0}
+    - target: {fileID: 785956151237216751, guid: 67a31ed1757d3c14196eed45e7d7c4e7,
+        type: 3}
+      propertyPath: m_TagString
+      value: MainCamera
       objectReference: {fileID: 0}
     - target: {fileID: 785956152830004935, guid: 67a31ed1757d3c14196eed45e7d7c4e7,
         type: 3}
@@ -704,12 +703,12 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 606681812}
+      objectReference: {fileID: 1578284790}
     - target: {fileID: 785956150946532601, guid: 67a31ed1757d3c14196eed45e7d7c4e7,
         type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 1346938294}
+      objectReference: {fileID: 352474774}
     - target: {fileID: 785956151166899539, guid: 67a31ed1757d3c14196eed45e7d7c4e7,
         type: 3}
       propertyPath: vrInputController
@@ -744,6 +743,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_ConnectedAnchor.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 785956151237216656, guid: 67a31ed1757d3c14196eed45e7d7c4e7,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.63
+      objectReference: {fileID: 0}
+    - target: {fileID: 785956151237216656, guid: 67a31ed1757d3c14196eed45e7d7c4e7,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -8.62
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67a31ed1757d3c14196eed45e7d7c4e7, type: 3}

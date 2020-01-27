@@ -34,7 +34,7 @@ Material:
     m_Floats:
     - _HBarVisibility: 0.2
     - _LeadSharp: 25
-    - _ScanDistance: 48.3796
+    - _ScanDistance: 88.31033
     - _ScanWidth: 10
     - _Width: 16
     m_Colors:
