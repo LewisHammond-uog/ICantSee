@@ -63,12 +63,25 @@ public class ScannerEffectDemo : MonoBehaviour
 	[ImageEffectOpaque]
 	void OnRenderImage(RenderTexture src, RenderTexture dst)
 	{
-		Vector4[] list = new Vector4[2];
-		list[0] = ScannerOrigin[0].position;
-		list[1] = ScannerOrigin[1].position;
+		Vector4[] list = new Vector4[9];
+		for(int i = 0; i < 9; i++)
+		{
+			list[i] = ScannerOrigin[i].position;
+		}
+
+		float[] distList = new float[9];
+		distList[0] = 6;
+		distList[1] = 6;
+		distList[2] = 6;
+		distList[3] = 6;
+		distList[4] = 6;
+		distList[5] = 6;
+		distList[6] = 6;
+		distList[7] = 6;
+		distList[8] = 6;
 
 		EffectMaterial.SetVectorArray("_WorldSpaceScannerPos", list);
-		EffectMaterial.SetFloat("_ScanDistance", ScanDistance);
+		EffectMaterial.SetFloatArray("_ScanDistance", distList);
 		RaycastCornerBlit(src, dst, EffectMaterial);
 	}
 

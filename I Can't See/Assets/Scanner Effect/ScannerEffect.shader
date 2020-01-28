@@ -65,8 +65,9 @@ Shader "Hidden/ScannerEffect"
 			sampler2D _MainTex;
 			sampler2D _DetailTex;
 			sampler2D_float _CameraDepthTexture;
-			float4 _WorldSpaceScannerPos[2];
-			float _ScanDistance;
+			float _NumOfEffectUpdates;
+			float4 _WorldSpaceScannerPos[25];
+			float _ScanDistance[25];
 			float _ScanWidth;
 			float _LeadSharp;
 			float4 _LeadColor;
@@ -92,13 +93,13 @@ Shader "Hidden/ScannerEffect"
 
 			half4 calcScannerCol(float a_rawDepth, float a_linearDepth, float4 a_wsDir, float3 a_wsPos, half4 a_scannerCol, VertOut i) {
 
-				for (int j = 0; j < 2; j++) {
+				for (int j = 0; j < _NumOfEffectUpdates; j++) {
 
 					float dist = distance(a_wsPos, _WorldSpaceScannerPos[j]);
 
-					if (dist < _ScanDistance && dist > _ScanDistance - _ScanWidth && a_linearDepth < 1)
+					if (dist < _ScanDistance[j] && dist > _ScanDistance[j] - _ScanWidth && a_linearDepth < 1)
 					{
-						float diff = 1 - (_ScanDistance - dist) / (_ScanWidth);
+						float diff = 1 - (_ScanDistance[j] - dist) / (_ScanWidth);
 						half4 edge = lerp(_MidColor, _LeadColor, pow(diff, _LeadSharp));
 						a_scannerCol = lerp(_TrailColor, edge, diff) + horizBars(i.uv) * _HBarColor;
 						a_scannerCol *= diff;
@@ -127,3 +128,5 @@ Shader "Hidden/ScannerEffect"
 		}
 	}
 }
+
+//Lewis Hammond
