@@ -13,7 +13,7 @@ public class EffectPoint : MonoBehaviour
     public float scanSpd = 20;
 
     // Start is called before the first frame update
-    void OnEnable()
+    void Start()
     {
         EffectController.ePoints.Add(this);
     }
@@ -27,5 +27,6 @@ public class EffectPoint : MonoBehaviour
     void Update()
     {
         scanDistance += Time.deltaTime * scanSpd;
+        gameObject.name = "P:" + scanDistance;
     }
 }

@@ -16,7 +16,7 @@ public class EffectController : MonoBehaviour
     //to be hard coded
     [Range(0,25)]
     [SerializeField]
-    private int maxEffectUpdates = 20;
+    private volatile int maxEffectUpdates = 20;
 
     //Effect Points
     public static List<EffectPoint> ePoints;
@@ -35,6 +35,14 @@ public class EffectController : MonoBehaviour
         ePoints = new List<EffectPoint>();
     }
 
+    private void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            Instantiate(prefab);
+        }
+    }
+
 
     /// <summary>
     /// Gets the x number of closest effect points (unsorted), if there are less than the desired number
@@ -51,6 +59,7 @@ public class EffectController : MonoBehaviour
         //Loop and add distances with objects to list
         foreach(EffectPoint point in ePoints)
         {
+            //Closest Point to the Camera
             float dist = Vector3.Distance(point.transform.position, mainCam.transform.position);
 
             //Add a new value to the dictonary if we haven't filled out the max num of values,
@@ -81,28 +90,29 @@ public class EffectController : MonoBehaviour
     private void OnRenderImage(RenderTexture src, RenderTexture dst)
     {
 
-        if (ePoints.Count != 0)
+        //Get Array of closest items and convert in to arrays to send to the shader
+        EffectPoint[] closestPoints = GetClosestEffectPoints(maxEffectUpdates);
+
+        //DO NOT CHANGE THE LENGTH OF THESE ARRAYS EVEN IF YOU THINK IT
+        //WILL MAKE THE PROGRAM QUICKER. UNITY SHADERS ARE NOT HAPPY WHEN THE LENGTHS
+        //OF ARRAYS ARE CHANGED AT RUN TIME
+        //THIS SYSTEM IS OKAY WITH NULL VALUES IN THE ARRAY
+
+        Vector4[] positions = new Vector4[maxEffectUpdates];
+        float[] distances = new float[maxEffectUpdates];
+        for (int i = 0; i < closestPoints.Length; i++)
         {
-            //Get Array of closest items and convert in to arrays to send to the shader
-            EffectPoint[] closestPoints = GetClosestEffectPoints(maxEffectUpdates);
-
-
-            Vector4[] positions = new Vector4[closestPoints.Length];
-            float[] distances = new float[closestPoints.Length];
-            for (int i = 0; i < closestPoints.Length; i++)
-            {
-                positions[i] = closestPoints[i].transform.position;
-                distances[i] = closestPoints[i].ScanDistance;
-            }
-
-
-            //Send info to the shader
-            effectMaterial.SetFloat("_NumOfEffectUpdates", closestPoints.Length);
-            effectMaterial.SetVectorArray("_WorldSpaceScannerPos", positions);
-            effectMaterial.SetFloatArray("_ScanDistance", distances);
-
+            positions[i] = closestPoints[i].transform.position;
+            distances[i] = closestPoints[i].ScanDistance;
         }
-            RaycastCornerBlit(src, dst, effectMaterial);
+
+        //Send info to the shader
+        effectMaterial.SetFloat("_NumOfEffectUpdates", maxEffectUpdates);
+        effectMaterial.SetVectorArray("_WorldSpaceScannerPos", positions);
+        effectMaterial.SetFloatArray("_ScanDistance", distances);
+
+        
+        RaycastCornerBlit(src, dst, effectMaterial);
         
         
     }
