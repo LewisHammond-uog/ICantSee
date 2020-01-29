@@ -7,6 +7,8 @@ public class Holdable : Interactable
 
     private bool isHeld = false;
     private VRHand currentHolder = null;
+
+    bool isBtnPressed = false;
     public VRHand CurrentHolder
     {
         get { return currentHolder;  }
@@ -18,16 +20,16 @@ public class Holdable : Interactable
         //Get the vr controller
         VRInput vr = hand.VRInputController;
 
-        bool btb = hand.GetActionState(vr.GrabAction);
+        isBtnPressed = hand.GetActionState(vr.GrabAction);
 
         //Check if we should pickup or drop object
-        if (btb && !isHeld && currentHolder == null)
+        if (isBtnPressed && !isHeld && currentHolder == null)
         {
             //Pickup
             hand.AttachObject(this);
             isHeld = true;
 
-        }else if(!btb && isHeld)
+        }else if(!isBtnPressed && isHeld)
         {
             //Drop
             hand.DetachObject(this);
@@ -38,3 +40,4 @@ public class Holdable : Interactable
 }
 
 //Lewis Hammond
+// connor done

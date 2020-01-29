@@ -27,7 +27,7 @@ public class SlideInteractable : Interactable
         {
 
             //Get the velocity of the hand
-            moveAmount = hand.CurrentPose.GetVelocity();
+            moveAmount = hand.CurrentPose.GetVelocity() * Time.deltaTime;
             //Check if the distance between the Interactable's startPos and position after moving, is less than the movement limit
             if (Vector3.Distance(this.transform.position + Vector3.Scale(moveAmount, chosenAxis), startPos) < movementLimit) 
             {

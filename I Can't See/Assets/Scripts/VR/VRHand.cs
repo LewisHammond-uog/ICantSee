@@ -108,7 +108,7 @@ public class VRHand : MonoBehaviour
         }
 
         heldObject = obj;
-        test = obj.gameObject;
+        //test = obj.gameObject;
 
         //Position object to controller
         heldObject.transform.position = transform.position;
