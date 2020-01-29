@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody))]
 public class Holdable : Interactable
 {
 
@@ -19,16 +18,20 @@ public class Holdable : Interactable
         //Get the vr controller
         VRInput vr = hand.VRInputController;
 
+        bool btb = hand.GetActionState(vr.GrabAction);
+
         //Check if we should pickup or drop object
-        if (hand.GetActionState(vr.GrabAction) && !isHeld && currentHolder == null)
+        if (btb && !isHeld && currentHolder == null)
         {
             //Pickup
             hand.AttachObject(this);
+            isHeld = true;
 
-        }else if(isHeld && currentHolder == this)
+        }else if(!btb && isHeld)
         {
             //Drop
             hand.DetachObject(this);
+            isHeld = false;
         }
     }
 

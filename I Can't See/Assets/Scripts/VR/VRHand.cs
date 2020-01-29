@@ -7,7 +7,6 @@ using Valve.VR;
 /// <summary>
 /// Class for handiling player Hands in VR
 /// </summary>
-[RequireComponent(typeof(ConfigurableJoint))]
 public class VRHand : MonoBehaviour
 {
 
@@ -28,7 +27,9 @@ public class VRHand : MonoBehaviour
     public Holdable HeldObject { get { return heldObject;  } }
 
     [SerializeField]
-    private ConfigurableJoint holdJoint = null;
+    private Joint holdJoint = null;
+
+    public GameObject test;
 
     private void Start()
     {
@@ -58,12 +59,14 @@ public class VRHand : MonoBehaviour
         {
             obj.DoAction(this);
         }
+
+     
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
         //Get interactable component
-        Interactable collidedInteractable = collision.gameObject.GetComponent<Interactable>();
+        Interactable collidedInteractable = other.gameObject.GetComponent<Interactable>();
 
         //Add items on collision enter to our update list
         if (collidedInteractable != null)
@@ -72,10 +75,10 @@ public class VRHand : MonoBehaviour
         }
     }
 
-    private void OnCollisionExit(Collision collision)
+    private void OnTriggerExit(Collider other)
     {
         //Get interactable component
-        Interactable collidedInteractable = collision.gameObject.GetComponent<Interactable>();
+        Interactable collidedInteractable = other.gameObject.GetComponent<Interactable>();
 
         //Add items on collision enter to our update list
         if (collidedInteractable != null)
@@ -104,15 +107,18 @@ public class VRHand : MonoBehaviour
             obj.CurrentHolder.DetachObject(obj);
         }
 
+        heldObject = obj;
+        test = obj.gameObject;
+
         //Position object to controller
-        obj.transform.position = transform.position;
+        heldObject.transform.position = transform.position;
 
         //Attach to Hand
-        Rigidbody objRB = obj.GetComponent<Rigidbody>();
+        Rigidbody objRB = heldObject.GetComponent<Rigidbody>();
         holdJoint.connectedBody = objRB;
 
         //Set this to be the active hand
-        obj.CurrentHolder = this;
+        heldObject.CurrentHolder = this;
 
     }
 
@@ -138,8 +144,8 @@ public class VRHand : MonoBehaviour
         objRB.angularVelocity = CurrentPose.GetAngularVelocity();
 
         //Null out vars
-        heldObject = null;
         heldObject.CurrentHolder = null;
+        heldObject = null;
         
     }
 

@@ -119,8 +119,8 @@ GameObject:
   - component: {fileID: 785956151166899543}
   - component: {fileID: 785956151166899542}
   - component: {fileID: 785956151166899541}
-  - component: {fileID: 785956151166899540}
   - component: {fileID: 785956151166899539}
+  - component: {fileID: 785956151166899540}
   m_Layer: 0
   m_Name: Controller (left)
   m_TagString: Untagged
@@ -197,11 +197,25 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
+  m_UseGravity: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &785956151166899539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 785956151166899538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ac8c54a0a3dc454ca18e9ef141c3e5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vrInputController: {fileID: 0}
+  holdJoint: {fileID: 785956151166899540}
 --- !u!153 &785956151166899540
 ConfigurableJoint:
   m_ObjectHideFlags: 0
@@ -297,20 +311,6 @@ ConfigurableJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!114 &785956151166899539
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 785956151166899538}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ac8c54a0a3dc454ca18e9ef141c3e5f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  vrInputController: {fileID: 0}
-  holdJoint: {fileID: 785956151166899540}
 --- !u!1 &785956151237216751
 GameObject:
   m_ObjectHideFlags: 0
@@ -503,8 +503,8 @@ GameObject:
   - component: {fileID: 785956152180280603}
   - component: {fileID: 785956152180280606}
   - component: {fileID: 785956152180280605}
-  - component: {fileID: 785956152180280604}
   - component: {fileID: 785956152180280607}
+  - component: {fileID: 785956152180280604}
   m_Layer: 0
   m_Name: Controller (right)
   m_TagString: Untagged
@@ -581,11 +581,25 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
+  m_UseGravity: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &785956152180280607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 785956152180280602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ac8c54a0a3dc454ca18e9ef141c3e5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vrInputController: {fileID: 0}
+  holdJoint: {fileID: 785956152180280604}
 --- !u!153 &785956152180280604
 ConfigurableJoint:
   m_ObjectHideFlags: 0
@@ -681,20 +695,6 @@ ConfigurableJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!114 &785956152180280607
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 785956152180280602}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ac8c54a0a3dc454ca18e9ef141c3e5f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  vrInputController: {fileID: 0}
-  holdJoint: {fileID: 785956152180280604}
 --- !u!1 &785956152830004933
 GameObject:
   m_ObjectHideFlags: 0
