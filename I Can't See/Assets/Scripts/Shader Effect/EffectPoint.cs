@@ -10,7 +10,8 @@ public class EffectPoint : MonoBehaviour
     private float scanDistance = 0.0f;
     public float ScanDistance { get { return scanDistance; } }
     
-    public float scanSpd = 20;
+    private float scanSpd = 20f;
+    private float maxDistance = 100f;
 
     // Start is called before the first frame update
     void Start()
@@ -26,7 +27,13 @@ public class EffectPoint : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Increase scan distance
         scanDistance += Time.deltaTime * scanSpd;
-        gameObject.name = "P:" + scanDistance;
+
+        //Destroy if over max scan distance
+        if(scanDistance > maxDistance)
+        {
+            Destroy(gameObject);
+        }
     }
 }

@@ -4,7 +4,7 @@ using System.Collections;
 /*
 USE FOR LOOPS FOR POSTIONS USE OBJECT ATTACHED TO THE CAMERA AND PASS ARRAY OF POSISITIONS TO DO IT
 */
-
+/*
 
 [ExecuteInEditMode]
 public class ScannerEffectDemo : MonoBehaviour
@@ -147,3 +147,4 @@ public class ScannerEffectDemo : MonoBehaviour
 		GL.PopMatrix();
 	}
 }
+*/

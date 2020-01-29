@@ -11,7 +11,7 @@ public class EffectController : MonoBehaviour
     private Material effectMaterial;
     private Camera mainCam;
 
-    //Max number of effects to update at once - forced to 25,
+    //Max number of effects to update at once - forced to <25,
     //as this is the size of the array within the shader which has
     //to be hard coded
     [Range(0,25)]
