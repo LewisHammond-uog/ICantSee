@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(AudioSource))]
 public class SoundInteractable : Interactable
 {
     //Audio
     [SerializeField]
-    private AudioSource interactableAudioSource;
+    protected AudioSource interactableAudioSource;
     [SerializeField]
     private AudioClip interactableAudioEndClip;
 
@@ -15,7 +16,7 @@ public class SoundInteractable : Interactable
 
     //Job Info - For Job Manager to register the associated job actions for the job manager
     [SerializeField]
-    private JobActionInfo jobInfo;
+    protected JobActionInfo jobInfo;
 
     // Start is called before the first frame update
     void Start()
