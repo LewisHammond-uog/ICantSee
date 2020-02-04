@@ -100,21 +100,22 @@ public class EffectController : MonoBehaviour
 
         Vector4[] positions = new Vector4[maxEffectUpdates];
         float[] distances = new float[maxEffectUpdates];
+        float[] widths = new float[maxEffectUpdates];
         for (int i = 0; i < closestPoints.Length; i++)
         {
             positions[i] = closestPoints[i].transform.position;
             distances[i] = closestPoints[i].ScanDistance;
+            widths[i] = closestPoints[i].ScanWidth;
         }
 
         //Send info to the shader
         effectMaterial.SetFloat("_NumOfEffectUpdates", maxEffectUpdates);
         effectMaterial.SetVectorArray("_WorldSpaceScannerPos", positions);
         effectMaterial.SetFloatArray("_ScanDistance", distances);
+        effectMaterial.SetFloatArray("_ScanWidth", widths);
 
         
         RaycastCornerBlit(src, dst, effectMaterial);
-        
-        
     }
 
     void RaycastCornerBlit(RenderTexture source, RenderTexture dest, Material mat)

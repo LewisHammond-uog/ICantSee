@@ -1,5 +1,4 @@
-﻿// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
-
+﻿
 Shader "Hidden/ScannerEffect"
 {
 	Properties
@@ -7,7 +6,7 @@ Shader "Hidden/ScannerEffect"
 		_MainTex("Texture", 2D) = "white" {}
 		_DetailTex("Texture", 2D) = "white" {}
 		//_ScanDistance("Scan Distance", float) = 0
-		_ScanWidth("Scan Width", float) = 20
+		//_ScanWidth("Scan Width", float) = 20
 		_LeadSharp("Leading Edge Sharpness", float) = 10
 		_LeadColor("Leading Edge Color", Color) = (1, 1, 1, 0)
 		_MidColor("Mid Color", Color) = (1, 1, 1, 0)
@@ -68,7 +67,7 @@ Shader "Hidden/ScannerEffect"
 			float _NumOfEffectUpdates;
 			float4 _WorldSpaceScannerPos[25];
 			float _ScanDistance[25];
-			float _ScanWidth;
+			float _ScanWidth[25];
 			float _LeadSharp;
 			float4 _LeadColor;
 			float4 _MidColor;
@@ -98,9 +97,9 @@ Shader "Hidden/ScannerEffect"
 
 					float dist = distance(a_wsPos, _WorldSpaceScannerPos[j]);
 
-					if (dist < _ScanDistance[j] && dist > _ScanDistance[j] - _ScanWidth && a_linearDepth < 1)
+					if (dist < _ScanDistance[j] && dist > _ScanDistance[j] - _ScanWidth[j] && a_linearDepth < 1)
 					{
-						float diff = 1 - (_ScanDistance[j] - dist) / (_ScanWidth);
+						float diff = 1 - (_ScanDistance[j] - dist) / (_ScanWidth[j]);
 						half4 edge = lerp(_MidColor, _LeadColor, pow(diff, _LeadSharp));
 						a_scannerCol = lerp(_TrailColor, edge, diff) + horizBars(i.uv) * _HBarColor;
 						a_scannerCol *= diff;
@@ -130,4 +129,4 @@ Shader "Hidden/ScannerEffect"
 	}
 }
 
-//Lewis Hammond
+//Lewis Hammond - Modified from "Makin' Stuff Look Good" (https://www.youtube.com/watch?v=OKoNp2RqE9A)

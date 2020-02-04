@@ -9,7 +9,10 @@ public class EffectPoint : MonoBehaviour
     //Distance for the scan from its orign
     private float scanDistance = 0.0f;
     public float ScanDistance { get { return scanDistance; } }
-    
+
+    private float scanWidth = 20f;
+    public float ScanWidth { get { return scanWidth; } }
+
     private float scanSpd = 20f;
     private float maxDistance = 100f;
 
