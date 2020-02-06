@@ -93,6 +93,11 @@ public static class JobManager
     private static Stack<Job> remainingJobs = new Stack<Job>();
     private static Stack<Job> completedJobs = new Stack<Job>();
 
+    //Event Triggered when a job is complete
+    public delegate void JobEvent();
+    public static event JobEvent JobComplete;
+    public static event JobEvent JobStarted;
+
     /// <summary>
     /// Adds a job that the player has to complete to the manager list
     /// </summary>
@@ -142,12 +147,18 @@ public static class JobManager
         {
             Job completedJob = remainingJobs.Pop();
 
+            //Call Job Complete Event
+            JobComplete?.Invoke();
+
             //Add to completed jobs list
             completedJobs.Push(completedJob);
 
             //Play Audio of the next job
             Job nextJob = remainingJobs.Peek();
             nextJob.PlayJobAudio();
+
+            //Call New Job Started Events
+            JobComplete?.Invoke();
         }
     }
 }

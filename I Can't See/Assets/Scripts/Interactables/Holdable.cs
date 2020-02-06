@@ -5,7 +5,7 @@ using UnityEngine;
 public class Holdable : Interactable
 {
 
-    private bool isHeld = false;
+    protected bool isHeld = false;
     private VRHand currentHolder = null;
 
     bool isBtnPressed = false;
