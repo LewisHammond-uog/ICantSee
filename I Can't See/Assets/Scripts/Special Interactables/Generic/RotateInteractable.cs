@@ -23,7 +23,7 @@ public class RotateInteractable : Interactable
 
     public override void DoAction(VRHand hand)
     {
-        //Check if trigger has been pressed to grab sliding Interactable
+        //Check if trigger has been pressed to grab rotate Interactable
         if (hand.GetActionState(hand.VRInputController.GrabAction))
         {
             //Get the velocity of the hand
