@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
 public class EffectPoint : MonoBehaviour
 {
 
@@ -11,10 +10,13 @@ public class EffectPoint : MonoBehaviour
     public float ScanDistance { get { return scanDistance; } }
 
     private float scanWidth = 20f;
-    public float ScanWidth { get { return scanWidth; } }
+    public float ScanWidth { 
+        get { return scanWidth; }
+        set { scanWidth = value;  }
+    }
 
-    private float scanSpd = 20f;
-    private float maxDistance = 100f;
+    private const float scanSpd = 20f;
+    private const float maxDistance = 100f;
 
     // Start is called before the first frame update
     void Start()

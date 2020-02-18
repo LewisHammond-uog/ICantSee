@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(AudioSource))]
+[RequireComponent(typeof(EffectGenerator))]
 public class SoundInteractable : Interactable
 {
     //Audio
