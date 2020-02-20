@@ -21,7 +21,7 @@ public class VRInput : MonoBehaviour
 
     // generic action to be used when a special interation is available
     [SerializeField]
-    private SteamVR_Action_Boolean specialDpadAction;
+    protected SteamVR_Action_Boolean specialDpadAction;
 
     public SteamVR_Action_Boolean SpecialDpadAction { get { return specialDpadAction; } }
 
