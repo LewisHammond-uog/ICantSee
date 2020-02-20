@@ -15,8 +15,10 @@ public class VRMove : MonoBehaviour
     [SerializeField]
     private VRInput vrInputController;
 
-
     private bool moveButtonClicked = false;
+
+    private Vector3 rightVel;
+    private Vector3 leftVel;
 
     // Start is called before the first frame update
     void Start()
@@ -37,17 +39,18 @@ public class VRMove : MonoBehaviour
         }
 
         //Get the velocity of both controllers
-        Vector3 rightVel = rightHand.CurrentPose.GetVelocity();
-        Vector3 leftVel = leftHand.CurrentPose.GetVelocity();
+        rightVel = rightHand.CurrentPose.GetVelocity();
+        leftVel = leftHand.CurrentPose.GetVelocity();
 
         //If move button is clicked...
         if(moveButtonClicked)
         {
             //Check if a controller velocity is more than 0
-            if (rightVel.x + rightVel.z > 0 || leftVel.x + leftVel.z > 0)
+            if (rightVel.x + rightVel.z != 0 || leftVel.x + leftVel.z != 0)
             {
                 //Increase the position by whatever the higher velocity of the controllers is
-                vrRig.transform.position += ((leftVel.x + leftVel.z) > (rightVel.x + rightVel.z)) ? leftVel : rightVel;
+                Vector3 controllerVelocity = ((leftVel.x + leftVel.z) > (rightVel.x + rightVel.z)) ? leftVel : rightVel;
+                vrRig.transform.position += controllerVelocity * Time.deltaTime;
             }
         }
         
@@ -57,3 +60,4 @@ public class VRMove : MonoBehaviour
 
 
 //Rhys Wareham
+//Lewis Hammond

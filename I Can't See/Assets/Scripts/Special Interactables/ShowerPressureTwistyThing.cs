@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class ShowerPressureTwistyThing : Interactable
 {
-    private Vector3 handVel;
     private float rotationAngle;
     private Vector3 finalAxis;
 
@@ -15,20 +14,30 @@ public class ShowerPressureTwistyThing : Interactable
     [SerializeField]
     private JobActionInfo jobInfo;
 
+    private void Update()
+    {
+        
+    }
+
     public override void DoAction(VRHand hand)
     {
+        
         //Check if D-Pad has been pressed to turn off radio
         if (hand.GetActionState(hand.VRInputController.SpecialDpadAction))
         {
-            handVel = hand.CurrentPose.GetAngularVelocity();
-            finalAxis = Vector3.Scale(handVel, rotationAxis);
+            rotationAngle = -hand.CurrentPose.GetAngularVelocity().x;
+            if(rotationAngle > 0)
+            {
+                int i = 0;
+            }
 
-            rotationAngle = finalAxis.x = finalAxis.y + finalAxis.z;
+            Vector3 handVel = new Vector3(rotationAngle, rotationAngle, rotationAngle);
+            finalAxis = Vector3.Scale(handVel, rotationAxis);
 
             this.transform.Rotate(rotationAxis, rotationAngle);
 
             // call job manager
-            JobManager.RegisterJobAction(jobInfo);
+            //JobManager.RegisterJobAction(jobInfo);
         }
     }
 }

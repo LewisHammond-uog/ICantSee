@@ -28,9 +28,6 @@ public class VRHand : MonoBehaviour
 
     [SerializeField]
     private Joint holdJoint = null;
-
-    public GameObject test;
-
     private void Start()
     {
         //Intialise list of colliding iteractables

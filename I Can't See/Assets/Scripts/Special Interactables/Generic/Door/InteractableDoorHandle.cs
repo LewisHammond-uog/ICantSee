@@ -9,10 +9,12 @@ using UnityEngine;
 public class InteractableDoorHandle : Holdable
 {
     Transform startPos;
+    Rigidbody rb;
 
     private void Start()
     {
         startPos = transform;
+        rb = GetComponent<Rigidbody>();
     }
 
     public override void DoAction(VRHand hand)
@@ -25,6 +27,12 @@ public class InteractableDoorHandle : Holdable
         {
             transform.position = startPos.position;
             transform.rotation = startPos.rotation;
+
+            rb.isKinematic = true;
+        }
+        else
+        {
+            rb.isKinematic = false;
         }
 
 
