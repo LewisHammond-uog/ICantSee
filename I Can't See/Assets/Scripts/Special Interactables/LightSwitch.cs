@@ -21,9 +21,12 @@ public class LightSwitch : SoundInteractable
         {
             //Play 1 Shot Audio for switch on/off
             interactableAudioSource.PlayOneShot(switchSoundClip);
+            // call job manager
+            JobManager.RegisterJobAction(jobInfo);
         }
 
-        // call job manager
-        JobManager.RegisterJobAction(jobInfo);
     }
 }
+
+
+//Lewis Hammond

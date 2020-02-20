@@ -6,6 +6,11 @@ public class ToothPaste : Holdable
 {
     [SerializeField]
     private AudioSource interactableAudioSource;
+    [SerializeField]
+    private Transform pasteSpawn;
+    [SerializeField]
+    private GameObject tpPaste;
+    private Vector3 squirtLocation;
 
     public bool isDPadPressed = false;
 
@@ -24,6 +29,8 @@ public class ToothPaste : Holdable
                 //Play Interactable moving sound
                 interactableAudioSource.Play();
             }
+            squirtLocation = new Vector3(pasteSpawn.position.x, pasteSpawn.position.y, pasteSpawn.position.z);
+            Instantiate(tpPaste, squirtLocation, Quaternion.identity);
 
         }
         interactableAudioSource.Stop();
