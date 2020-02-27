@@ -39,18 +39,29 @@ public class VRMove : MonoBehaviour
         }
 
         //Get the velocity of both controllers
+        //FOR FIXES? - GET THE ABS VELOCITY
         rightVel = rightHand.CurrentPose.GetVelocity();
         leftVel = leftHand.CurrentPose.GetVelocity();
+
+        //Set Y Component to 0 so that we don't move in the Y Direction
+        rightVel.y = 0f;
+        leftVel.y = 0f;
 
         //If move button is clicked...
         if(moveButtonClicked)
         {
-            //Check if a controller velocity is more than 0
-            if (rightVel.x + rightVel.z != 0 || leftVel.x + leftVel.z != 0)
+            //Check if a controller velocity is not 0
+            if (rightVel.magnitude != 0 || leftVel.magnitude != 0)
             {
                 //Increase the position by whatever the higher velocity of the controllers is
+                //FOR FIXES  - NORMLIZE THIS
                 Vector3 controllerVelocity = ((leftVel.x + leftVel.z) > (rightVel.x + rightVel.z)) ? leftVel : rightVel;
-                vrRig.transform.position += controllerVelocity * Time.deltaTime;
+                
+                //Apply the velocity in the direction that the controller is facing
+                //FOR FIXES - Not Local Rotation?
+                Vector3 moveVector = Vector3.Scale(controllerVelocity, rightHand.gameObject.transform.localEulerAngles);
+                
+                vrRig.transform.position += moveVector * Time.deltaTime;
             }
         }
         
