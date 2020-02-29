@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShowerPressureTwistyThing : Interactable
+public class TwistInteractable : Interactable
 {
     private float rotationAngle;
     private Vector3 finalAxis;
