@@ -15,9 +15,13 @@ public class TwistInteractable : Interactable
     [SerializeField]
     private Vector3 objectRotationAxis;
 
-    //Job Info - For Job Manager to register the associated job actions for the job manager
-    [SerializeField]
-    private JobActionInfo jobInfo;
+    //Property for getting the difference in rotation between the start
+    //and current rotation
+    public Vector3 rotatedAmount { get { return (transform.rotation.eulerAngles - startRotation.eulerAngles); } }
+
+    //Event for when the state of the twistable is changed
+    public delegate void TwistInteractableEvent();
+    public static event TwistInteractableEvent TwistMoved;
 
     private void Update()
     {
@@ -38,6 +42,13 @@ public class TwistInteractable : Interactable
 
             //Apply that rotation in the direction that we want to rotate
             gameObject.transform.Rotate(objectRotationAxis, rotateAmount);
+
+            //If rotation was > 0 then call the event that 
+            //the object was twisted
+            if(Mathf.Abs(rotateAmount) > 0)
+            {
+                TwistMoved();
+            }
 
             // call job manager
             JobManager.RegisterJobAction(jobInfo);

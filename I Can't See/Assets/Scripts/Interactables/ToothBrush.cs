@@ -6,11 +6,6 @@ public class ToothBrush : Holdable
 {
     [SerializeField]
     private GameObject paste;
-    
-    //Job Info - For Job Manager to register the associated job actions for the job manager
-    [SerializeField]
-    protected JobActionInfo jobInfo;
-
 
     public override void DoAction(VRHand hand)
     {

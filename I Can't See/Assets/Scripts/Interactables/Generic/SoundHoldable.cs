@@ -14,10 +14,6 @@ public class SoundHoldable : Holdable
     [SerializeField]
     private bool playOnStart = false;
 
-    //Job Info - For Job Manager to register the associated job actions for the job manager
-    [SerializeField]
-    private JobActionInfo jobInfo;
-
     private void Start()
     {
         if (holdableAudioSource != null && playOnStart)

@@ -15,10 +15,6 @@ public class SoundInteractable : Interactable
     [SerializeField]
     private bool playOnStart = false;
 
-    //Job Info - For Job Manager to register the associated job actions for the job manager
-    [SerializeField]
-    protected JobActionInfo jobInfo;
-
     // Start is called before the first frame update
     void Start()
     {
