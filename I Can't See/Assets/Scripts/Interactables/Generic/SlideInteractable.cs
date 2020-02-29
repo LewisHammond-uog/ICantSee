@@ -44,6 +44,10 @@ public class SlideInteractable : Interactable
 
         }
         interactableAudioSource.Stop();
+
+        //Reset Moveamount incase we are not interacting next
+        //frame
+        moveAmount = Vector3.zero;
     }
 }
 
