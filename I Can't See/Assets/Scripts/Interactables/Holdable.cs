@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//Require a rigidbody and collder so that thse objects are holdable
+[RequireComponent(typeof(Rigidbody), typeof(Collider))]
 public class Holdable : Interactable
 {
 

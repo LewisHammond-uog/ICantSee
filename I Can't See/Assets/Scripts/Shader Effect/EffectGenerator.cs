@@ -5,10 +5,21 @@ using UnityEngine;
 /// <summary>
 /// Class generates the game effect based on the sound an object is creating
 /// </summary>
-[RequireComponent(typeof(AudioSource))]
 public class EffectGenerator : MonoBehaviour
 {
+    //Audio Source for whatever sound the object is playing
+    //(e.g music coming out of the radio)
     private AudioSource objectAudioSource;
+    //Flags if this object has an existing audio source (i.e a radio)
+    //if it does then we should poll the object for updates on what
+    //it is currently playing
+    private bool hasExistingAudioSoruce;
+
+    //Audio Source for dropped sound - created by the script
+    //so that it can't be messed up
+    private AudioSource dropAudioSource;
+    [SerializeField]
+    private AudioClip dropSound;
 
     //How often the effect updates (i.e a new effect is created) in seconds
     [SerializeField]
@@ -28,35 +39,55 @@ public class EffectGenerator : MonoBehaviour
     [SerializeField]
     private float loudnessMultiplyer = 20;
 
+    //Name of the object that we create when creating an effect
+    private const string effectObjName = "EffectPoint";
+
     // Start is called before the first frame update
     void Start()
     {
-        //Get the audio source component
+        //Get the audio source component already on the object,
+        //if there isn't one then we can disable
+        //regular updates
         objectAudioSource = GetComponent<AudioSource>();
+        hasExistingAudioSoruce = objectAudioSource != null ? true : false;
+
+        //Create the drop audio source and assign values - this audio soruce
+        //is played only when the object collides with another
+        dropAudioSource = gameObject.AddComponent<AudioSource>();
+        dropAudioSource.playOnAwake = false;
+        dropAudioSource.clip = dropSound;
 
         //Allocate the memory for the array
         clipSampleData = new float[sampleDataLen];
 
-        //Create a clip straigtht away
-        CreateEffect(GetCurrentClipLoundness());
+        if (hasExistingAudioSoruce)
+        {
+            //Create a clip straigtht away
+            CreateEffect(GetCurrentClipLoundness() * loudnessMultiplyer);
+        }
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        timeSinceLastUpdate += Time.deltaTime;
-        if (timeSinceLastUpdate >= updateStep)
+        //Don't poll for updates if we don't have a audio source that is not
+        //the drop audio source
+        if (hasExistingAudioSoruce)
         {
-            //Get the loudness of the current playing audio
-            float loudness = GetCurrentClipLoundness();
-
-            if (loudness > minEffectLoundness)
+            timeSinceLastUpdate += Time.deltaTime;
+            if (timeSinceLastUpdate >= updateStep)
             {
-                CreateEffect((loudness * loudness) * loudnessMultiplyer);
-            }
+                //Get the loudness of the current playing audio
+                float loudness = GetCurrentClipLoundness();
 
-            timeSinceLastUpdate = 0.0f;
+                if (loudness > minEffectLoundness)
+                {
+                    CreateEffect((loudness * loudness)/*^2*/ * loudnessMultiplyer);
+                }
+
+                timeSinceLastUpdate = 0.0f;
+            }
         }
     }
 
@@ -93,9 +124,22 @@ public class EffectGenerator : MonoBehaviour
     {
         //Create an effect
         GameObject effectObj = new GameObject();
+        effectObj.name = effectObjName;
         effectObj.transform.position = transform.position;
 
+        //Add the effect point 
         EffectPoint effect = effectObj.AddComponent<EffectPoint>();
-        effect.ScanWidth = effectWidth * loudnessMultiplyer;
+        effect.ScanWidth = effectWidth;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        //Create an effect as soon as we collide with something - don't wait
+        CreateEffect(gameObject.GetComponent<Rigidbody>().velocity.magnitude);
+
+        //Play audio source sound
+        dropAudioSource.PlayOneShot(dropSound);
     }
 }
+
+//Lewis Hammond
