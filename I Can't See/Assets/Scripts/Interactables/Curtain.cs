@@ -19,13 +19,11 @@ public class Curtain : Interactable
         startPos = this.transform.position;
     }
 
-
     public override void DoAction(VRHand hand)
     {
         //Check if trigger has been pressed to grab sliding Interactable
         if (hand.GetActionState(hand.VRInputController.GrabAction))
         {
-
             //Get the velocity of the hand
             moveAmount = hand.CurrentPose.GetVelocity() * Time.deltaTime;
             //Check if the distance between the Interactable's startPos and position after moving, is less than the movement limit
@@ -41,7 +39,6 @@ public class Curtain : Interactable
                 //Play Interactable moving sound
                 interactableAudioSource.Play();
             }
-
         }
         interactableAudioSource.Stop();
     }
