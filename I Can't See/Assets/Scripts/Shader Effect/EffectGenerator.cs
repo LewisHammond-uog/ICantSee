@@ -63,7 +63,7 @@ public class EffectGenerator : MonoBehaviour
         if (hasExistingAudioSoruce)
         {
             //Create a clip straigtht away
-            CreateEffect(GetCurrentClipLoundness() * loudnessMultiplyer);
+            CreateEffect(GetCurrentClipLoundness() * loudnessMultiplyer, transform.position);
         }
 
     }
@@ -83,7 +83,7 @@ public class EffectGenerator : MonoBehaviour
 
                 if (loudness > minEffectLoundness)
                 {
-                    CreateEffect((loudness * loudness)/*^2*/ * loudnessMultiplyer);
+                    CreateEffect((loudness * loudness)/*^2*/ * loudnessMultiplyer, transform.position);
                 }
 
                 timeSinceLastUpdate = 0.0f;
@@ -120,12 +120,12 @@ public class EffectGenerator : MonoBehaviour
     /// <summary>
     /// Creates an effect with a given width at the current objects position
     /// </summary>
-    private void CreateEffect(float effectWidth)
+    private static void CreateEffect(float effectWidth, Vector3 position)
     {
         //Create an effect
         GameObject effectObj = new GameObject();
         effectObj.name = effectObjName;
-        effectObj.transform.position = transform.position;
+        effectObj.transform.position = position;
 
         //Add the effect point 
         EffectPoint effect = effectObj.AddComponent<EffectPoint>();
@@ -135,7 +135,7 @@ public class EffectGenerator : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         //Create an effect as soon as we collide with something - don't wait
-        CreateEffect(gameObject.GetComponent<Rigidbody>().velocity.magnitude);
+        CreateEffect(gameObject.GetComponent<Rigidbody>().velocity.magnitude, transform.position);
 
         //Play audio source sound
         dropAudioSource.PlayOneShot(dropSound);
