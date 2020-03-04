@@ -28,13 +28,13 @@ public class InteractableDoorHandle : Holdable
             transform.position = startPos.position;
             transform.rotation = startPos.rotation;
 
-            rb.isKinematic = true;
+            rb.isKinematic = false;
         }
         else
         {
-            rb.isKinematic = false;
+            rb.isKinematic = true;
         }
-
-
     }
 }
+
+//Lewis Hammond
