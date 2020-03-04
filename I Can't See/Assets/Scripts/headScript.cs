@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class headScript : MonoBehaviour
+public class HeadScript : MonoBehaviour
 {
     [SerializeField]
     private GameObject toothBrush;
