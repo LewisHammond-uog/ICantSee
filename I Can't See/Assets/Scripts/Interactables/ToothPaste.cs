@@ -21,7 +21,7 @@ public class ToothPaste : Holdable
 
         isDPadPressed = hand.GetActionState(vr.SpecialDpadAction);
 
-        while(isDPadPressed)
+        if(isDPadPressed)
         {
             //Check if audio source is not null
             if (interactableAudioSource != null)

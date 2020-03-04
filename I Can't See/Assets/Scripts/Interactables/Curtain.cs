@@ -29,8 +29,8 @@ public class Curtain : Interactable
             //Check if the distance between the Interactable's startPos and position after moving, is less than the movement limit
             if (Vector3.Distance(this.transform.position + Vector3.Scale(moveAmount, chosenAxis), startPos) < movementLimit)
             {
-                this.transform.localScale = Vector3.Scale(moveAmount, chosenAxis) * 0.5f;
-                this.transform.position = Vector3.Scale(moveAmount, chosenAxis) * 0.5f;
+                this.transform.localScale += Vector3.Scale(moveAmount, chosenAxis) * 0.5f;
+                this.transform.position += Vector3.Scale(moveAmount, chosenAxis) * 0.5f;
             }
 
             //Check if audio source is not null

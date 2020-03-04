@@ -23,8 +23,7 @@ public class VRHand : MonoBehaviour
     private List<Interactable> collidingIteractables;
 
     //Info about objects we are holding
-    private Holdable heldObject = null;
-    public Holdable HeldObject { get { return heldObject;  } }
+    public Holdable HeldObject { get { return holdJoint.connectedBody.GetComponent<Holdable>();  } }
 
     [SerializeField]
     private Joint holdJoint = null;
@@ -89,12 +88,12 @@ public class VRHand : MonoBehaviour
     /// Attach and object to the hand
     /// </summary>
     /// <param name="obj"></param>
-    public void AttachObject(Holdable obj, bool a_FixedX = false, bool a_FixedY = false, bool a_FixedZ = false)
+    public void AttachObject(Holdable obj)
     {
         //null Check
-        if(obj == null || heldObject != null)
+        if(obj == null)
         {
-            return;
+             return;
         }
         
 
@@ -104,18 +103,15 @@ public class VRHand : MonoBehaviour
             obj.CurrentHolder.DetachObject(obj);
         }
 
-        heldObject = obj;
-        //test = obj.gameObject;
-
         //Position object to controller
-        heldObject.transform.position = transform.position;
+        obj.transform.position = transform.position;
 
         //Attach to Hand
-        Rigidbody objRB = heldObject.GetComponent<Rigidbody>();
+        Rigidbody objRB = obj.GetComponent<Rigidbody>();
         holdJoint.connectedBody = objRB;
 
         //Set this to be the active hand
-        heldObject.CurrentHolder = this;
+        obj.CurrentHolder = this;
 
     }
 
@@ -125,9 +121,8 @@ public class VRHand : MonoBehaviour
     /// <param name="obj"></param>
     public void DetachObject(Holdable obj)
     {
-
         //null Check
-        if (obj == null || obj != heldObject)
+        if (obj == null || obj != HeldObject)
         {
             return;
         }
@@ -141,8 +136,7 @@ public class VRHand : MonoBehaviour
         objRB.angularVelocity = CurrentPose.GetAngularVelocity();
 
         //Null out vars
-        heldObject.CurrentHolder = null;
-        heldObject = null;
+        obj.CurrentHolder = null;
         
     }
 

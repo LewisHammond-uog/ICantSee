@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class HeadScript : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject toothBrush;
+
     [SerializeField]
     private AudioSource brushingAudioSource;
 
@@ -18,10 +17,11 @@ public class HeadScript : MonoBehaviour
     private void OnTriggerStay(Collider other)
     {
         //Check if toothbrush is within the collider
-        if (other.gameObject == toothBrush)
+        ToothBrush brush = other.gameObject.GetComponent<ToothBrush>();
+        if (brush)
         {
             //Check if brush is being moved within the head's collider
-            if (toothBrush.GetComponent<Rigidbody>().velocity != new Vector3(0, 0, 0))
+            if (brush.GetComponent<Rigidbody>().velocity != new Vector3(0, 0, 0))
             {
                 //Play brushing sound
                 brushingAudioSource.Play();
