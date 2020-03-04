@@ -55,13 +55,14 @@ public class VRMove : MonoBehaviour
             {
                 //Increase the position by whatever the higher velocity of the controllers is
                 //FOR FIXES  - NORMLIZE THIS
-                Vector3 controllerVelocity = ((leftVel.x + leftVel.z) > (rightVel.x + rightVel.z)) ? leftVel : rightVel;
+                Vector3 controllerVelocity = ((Mathf.Abs(leftVel.x) + Mathf.Abs(leftVel.z)) > (Mathf.Abs(rightVel.x) + Mathf.Abs(rightVel.z))) ? leftVel : rightVel;
                 
                 //Apply the velocity in the direction that the controller is facing
                 //FOR FIXES - Not Local Rotation?
-                Vector3 moveVector = Vector3.Scale(controllerVelocity, rightHand.gameObject.transform.localEulerAngles);
+                //Vector3 moveVector = Vector3.Scale(controllerVelocity, rightHand.gameObject.transform.localEulerAngles);
                 
-                vrRig.transform.position += moveVector * Time.deltaTime;
+                // apply negative velocity to move in opposite direction to hand
+                vrRig.transform.position += -controllerVelocity * Time.deltaTime;
             }
         }
         
@@ -72,3 +73,4 @@ public class VRMove : MonoBehaviour
 
 //Rhys Wareham
 //Lewis Hammond
+// connnor done

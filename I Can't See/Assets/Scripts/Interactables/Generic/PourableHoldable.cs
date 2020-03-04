@@ -22,7 +22,7 @@ public class PourableHoldable : Holdable
 
     //Number of Water Drops that the object starts with
     [SerializeField]
-    private int startingWaterDrops;
+    private int startingDropCount;
     //Number of water drops that we currently have
     private int waterDropCount;
 
@@ -32,7 +32,7 @@ public class PourableHoldable : Holdable
         timeSinceBlob = 0.0f;
 
         //Init number of starting drops
-        waterDropCount = startingWaterDrops;
+        waterDropCount = startingDropCount;
     }
 
     // Update is called once per frame

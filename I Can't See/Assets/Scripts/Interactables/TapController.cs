@@ -16,12 +16,48 @@ public class TapController : SoundInteractable
     private TwistInteractable[] tapComponents;
 
     //If tap is on or not
-    private bool tapOn = false;
+    private bool tapOn = true;
+
+    //Time between blobs being created in seconds
+    const float timeBetweenBlobs = 0.1f;
+    //Time since the last blob was released
+    float timeSinceBlob;
+
+    //Prefab for the water object
+    [SerializeField]
+    private GameObject waterPrefab;
+
+    //Point to create Water at
+    [SerializeField]
+    private Transform waterCreatePoint;
 
     private void Start()
     {
         //Get all of the twist interactables in the child objects
         tapComponents = GetComponentsInChildren<TwistInteractable>();
+
+        //Init time since blobs to be 0
+        timeSinceBlob = 0.0f;
+    }
+
+    private void Update()
+    {
+        //Increase time since blob
+        timeSinceBlob += Time.deltaTime;
+
+        //Make Water come out of the tap, if on
+        if (tapOn && timeSinceBlob > timeBetweenBlobs)
+        { 
+            //Null Check Water Prefab
+            if (!waterPrefab) { return; }
+
+            //Create water object at creation point
+            GameObject waterDrop = Instantiate(waterPrefab);
+            waterDrop.transform.position = waterCreatePoint.position;
+
+            //Reset time since blob
+            timeSinceBlob = 0.0f;
+        }
     }
 
     public override void DoAction(VRHand hand)
