@@ -9,17 +9,28 @@ public class headScript : MonoBehaviour
     [SerializeField]
     private AudioSource brushingAudioSource;
 
+    [SerializeField]
+    protected JobActionInfo jobInfo;
+
+    private float timeLeft = 5.0f;
+
 
     private void OnTriggerStay(Collider other)
     {
         //Check if toothbrush is within the collider
         if (other.gameObject == toothBrush)
         {
-
+            //Check if brush is being moved within the head's collider
             if (toothBrush.GetComponent<Rigidbody>().velocity != new Vector3(0, 0, 0))
             {
                 //Play brushing sound
                 brushingAudioSource.Play();
+                timeLeft -= Time.deltaTime;
+                if(timeLeft < 0)
+                {
+                    // call job manager
+                    JobManager.RegisterJobAction(jobInfo);
+                }
             }
             else
             {
