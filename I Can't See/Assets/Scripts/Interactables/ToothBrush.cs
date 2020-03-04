@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class ToothBrush : Holdable
 {
-    [SerializeField]
-    private GameObject paste;
 
     public override void DoAction(VRHand hand)
     {
@@ -17,7 +15,7 @@ public class ToothBrush : Holdable
     private void OnCollisionStay(Collision collision)
     {
         //Check if toothpaste is on toothbrush
-        if(collision.gameObject == paste)
+        if(collision.gameObject.GetComponent<PasteObj>())
         {
             // call job manager
             JobManager.RegisterJobAction(jobInfo);
