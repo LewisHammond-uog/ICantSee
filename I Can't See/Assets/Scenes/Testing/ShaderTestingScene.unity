@@ -218,7 +218,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   effectMaterial: {fileID: 2100000, guid: 508499fbba94ff64fa8d4b31d7edaf3e, type: 2}
   maxEffectUpdates: 20
-  prefab: {fileID: 4452643323228552315, guid: e20c39dd9249df845b7becfb12080ed9, type: 3}
 --- !u!1 &214511770
 GameObject:
   m_ObjectHideFlags: 0

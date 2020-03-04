@@ -21,10 +21,6 @@ public class EffectController : MonoBehaviour
     //Effect Points
     public static List<EffectPoint> ePoints;
 
-    public GameObject prefab;
-    Ray ray;
-    RaycastHit hit;
-
 
     // Start is called before the first frame update
     void OnEnable()
@@ -33,14 +29,6 @@ public class EffectController : MonoBehaviour
         mainCam.depthTextureMode = DepthTextureMode.Depth;
 
         ePoints = new List<EffectPoint>();
-    }
-
-    private void Update()
-    {
-        if (Input.GetMouseButtonDown(0))
-        {
-            Instantiate(prefab);
-        }
     }
 
 
