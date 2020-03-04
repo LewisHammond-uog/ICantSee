@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Kettle : Holdable
+public class Kettle : PourableHoldable
 {
     /// States that the kettle can be in
     private enum KettleState
@@ -16,7 +16,6 @@ public class Kettle : Holdable
 
     //Time it takes for the kettle to boil
     private const float timeToBoil = 5.0f;
-
     //Timer from when the kettle boil
     private float timeSinceBoil;
 
@@ -31,8 +30,11 @@ public class Kettle : Holdable
 
     }
 
-    private void Update()
+    private new void Update()
     {
+        //Call Base Update on the pourable object
+        base.Update();
+
         //If Boiling keep going until boiled
         if(currentKettleState == KettleState.FILLED_BOILING)
         {
