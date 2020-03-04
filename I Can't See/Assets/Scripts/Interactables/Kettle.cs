@@ -14,6 +14,9 @@ public class Kettle : PourableHoldable
     }
     private KettleState currentKettleState;
 
+    //Amount of water blobs required to be filled
+    private int requiredBlobsForFilled = 0;
+
     //Time it takes for the kettle to boil
     private const float timeToBoil = 5.0f;
     //Timer from when the kettle boil
@@ -32,21 +35,42 @@ public class Kettle : PourableHoldable
 
     private new void Update()
     {
+        //NEED TO ADD AUDIO
+
         //Call Base Update on the pourable object
         base.Update();
 
-        //If Boiling keep going until boiled
-        if(currentKettleState == KettleState.FILLED_BOILING)
+        switch (currentKettleState)
         {
-            //Increment boil timer
-            timeSinceBoil += Time.deltaTime;
+            case KettleState.FILLED_BOILING:
+                {
+                    //Increment boil timer
+                    timeSinceBoil += Time.deltaTime;
 
-            //Check if we should be boiled, if so set it
-            //the kettle as boiled
-            if(timeSinceBoil >= timeToBoil)
-            {
-                currentKettleState = KettleState.FILLED_BOILED;
-            }
+                    //Check if we should be boiled, if so set it
+                    //the kettle as boiled
+                    if (timeSinceBoil >= timeToBoil)
+                    {
+                        currentKettleState = KettleState.FILLED_BOILED;
+
+                        //Call Job Manager to call that kettle has filled
+                        JobManager.RegisterJobAction(jobInfo);
+                    }
+                    break;
+                }
+            case KettleState.EMPTY:
+                {
+                    //Check if we are ove the required number of 
+                    //water blobs to the filled
+                    if(waterDropCount >= requiredBlobsForFilled)
+                    {
+                        currentKettleState = KettleState.FILLED;
+                    }
+                    break;
+                }
+            default:
+                break;
+
 
         }
     }

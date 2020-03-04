@@ -6,11 +6,11 @@ public class PourableHoldable : Holdable
 {
     //Prefab for blobs of water
     [SerializeField]
-    private GameObject waterPrefab;
+    protected GameObject waterPrefab;
 
     //Location on pourable to create
     [SerializeField]
-    private Transform pourCreatePoint;
+    protected Transform pourCreatePoint;
 
     //Min rotation for the pourable to pour at
     float minRotation = 25f;
@@ -24,7 +24,7 @@ public class PourableHoldable : Holdable
     [SerializeField]
     private int startingDropCount;
     //Number of water drops that we currently have
-    private int waterDropCount;
+    protected int waterDropCount;
 
     private void Start()
     {
