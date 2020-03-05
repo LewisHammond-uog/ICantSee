@@ -56,7 +56,9 @@ public class Kettle : PourableHoldable
                     {
                         currentKettleState = KettleState.FILLED_BOILED;
 
-                        //Call Job Manager to call that kettle has filled
+                        //Call Job Manager to call that kettle has boiled
+                        //Change Job Info to bolied
+                        jobInfo.action = Job.JOB_ACTIONS.BOILED;
                         JobManager.RegisterJobAction(jobInfo);
                     }
                     break;
@@ -68,6 +70,11 @@ public class Kettle : PourableHoldable
                     if(waterDropCount >= requiredBlobsForFilled)
                     {
                         currentKettleState = KettleState.FILLED;
+
+                        //Call Job Manager to call that kettle has filled
+                        //Change Job Info to bolied
+                        jobInfo.action = Job.JOB_ACTIONS.FILLED;
+                        JobManager.RegisterJobAction(jobInfo);
                     }
                     break;
                 }

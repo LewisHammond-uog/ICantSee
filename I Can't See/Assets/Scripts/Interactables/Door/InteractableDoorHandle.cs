@@ -37,6 +37,10 @@ public class InteractableDoorHandle : Interactable
             //Get the cross product between the force and direction
             cross = Vector3.Cross(doorPivotToHand, force);
             angle = Vector3.Angle(doorPivotToHand, force);
+
+            //Register Job Action
+            JobManager.RegisterJobAction(jobInfo);
+
         }
 
         //Apply Door Movement

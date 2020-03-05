@@ -12,7 +12,7 @@ public class GetInShowerScript : MonoBehaviour
     [SerializeField]
     protected JobActionInfo jobInfo;
 
-    private void OnTriggerStay(Collision collision)
+    private void OnTriggerStay(Collider collision)
     {
         if(collision.gameObject.GetComponent<VRMove>() == true)
         {
@@ -20,12 +20,12 @@ public class GetInShowerScript : MonoBehaviour
                 showerTap.rotatedAmount.y > 0.0f ||
                 showerTap.rotatedAmount.z > 0.0f)
             {
-                startTimer();
+                DoShowerTimer();
             }
         }
     }
 
-    void startTimer()
+    void DoShowerTimer()
     {
         timer -= Time.deltaTime;
         if(timer < 0)

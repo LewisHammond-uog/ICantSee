@@ -17,6 +17,10 @@ public class Curtain : Interactable
     [SerializeField]
     private float posScaleBias = 0.5f; // Higher numbers bias towards the scale, lower numbers bias towards the position
 
+    //Distance that the curtain must travel to register as complete
+    [SerializeField]
+    private float jobRegisterDist = 1f;
+
     private void Start()
     {
         //Get start position of the Interactable
@@ -33,13 +37,20 @@ public class Curtain : Interactable
 
             // Check if the distance between the curtain's start position and position after moving, is more than the minimum movement limit
             // And check if the distance is less than the maximum movement limit
-            if (Vector3.Distance(this.transform.position + Vector3.Scale(moveAmount, chosenAxis), startPos) > minMovementLimit ||
-                Vector3.Distance(this.transform.position + Vector3.Scale(moveAmount, chosenAxis), startPos) < maxMovementLimit)
+            float distFromStart = Vector3.Distance(this.transform.position + Vector3.Scale(moveAmount, chosenAxis), startPos);
+            if (distFromStart > minMovementLimit ||
+                distFromStart < maxMovementLimit)
             {
                 // Change the scale by the 'moveAmout' multiplied by the 'chosenAxis' to act as a mask so as to only change the desired axis, muliplied by the bias to smooth the change and make it look correct
                 this.transform.localScale += Vector3.Scale(moveAmount, chosenAxis) * posScaleBias;
                 // Change the position by the 'moveAmout' multiplied by the 'chosenAxis' to act as a mask so as to only change the desired axis, muliplied by the bias to smooth the change and make it look correct
                 this.transform.position += Vector3.Scale(moveAmount, chosenAxis) * (1.0f - posScaleBias);
+
+                //Check for distance exceding dist to register job
+                if(distFromStart >= jobRegisterDist)
+                {
+                    JobManager.RegisterJobAction(jobInfo);
+                }
             }
 
             //Check if audio source is not null
