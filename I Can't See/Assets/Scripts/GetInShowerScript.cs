@@ -12,7 +12,7 @@ public class GetInShowerScript : MonoBehaviour
     [SerializeField]
     protected JobActionInfo jobInfo;
 
-    private void OnCollisionStay(Collision collision)
+    private void OnTriggerStay(Collision collision)
     {
         if(collision.gameObject.GetComponent<VRMove>() == true)
         {
