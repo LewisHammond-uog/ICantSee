@@ -8,10 +8,14 @@ public class Curtain : Interactable
     private AudioSource interactableAudioSource;
     private Vector3 moveAmount;
     [SerializeField]
-    private float movementLimit;
+    private float minMovementLimit = 150;
+    private float maxMovementLimit = 250;
     [SerializeField]
     private Vector3 chosenAxis;
     private Vector3 startPos;
+
+    [SerializeField]
+    private float posScaleBias = 0.5f; // Higher numbers bias towards the scale, lower numbers bias towards the position
 
     private void Start()
     {
@@ -21,27 +25,42 @@ public class Curtain : Interactable
 
     public override void DoAction(VRHand hand)
     {
-        //Check if trigger has been pressed to grab sliding Interactable
+        // Check if trigger has been pressed to grab the curtain
         if (hand.GetActionState(hand.VRInputController.GrabAction))
         {
-            //Get the velocity of the hand
+            // Get the currect velocity of the hand and multiply by delta time to get how far the curtain should be moved
             moveAmount = hand.CurrentPose.GetVelocity() * Time.deltaTime;
-            //Check if the distance between the Interactable's startPos and position after moving, is less than the movement limit
-            if (Vector3.Distance(this.transform.position + Vector3.Scale(moveAmount, chosenAxis), startPos) < movementLimit)
+
+            // Check if the distance between the curtain's start position and position after moving, is more than the minimum movement limit
+            // And check if the distance is less than the maximum movement limit
+            if (Vector3.Distance(this.transform.position + Vector3.Scale(moveAmount, chosenAxis), startPos) > minMovementLimit ||
+                Vector3.Distance(this.transform.position + Vector3.Scale(moveAmount, chosenAxis), startPos) < maxMovementLimit)
             {
-                this.transform.localScale += Vector3.Scale(moveAmount, chosenAxis) * 0.5f;
-                this.transform.position += Vector3.Scale(moveAmount, chosenAxis) * 0.5f;
+                // Change the scale by the 'moveAmout' multiplied by the 'chosenAxis' to act as a mask so as to only change the desired axis, muliplied by the bias to smooth the change and make it look correct
+                this.transform.localScale += Vector3.Scale(moveAmount, chosenAxis) * posScaleBias;
+                // Change the position by the 'moveAmout' multiplied by the 'chosenAxis' to act as a mask so as to only change the desired axis, muliplied by the bias to smooth the change and make it look correct
+                this.transform.position += Vector3.Scale(moveAmount, chosenAxis) * (1.0f - posScaleBias);
             }
 
             //Check if audio source is not null
             if (interactableAudioSource != null)
             {
-                //Play Interactable moving sound
-                interactableAudioSource.Play();
+                if (!interactableAudioSource.isPlaying)
+                {
+                    //Play Interactable moving sound
+                    interactableAudioSource.Play();
+                }
             }
         }
-        interactableAudioSource.Stop();
+        // Stop the sound from playing when the curtain isnt moving
+        if (interactableAudioSource != null)
+        {
+            if(interactableAudioSource.isPlaying)
+            {
+                interactableAudioSource.Stop();
+            }
+        }
     }
 }
 
-// connor done
+// Connor Done

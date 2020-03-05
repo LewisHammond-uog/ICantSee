@@ -105,9 +105,10 @@ public class EffectGenerator : MonoBehaviour
 
         //Loop and get the average of all samples in the sample array
         float avgLoundess = 0.0f;
-        foreach(float sample in clipSampleData)
+        for (int i = 0; i < clipSampleData.Length; i++)
         {
-            avgLoundess += Mathf.Abs(sample);
+            // Add the peak volume for each point in the wave data
+            avgLoundess += Mathf.Abs(clipSampleData[i]);
         }
         avgLoundess /= sampleDataLen;
 
@@ -143,3 +144,4 @@ public class EffectGenerator : MonoBehaviour
 }
 
 //Lewis Hammond
+// Connor Done
