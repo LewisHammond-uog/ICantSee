@@ -6,6 +6,8 @@ public class SlideInteractable : Interactable
 {
     [SerializeField]
     private AudioSource interactableAudioSource;
+    [SerializeField]
+    private AudioClip interactableAudioClip;
     private Vector3 moveAmount;
     [SerializeField]
     private float movementLimit;
@@ -38,6 +40,7 @@ public class SlideInteractable : Interactable
             //Check if audio source is not null
             if (interactableAudioSource != null)
             {
+                interactableAudioSource.clip = interactableAudioClip;
                 //Play Interactable moving sound
                 interactableAudioSource.Play();
             }

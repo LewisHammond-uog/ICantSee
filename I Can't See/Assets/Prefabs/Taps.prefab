@@ -311,6 +311,10 @@ MonoBehaviour:
     action: 0
     objectType: 0
     room: 0
+  interactableAudioSource: {fileID: 0}
+  interactableAudioEndClip: {fileID: 8300000, guid: 161177f3b5e0b2e4687f02fe2bcce0ec,
+    type: 3}
+  playOnStart: 0
   controllerRotationAxis: {x: 1, y: 0, z: 0}
   objectRotationAxis: {x: 0, y: 0, z: 0}
 --- !u!1 &1465625969416708055
@@ -623,6 +627,10 @@ MonoBehaviour:
     action: 0
     objectType: 0
     room: 0
+  interactableAudioSource: {fileID: 0}
+  interactableAudioEndClip: {fileID: 8300000, guid: 161177f3b5e0b2e4687f02fe2bcce0ec,
+    type: 3}
+  playOnStart: 0
   controllerRotationAxis: {x: 1, y: 0, z: 0}
   objectRotationAxis: {x: 0, y: 0, z: 0}
 --- !u!1 &3955355200601077724
@@ -974,7 +982,8 @@ MonoBehaviour:
     objectType: 0
     room: 0
   interactableAudioSource: {fileID: 0}
-  interactableAudioEndClip: {fileID: 0}
+  interactableAudioEndClip: {fileID: 8300000, guid: 8328e71318e030345b8d04c871744781,
+    type: 3}
   playOnStart: 0
   waterPrefab: {fileID: 2684191403722294691, guid: 878421c4814402d49a184c40c57599ba,
     type: 3}
@@ -1146,7 +1155,8 @@ MonoBehaviour:
     objectType: 0
     room: 0
   interactableAudioSource: {fileID: 0}
-  interactableAudioEndClip: {fileID: 0}
+  interactableAudioEndClip: {fileID: 8300000, guid: 8328e71318e030345b8d04c871744781,
+    type: 3}
   playOnStart: 0
   waterPrefab: {fileID: 2684191403722294691, guid: 878421c4814402d49a184c40c57599ba,
     type: 3}

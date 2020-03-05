@@ -365,9 +365,10 @@ MonoBehaviour:
     objectType: 0
     room: 0
   interactableAudioSource: {fileID: 0}
-  interactableAudioEndClip: {fileID: 0}
+  interactableAudioEndClip: {fileID: 8300000, guid: b0af385813afac14fb75f3e5608756c3,
+    type: 3}
   playOnStart: 0
-  switchSoundClip: {fileID: 0}
+  switchSoundClip: {fileID: 8300000, guid: 31bf9a49fa4b54d49935bd30bb099383, type: 3}
 --- !u!1 &4686788271834325798
 GameObject:
   m_ObjectHideFlags: 0
