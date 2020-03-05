@@ -120,7 +120,7 @@ public class EffectGenerator : MonoBehaviour
     /// <summary>
     /// Creates an effect with a given width at the current objects position
     /// </summary>
-    private static void CreateEffect(float effectWidth, Vector3 position)
+    public static void CreateEffect(float effectWidth, Vector3 position)
     {
         //Create an effect
         GameObject effectObj = new GameObject();
