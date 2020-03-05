@@ -4,36 +4,43 @@ using UnityEngine;
 
 /// <summary>
 /// Door Handle, an object that the player can drag around the world
-/// The Door then uses its own handle script to move the door towards this interactable
+/// Child of the door object
 /// </summary>
-public class InteractableDoorHandle : Holdable
+public class InteractableDoorHandle : Interactable
 {
-    Transform startPos;
-    Rigidbody rb;
 
-    private void Start()
-    {
-        startPos = transform;
-        rb = GetComponent<Rigidbody>();
-    }
+    //Amount of force to apply when moving the door
+    [SerializeField]
+    private float doorForceMultiplier = 1.0f;
 
     public override void DoAction(VRHand hand)
     {
-        //Do Holdable actions to move this object around
-        base.DoAction(hand);
 
-        //Check if this object is not held and is not in the right position
-        if(!isHeld && transform.position != startPos.position)
-        {
-            transform.position = startPos.position;
-            transform.rotation = startPos.rotation;
+        //Init Variables to 0
+        Vector3 force = Vector3.zero;
+        Vector3 cross = Vector3.zero;
+        float angle = 0f;
 
-            rb.isKinematic = false;
-        }
-        else
+        //If Door Grabed
+        if (hand.GetActionState(hand.VRInputController.GrabAction))
         {
-            rb.isKinematic = true;
+
+            //Get the direction from door pivot point
+            Vector3 doorPivotToHand = hand.transform.position - transform.parent.position;
+
+            //Ignore the y axis of the direction vector
+            doorPivotToHand.y = 0;
+
+            //Direction vector from door hanle to hand's current position
+            force = hand.transform.position - transform.position;
+
+            //Get the cross product between the force and direction
+            cross = Vector3.Cross(doorPivotToHand, force);
+            angle = Vector3.Angle(doorPivotToHand, force);
         }
+
+        //Apply Door Movement
+        GetComponentInParent<Rigidbody>().angularVelocity = cross * angle * doorForceMultiplier;
     }
 }
 
