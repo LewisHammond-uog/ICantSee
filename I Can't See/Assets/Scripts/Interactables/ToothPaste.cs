@@ -12,7 +12,7 @@ public class ToothPaste : Holdable
     private GameObject tpPaste;
     private Vector3 squirtLocation;
 
-    public bool isDPadPressed = false;
+    private bool isDPadPressed = false;
 
     public override void DoAction(VRHand hand)
     {

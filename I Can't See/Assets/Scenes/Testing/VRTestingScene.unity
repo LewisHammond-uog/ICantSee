@@ -212,40 +212,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!21 &349692852
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Sprites/Default
-  m_Shader: {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _AlphaTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - PixelSnap: 0
-    - _EnableExternalAlpha: 0
-    m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Flip: {r: 1, g: 1, b: 1, a: 1}
-    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &692801769
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -582,7 +548,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29cad80f71281b446a6e7407ed2d9d1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!43 &756863204
+--- !u!43 &923529786
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -998,11 +964,45 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2eebaf3b97f730a40b7e8bb328741f22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  brushingAudioSource: {fileID: 1664703167}
+  brushingAudioSource: {fileID: 0}
   jobInfo:
     action: 0
     objectType: 0
     room: 0
+--- !u!21 &1669029929
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Sprites/Default
+  m_Shader: {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _AlphaTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - PixelSnap: 0
+    - _EnableExternalAlpha: 0
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Flip: {r: 1, g: 1, b: 1, a: 1}
+    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &2023359877
 GameObject:
   m_ObjectHideFlags: 0
@@ -1127,7 +1127,6 @@ MonoBehaviour:
   interactableAudioSource: {fileID: 2111147963}
   pasteSpawn: {fileID: 2023359878}
   tpPaste: {fileID: 538173737821290302, guid: df32dfe2ccaff044986af535ca315579, type: 3}
-  isDPadPressed: 0
 --- !u!114 &2111147961
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1351,12 +1350,12 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 349692852}
+      objectReference: {fileID: 1669029929}
     - target: {fileID: 785956150946532601, guid: 67a31ed1757d3c14196eed45e7d7c4e7,
         type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 756863204}
+      objectReference: {fileID: 923529786}
     - target: {fileID: 785956152180280607, guid: 67a31ed1757d3c14196eed45e7d7c4e7,
         type: 3}
       propertyPath: vrInputController
