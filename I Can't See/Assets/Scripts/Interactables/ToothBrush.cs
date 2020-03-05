@@ -18,6 +18,7 @@ public class ToothBrush : Holdable
         if(collision.gameObject.GetComponent<PasteObj>())
         {
             // call job manager
+            //Make sure Job Action for this object is put on
             JobManager.RegisterJobAction(jobInfo);
         }
 

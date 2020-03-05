@@ -18,6 +18,9 @@ public class JobActionInfo
 
 public class Job
 {
+
+    #region Job Info (Actions, Rooms, Objects)
+
     //Enum for types of actions that jobs can have
     public enum JOB_ACTIONS
     {
@@ -27,6 +30,9 @@ public class Job
         CLOSE,
         PICKUP,
         USE,
+        PUT_ON, //FOR Putting Toothpaste on Toothbrush/CLOTHES
+        FILLED,
+        BOILED,
         ENTER_TRIGGER,
         EXIT_TRIGGER
     }
@@ -44,12 +50,24 @@ public class Job
     //Enum for the types of objects that jobs can happen in
     public enum JOB_OBJECTS
     {
+        //Items
         ALARM_CLOCK,
+        CURTAIN,
+        LIGHT_SWITCH,
+        TAP,
+        TOAST,
+        TOASTER,
+        TOOTH_BRUSH,
+        TOOTH_PASTE,
+        DOOR,
+        KETTLE,
+        SHOWER,
 
         //Clothing
         CLOTHING_SHIRT,
         CLOTHING_TROUSERS,
     }
+    #endregion
 
     private AudioClip voiceClip;
     private JobActionInfo jobInfo;
@@ -74,15 +92,15 @@ public class Job
         jobInfo.room = a_room;
         jobInfo.objectType = a_objectType;
         voiceClip = a_voiceline;
-
-        //Add to Stack
-        JobManager.AddJobToComplete(this);
     }
 
     public void PlayJobAudio()
     {
-        //[TO DO] Implement Playing Job Audio through and audio player
-        throw new NotImplementedException();
+        if (voiceClip != null)
+        {
+            //Add to the jobs vo queue so that it is played in turn
+            JobsVOPlayer.AddVOToPlayQueue(voiceClip);
+        }
     }
 
 }
@@ -113,6 +131,13 @@ public static class JobManager
     /// <returns>If action and room were for the next job in the stack</returns>
     public static bool RegisterJobAction(JobActionInfo a_jobInfo)
     {
+        //Check that the job stack is not empty
+        if(remainingJobs.Count == 0)
+        {
+            Debug.LogWarning("Tried to Register a Job Action but the stack was empty " + a_jobInfo.ToString());
+            return false;
+        }
+
         //Check if the action completed is the same as the next job, if it is
         //then register that job as completed
         Job currentJob = remainingJobs.Peek();
@@ -154,8 +179,11 @@ public static class JobManager
             completedJobs.Push(completedJob);
 
             //Play Audio of the next job
-            Job nextJob = remainingJobs.Peek();
-            nextJob.PlayJobAudio();
+            if (remainingJobs.Count > 0)
+            {
+                Job nextJob = remainingJobs.Peek();
+                nextJob.PlayJobAudio();
+            }
 
             //Call New Job Started Events
             JobComplete?.Invoke();

@@ -976,7 +976,8 @@ MonoBehaviour:
   interactableAudioSource: {fileID: 0}
   interactableAudioEndClip: {fileID: 0}
   playOnStart: 0
-  waterPrefab: {fileID: 0}
+  waterPrefab: {fileID: 2684191403722294691, guid: 878421c4814402d49a184c40c57599ba,
+    type: 3}
   waterCreatePoint: {fileID: 5009429887550905173}
 --- !u!1 &8348467197024200267
 GameObject:
@@ -1147,7 +1148,8 @@ MonoBehaviour:
   interactableAudioSource: {fileID: 0}
   interactableAudioEndClip: {fileID: 0}
   playOnStart: 0
-  waterPrefab: {fileID: 0}
+  waterPrefab: {fileID: 2684191403722294691, guid: 878421c4814402d49a184c40c57599ba,
+    type: 3}
   waterCreatePoint: {fileID: 1293795507631047297}
 --- !u!1 &8994314759731322961
 GameObject:
@@ -1175,7 +1177,7 @@ Transform:
   m_GameObject: {fileID: 8994314759731322961}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -21.976, y: 12, z: 69.817}
-  m_LocalScale: {x: 8.763018, y: 8.763018, z: 8.763018}
+  m_LocalScale: {x: 1.0686607, y: 1.068661, z: 1.068661}
   m_Children:
   - {fileID: 5170752130413788301}
   - {fileID: 9060109895109046414}

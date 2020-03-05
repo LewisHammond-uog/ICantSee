@@ -43,6 +43,10 @@ public class Toaster : Interactable
                 toasterState = ToasterStates.FINISHED;
                 toasterAudioSource.PlayOneShot(toastReadyAudio);
                 toastTime = 5.0f;
+
+                //Register Job
+                JobManager.RegisterJobAction(jobInfo);
+
             }
             else
             {

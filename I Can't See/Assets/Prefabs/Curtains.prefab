@@ -127,8 +127,10 @@ MonoBehaviour:
     objectType: 0
     room: 0
   interactableAudioSource: {fileID: 0}
-  movementLimit: 0
+  minMovementLimit: 150
   chosenAxis: {x: 0, y: 0, z: 0}
+  posScaleBias: 0.5
+  jobRegisterDist: 1
 --- !u!1 &3740675532082393330
 GameObject:
   m_ObjectHideFlags: 0
@@ -231,7 +233,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4757084190252000646}
   m_Layer: 0
-  m_Name: Curtains6
+  m_Name: Curtains
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -246,7 +248,7 @@ Transform:
   m_GameObject: {fileID: 8385657447679661973}
   m_LocalRotation: {x: 1, y: 0, z: 0, w: 0}
   m_LocalPosition: {x: 8.740505, y: 8.810835, z: 45.21371}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.12195122, y: 0.12195122, z: 0.12195122}
   m_Children:
   - {fileID: 415675002695624892}
   - {fileID: 604205174563891991}

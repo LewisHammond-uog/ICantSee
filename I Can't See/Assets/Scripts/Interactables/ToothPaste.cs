@@ -12,7 +12,12 @@ public class ToothPaste : Holdable
     private GameObject tpPaste;
     private Vector3 squirtLocation;
 
-    private bool isDPadPressed = false;
+    //Time between blobs being created in seconds
+    const float timeBetweenBlobs = 0.2f;
+    //Time since the last blob was released
+    float timeSinceBlob;
+
+    public bool isDPadPressed = false;
 
     public override void DoAction(VRHand hand)
     {
@@ -29,8 +34,28 @@ public class ToothPaste : Holdable
                 //Play Interactable moving sound
                 interactableAudioSource.Play();
             }
-            squirtLocation = new Vector3(pasteSpawn.position.x, pasteSpawn.position.y, pasteSpawn.position.z);
-            Instantiate(tpPaste, squirtLocation, Quaternion.identity);
+
+            //Increase time since blob
+            timeSinceBlob += Time.deltaTime;
+
+            //Make paste come out, if on
+            if (timeSinceBlob > timeBetweenBlobs)
+            {
+                //Null Check Water Prefab
+                if (!tpPaste) { return; }
+
+                //Create paste object at creation point
+                squirtLocation = new Vector3(pasteSpawn.position.x, pasteSpawn.position.y, pasteSpawn.position.z);
+                Instantiate(tpPaste, squirtLocation, Quaternion.identity);
+
+                //Register Job Action
+                JobManager.RegisterJobAction(jobInfo);
+
+                //Reset time since blob
+                timeSinceBlob = 0.0f;
+            }
+
+            
 
         }
         interactableAudioSource.Stop();
