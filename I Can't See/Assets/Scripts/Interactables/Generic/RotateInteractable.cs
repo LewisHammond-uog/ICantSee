@@ -6,9 +6,10 @@ public class RotateInteractable : Interactable
 {
     [SerializeField]
     private AudioSource interactableAudioSource;
-    private Vector3 rotateAmount;
     [SerializeField]
-    private float rotateLimit;
+    private float minRotateLimit;
+    [SerializeField]
+    private float maxRotateLimit;
     [SerializeField]
     private Vector3 chosenAxis;
     private Quaternion startRot;
@@ -32,7 +33,14 @@ public class RotateInteractable : Interactable
             Quaternion handRot = hand.CurrentPose.poseAction.localRotation;
             
             //Check if the rotation of the Interactable is less than the rotation limit
-            if (handRot.z - startRot.z < rotateLimit)
+            //if (handRot.z - startRot.z < rotateLimit)
+            //{
+            //    //Rotate the Interactable with the player's controller
+            //    this.transform.rotation = new Quaternion(this.transform.rotation.x, this.transform.rotation.y, handRot.z, 0);
+            //}
+
+            if(Vector3.Distance(this.transform.rotation.eulerAngles + Vector3.Scale(handRot.eulerAngles, chosenAxis), startRot.eulerAngles) > minRotateLimit ||
+               Vector3.Distance(this.transform.rotation.eulerAngles + Vector3.Scale(handRot.eulerAngles, chosenAxis), startRot.eulerAngles) < maxRotateLimit)
             {
                 //Rotate the Interactable with the player's controller
                 this.transform.rotation = new Quaternion(this.transform.rotation.x, this.transform.rotation.y, handRot.z, 0);
@@ -42,6 +50,7 @@ public class RotateInteractable : Interactable
                     JobManager.RegisterJobAction(jobInfo);
                 }
 
+                this.transform.rotation = Quaternion.FromToRotation(this.transform.rotation.eulerAngles, this.transform.rotation.eulerAngles + handRot.eulerAngles);
             }
 
             //Check if audio source is not null
@@ -56,5 +65,5 @@ public class RotateInteractable : Interactable
     }
 }
 
-
 //Rhys Wareham
+// Connor Done
