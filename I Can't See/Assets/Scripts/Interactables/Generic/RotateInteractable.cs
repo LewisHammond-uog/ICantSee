@@ -13,7 +13,9 @@ public class RotateInteractable : Interactable
     private Vector3 chosenAxis;
     private Quaternion startRot;
 
-
+    //Rotation for registering job
+    [SerializeField]
+    private float jobRequiredRotation;
 
     // Start is called before the first frame update
     void Start()
@@ -29,12 +31,17 @@ public class RotateInteractable : Interactable
             //Get the velocity of the hand
             Quaternion handRot = hand.CurrentPose.poseAction.localRotation;
             
-
             //Check if the rotation of the Interactable is less than the rotation limit
             if (handRot.z - startRot.z < rotateLimit)
             {
                 //Rotate the Interactable with the player's controller
                 this.transform.rotation = new Quaternion(this.transform.rotation.x, this.transform.rotation.y, handRot.z, 0);
+
+                if((handRot.z - startRot.z)> jobRequiredRotation)
+                {
+                    JobManager.RegisterJobAction(jobInfo);
+                }
+
             }
 
             //Check if audio source is not null

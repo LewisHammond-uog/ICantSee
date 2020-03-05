@@ -50,17 +50,17 @@ public class Job
     //Enum for the types of objects that jobs can happen in
     public enum JOB_OBJECTS
     {
+        //Items
         ALARM_CLOCK,
         CURTAIN,
         LIGHT_SWITCH,
         TAP,
+        TOAST,
         TOASTER,
         TOOTH_BRUSH,
         TOOTH_PASTE,
         DOOR,
-
         KETTLE,
-
         SHOWER,
 
         //Clothing
