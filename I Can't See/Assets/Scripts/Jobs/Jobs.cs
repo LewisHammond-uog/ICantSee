@@ -74,15 +74,15 @@ public class Job
         jobInfo.room = a_room;
         jobInfo.objectType = a_objectType;
         voiceClip = a_voiceline;
-
-        //Add to Stack
-        JobManager.AddJobToComplete(this);
     }
 
     public void PlayJobAudio()
     {
-        //Add to the jobs vo queue so that it is played in turn
-        JobsVOPlayer.AddVOToPlayQueue(voiceClip);
+        if (voiceClip != null)
+        {
+            //Add to the jobs vo queue so that it is played in turn
+            JobsVOPlayer.AddVOToPlayQueue(voiceClip);
+        }
     }
 
 }
@@ -116,6 +116,7 @@ public static class JobManager
         //Check that the job stack is not empty
         if(remainingJobs.Count == 0)
         {
+            Debug.LogWarning("Tried to Register a Job Action but the stack was empty " + a_jobInfo.ToString());
             return false;
         }
 
@@ -160,8 +161,11 @@ public static class JobManager
             completedJobs.Push(completedJob);
 
             //Play Audio of the next job
-            Job nextJob = remainingJobs.Peek();
-            nextJob.PlayJobAudio();
+            if (remainingJobs.Count > 0)
+            {
+                Job nextJob = remainingJobs.Peek();
+                nextJob.PlayJobAudio();
+            }
 
             //Call New Job Started Events
             JobComplete?.Invoke();

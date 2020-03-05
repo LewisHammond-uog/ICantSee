@@ -461,8 +461,8 @@ GameObject:
   - component: {fileID: 785956151237216656}
   - component: {fileID: 785956151237216658}
   - component: {fileID: 785956151237216657}
-  - component: {fileID: 306819486}
   - component: {fileID: 2526038045754966210}
+  - component: {fileID: 306819486}
   - component: {fileID: 3989794527062376100}
   m_Layer: 0
   m_Name: Camera
@@ -538,20 +538,6 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 785956151237216751}
   m_Enabled: 1
---- !u!114 &306819486
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 785956151237216751}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86ae09f64413ee64f94b05668aedf888, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  effectMaterial: {fileID: 2100000, guid: 508499fbba94ff64fa8d4b31d7edaf3e, type: 2}
-  maxEffectUpdates: 20
 --- !u!82 &2526038045754966210
 AudioSource:
   m_ObjectHideFlags: 0
@@ -648,6 +634,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &306819486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 785956151237216751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86ae09f64413ee64f94b05668aedf888, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effectMaterial: {fileID: 2100000, guid: 508499fbba94ff64fa8d4b31d7edaf3e, type: 2}
+  maxEffectUpdates: 20
 --- !u!114 &3989794527062376100
 MonoBehaviour:
   m_ObjectHideFlags: 0

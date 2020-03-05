@@ -12,7 +12,7 @@ public class JobsVOPlayer : MonoBehaviour
     private static JobsVOPlayer instance;
 
     //Queue of voice lines to play
-    private static Queue<AudioClip> voClipQueue;
+    private Queue<AudioClip> voClipQueue;
 
     //Audio soruce to play VO from
     private AudioSource voAudioSource;
@@ -31,6 +31,9 @@ public class JobsVOPlayer : MonoBehaviour
         //Set the instance of the VO Player
         instance = this;
 
+        //Initalise Empty Queue
+        voClipQueue = new Queue<AudioClip>();
+
         //Get the audio source of this object
         voAudioSource = GetComponent<AudioSource>();
         voAudioSource.playOnAwake = false; //Stop from playing on start
@@ -42,7 +45,7 @@ public class JobsVOPlayer : MonoBehaviour
         if(voClipQueue.Count > 0)
         {
             //Check that there is not audio already playing
-            if (voAudioSource.isPlaying)
+            if (!voAudioSource.isPlaying)
             {
                 //Play the next audio line in the queue,
                 //poping it off the queue so that it is no repeated
@@ -61,7 +64,7 @@ public class JobsVOPlayer : MonoBehaviour
         if(instance == null){ return; }
 
         //Add the VO Line to the queue
-        voClipQueue.Enqueue(voClip);
+        instance.voClipQueue.Enqueue(voClip);
     }
 
     
