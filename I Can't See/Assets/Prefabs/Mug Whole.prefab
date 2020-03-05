@@ -123,7 +123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4900db0a9d8440498e8ac30171bc291, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dropSound: {fileID: 0}
+  dropSound: {fileID: 8300000, guid: e3579ceea0c51fe4ba2b2abc3a52e622, type: 3}
   updateStep: 1
   minEffectLoundness: 0.2
   loudnessMultiplyer: 20
@@ -144,5 +144,6 @@ MonoBehaviour:
     objectType: 0
     room: 0
   objectWhole: {fileID: 142683136974736655}
-  objectBroken: {fileID: 0}
+  objectBroken: {fileID: 8640565499764476009, guid: 6196918928ed6ff41bca33654c5e138f,
+    type: 3}
   interactableAudioSource: {fileID: 0}

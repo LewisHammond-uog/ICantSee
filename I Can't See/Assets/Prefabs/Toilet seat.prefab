@@ -91,6 +91,7 @@ GameObject:
   - component: {fileID: 8472578655672073156}
   - component: {fileID: 1615509310038468083}
   - component: {fileID: 1009439012461349138}
+  - component: {fileID: 2004368559453355690}
   m_Layer: 0
   m_Name: Flush
   m_TagString: Untagged
@@ -171,6 +172,18 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: -2128599272216676504, guid: aa94f5f42f2fab047aef527af3535a38, type: 3}
+--- !u!114 &2004368559453355690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3030555094740126259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e28332475376db4439db1790375c93e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7238723773809839202
 GameObject:
   m_ObjectHideFlags: 0
@@ -390,5 +403,7 @@ MonoBehaviour:
     objectType: 0
     room: 0
   interactableAudioSource: {fileID: 0}
-  rotateLimit: 0
+  minRotateLimit: 0
+  maxRotateLimit: 0
   chosenAxis: {x: 0, y: 1, z: 0}
+  jobRequiredRotation: 0
