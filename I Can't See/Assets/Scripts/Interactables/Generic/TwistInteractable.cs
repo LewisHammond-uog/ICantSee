@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TwistInteractable : Interactable
+public class TwistInteractable : SoundInteractable
 {
     //Starting Rotation of this twistable
     //so that we can get the amount that this object has been rotated
@@ -42,10 +42,12 @@ public class TwistInteractable : Interactable
 
             //Apply that rotation in the direction that we want to rotate
             gameObject.transform.Rotate(objectRotationAxis, rotateAmount);
+            //Play twist sound
+            interactableAudioSource.Play();
 
             //If rotation was > 0 then call the event that 
             //the object was twisted
-            if(Mathf.Abs(rotateAmount) > 0)
+            if (Mathf.Abs(rotateAmount) > 0)
             {
                 TwistMoved();
             }

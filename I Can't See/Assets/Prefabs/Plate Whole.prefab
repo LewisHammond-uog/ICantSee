@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3351745193044936298}
   - component: {fileID: 379645852370210485}
   - component: {fileID: 6685445708296948587}
+  - component: {fileID: 8971767137291494814}
   m_Layer: 0
   m_Name: Plate Whole
   m_TagString: Untagged
@@ -122,7 +123,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4900db0a9d8440498e8ac30171bc291, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dropSound: {fileID: 0}
+  dropSound: {fileID: 8300000, guid: 78e57615230c4344d96509874587a0b8, type: 3}
   updateStep: 1
   minEffectLoundness: 0.2
   loudnessMultiplyer: 20
+--- !u!114 &8971767137291494814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9037338215162022013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac5f20f0c6c84f246a08c0a892a5d789, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jobInfo:
+    action: 0
+    objectType: 0
+    room: 0
+  objectWhole: {fileID: 9037338215162022013}
+  objectBroken: {fileID: 833602120906296399, guid: 537090c3dd14be442b0d7d552340ab13,
+    type: 3}
+  interactableAudioSource: {fileID: 0}

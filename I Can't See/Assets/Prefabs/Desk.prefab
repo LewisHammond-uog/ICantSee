@@ -249,6 +249,8 @@ MonoBehaviour:
     objectType: 0
     room: 0
   interactableAudioSource: {fileID: 0}
+  interactableAudioClip: {fileID: 8300000, guid: fc7d2cf4a40dd5141a2ff6652a184c47,
+    type: 3}
   movementLimit: 0.35
   chosenAxis: {x: 0, y: 0, z: 1}
 --- !u!1 &7251686263394066885
@@ -447,5 +449,7 @@ MonoBehaviour:
     objectType: 0
     room: 0
   interactableAudioSource: {fileID: 0}
+  interactableAudioClip: {fileID: 8300000, guid: fc7d2cf4a40dd5141a2ff6652a184c47,
+    type: 3}
   movementLimit: 0.35
   chosenAxis: {x: 0, y: 0, z: 1}
