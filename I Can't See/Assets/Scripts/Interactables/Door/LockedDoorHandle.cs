@@ -36,7 +36,7 @@ public class LockedDoorHandle : InteractableDoorHandle
 
     public override void DoAction(VRHand hand)
     {
-        //Only allow garbbing/ moving while unlocked
+        //Only allow grabbing/ moving while unlocked
         if (!doorLocked)
         {
             base.DoAction(hand);
