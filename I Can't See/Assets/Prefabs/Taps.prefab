@@ -976,7 +976,8 @@ MonoBehaviour:
   interactableAudioSource: {fileID: 0}
   interactableAudioEndClip: {fileID: 0}
   playOnStart: 0
-  waterPrefab: {fileID: 0}
+  waterPrefab: {fileID: 2684191403722294691, guid: 878421c4814402d49a184c40c57599ba,
+    type: 3}
   waterCreatePoint: {fileID: 5009429887550905173}
 --- !u!1 &8348467197024200267
 GameObject:
@@ -1147,7 +1148,8 @@ MonoBehaviour:
   interactableAudioSource: {fileID: 0}
   interactableAudioEndClip: {fileID: 0}
   playOnStart: 0
-  waterPrefab: {fileID: 0}
+  waterPrefab: {fileID: 2684191403722294691, guid: 878421c4814402d49a184c40c57599ba,
+    type: 3}
   waterCreatePoint: {fileID: 1293795507631047297}
 --- !u!1 &8994314759731322961
 GameObject:
