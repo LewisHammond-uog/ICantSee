@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 9070218607479842213}
   - component: {fileID: 37407015034052499}
   - component: {fileID: 6032690517643207530}
-  - component: {fileID: 1759890800087734689}
   - component: {fileID: 8916826914832577195}
   - component: {fileID: 2032411821019682320}
   - component: {fileID: 8748899951369144842}
+  - component: {fileID: 8281261241246122119}
   m_Layer: 0
   m_Name: Bowl Whole
   m_TagString: Untagged
@@ -29,13 +29,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5441678881783257014}
-  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071067}
+  m_LocalRotation: {x: 0.7069834, y: 0, z: 0, w: 0.7072302}
   m_LocalPosition: {x: 1.975, y: 2.472, z: 5.168}
   m_LocalScale: {x: 0.51858, y: 0.51858, z: 0.42136753}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 89.98, y: 0, z: 0}
 --- !u!33 &37407015034052499
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -81,20 +81,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &1759890800087734689
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5441678881783257014}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 973877516759717424, guid: 635e21286fd77a1408366af404808b75, type: 3}
 --- !u!54 &8916826914832577195
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -147,3 +133,16 @@ MonoBehaviour:
   objectBroken: {fileID: 6406104064320918234, guid: 170b52ae917c06844bbd6d56ec1e41b0,
     type: 3}
   interactableAudioSource: {fileID: 0}
+--- !u!135 &8281261241246122119
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5441678881783257014}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.30799854
+  m_Center: {x: 0, y: 0, z: -0.04}
