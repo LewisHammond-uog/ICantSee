@@ -15,7 +15,7 @@ public class Kettle : PourableHoldable
     private KettleState currentKettleState;
 
     //Amount of water blobs required to be filled
-    private int requiredBlobsForFilled = 0;
+    private int requiredBlobsForFilled = 10;
 
     //Time it takes for the kettle to boil
     private const float timeToBoil = 5.0f;
@@ -24,6 +24,9 @@ public class Kettle : PourableHoldable
 
     private void Start()
     {
+        //Call Base Start on pourable object
+        base.Start();
+
         //Set Kettle State to the empty
         currentKettleState = KettleState.EMPTY;
 

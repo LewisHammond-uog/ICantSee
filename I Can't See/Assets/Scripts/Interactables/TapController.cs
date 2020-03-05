@@ -54,6 +54,7 @@ public class TapController : SoundInteractable
             //Create water object at creation point
             GameObject waterDrop = Instantiate(waterPrefab);
             waterDrop.transform.position = waterCreatePoint.position;
+            waterDrop.GetComponent<WaterDrop>().dropCreatorObject = this.gameObject;
 
             //Reset time since blob
             timeSinceBlob = 0.0f;

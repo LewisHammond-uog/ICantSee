@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class WaterDrop : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    //Object that created this water drop
+    private GameObject creator;
+    public GameObject dropCreatorObject
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        //Only allow setting if we don't already have a creator
+        set
+        {
+            if(creator == null)
+            {
+                creator = value;
+            }
+        }
+        get { return creator; }
     }
 }

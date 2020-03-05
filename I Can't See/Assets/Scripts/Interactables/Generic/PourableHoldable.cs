@@ -26,7 +26,7 @@ public class PourableHoldable : Holdable
     //Number of water drops that we currently have
     protected int waterDropCount;
 
-    private void Start()
+    protected void Start()
     {
         //Init Time since last blob
         timeSinceBlob = 0.0f;
@@ -57,6 +57,7 @@ public class PourableHoldable : Holdable
 
                     GameObject waterDrop = Instantiate(waterPrefab);
                     waterDrop.transform.position = pourCreatePoint.position;
+                    waterDrop.GetComponent<WaterDrop>().dropCreatorObject = this.gameObject;
 
                     //Reduce the number of blobs that this object
                     //has
@@ -86,6 +87,24 @@ public class PourableHoldable : Holdable
         float rotation = Quaternion.Angle(RotationZX, Quaternion.identity);
 
         return rotation;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        //Check that we are colliding with a water drop
+        WaterDrop waterDrop = collision.gameObject.GetComponent<WaterDrop>();
+        if (waterDrop)
+        {
+            //Check that we are not the creator of this object
+            if (waterDrop.dropCreatorObject != this.gameObject)
+            {
+                //Add to water drop count
+                waterDropCount++;
+
+                //Delete Water Drop
+                Destroy(waterDrop.gameObject);
+            }
+        }
     }
 
 }
