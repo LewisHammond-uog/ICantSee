@@ -48,6 +48,9 @@ public class ToothPaste : Holdable
                 squirtLocation = new Vector3(pasteSpawn.position.x, pasteSpawn.position.y, pasteSpawn.position.z);
                 Instantiate(tpPaste, squirtLocation, Quaternion.identity);
 
+                //Register Job Action
+                JobManager.RegisterJobAction(jobInfo);
+
                 //Reset time since blob
                 timeSinceBlob = 0.0f;
             }

@@ -18,6 +18,9 @@ public class JobActionInfo
 
 public class Job
 {
+
+    #region Job Info (Actions, Rooms, Objects)
+
     //Enum for types of actions that jobs can have
     public enum JOB_ACTIONS
     {
@@ -27,6 +30,9 @@ public class Job
         CLOSE,
         PICKUP,
         USE,
+        PUT_ON, //FOR Putting Toothpaste on Toothbrush/CLOTHES
+        FILLED,
+        BOILED,
         ENTER_TRIGGER,
         EXIT_TRIGGER
     }
@@ -45,11 +51,23 @@ public class Job
     public enum JOB_OBJECTS
     {
         ALARM_CLOCK,
+        CURTAIN,
+        LIGHT_SWITCH,
+        TAP,
+        TOASTER,
+        TOOTH_BRUSH,
+        TOOTH_PASTE,
+        DOOR,
+
+        KETTLE,
+
+        SHOWER,
 
         //Clothing
         CLOTHING_SHIRT,
         CLOTHING_TROUSERS,
     }
+    #endregion
 
     private AudioClip voiceClip;
     private JobActionInfo jobInfo;

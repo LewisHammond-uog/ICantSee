@@ -31,6 +31,11 @@ public class Holdable : Interactable
             hand.AttachObject(this);
             isHeld = true;
 
+            //Register Job Info for Pickup
+            JobActionInfo pickupJobInfo = jobInfo;
+            pickupJobInfo.action = Job.JOB_ACTIONS.PICKUP;
+            JobManager.RegisterJobAction(pickupJobInfo);
+
         }else if(!isBtnPressed && isHeld)
         {
             //Drop
