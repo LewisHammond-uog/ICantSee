@@ -12,7 +12,11 @@ public class Toast : Holdable
 
     public void PlaceInToaster(Vector3 pos, Quaternion rot)
     {
-        this.CurrentHolder.DetachObject(this);
+        if(IsHeld)
+        {
+            this.CurrentHolder.DetachObject(this);
+        }
+        //this.CurrentHolder.DetachObject(this);
         this.transform.position = pos;
         this.transform.rotation = rot;
     }

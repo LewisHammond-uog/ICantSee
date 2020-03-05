@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 5038826212579808604}
   - component: {fileID: 4086602151381446506}
   - component: {fileID: 7749021957537649555}
-  - component: {fileID: 2332302900936796504}
   - component: {fileID: 3278642921974723417}
   - component: {fileID: 3606140999010129775}
-  - component: {fileID: 5365851152806664989}
+  - component: {fileID: 636186136}
+  - component: {fileID: 918846766914328358}
   m_Layer: 0
   m_Name: Toast
   m_TagString: Untagged
@@ -29,13 +29,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8338089695844624207}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 2.3122656, y: 2.3232832, z: 5.6972914}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90.00001, y: 0, z: 0}
 --- !u!33 &4086602151381446506
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -81,20 +81,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &2332302900936796504
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8338089695844624207}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 5060444177187149915, guid: 12d90fe8259b7c74784c49b0cbc61adc, type: 3}
 --- !u!54 &3278642921974723417
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -127,7 +113,20 @@ MonoBehaviour:
   updateStep: 1
   minEffectLoundness: 0.2
   loudnessMultiplyer: 20
---- !u!114 &5365851152806664989
+--- !u!65 &636186136
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8338089695844624207}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.19637792, y: 0.19391884, z: 0.01539201}
+  m_Center: {x: 0, y: -0.0020875302, z: 0.007696005}
+--- !u!114 &918846766914328358
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -136,7 +135,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8338089695844624207}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64a2545a9c93de84d9b507a6393e53c6, type: 3}
+  m_Script: {fileID: 11500000, guid: 8ecaf7a35b359a9418045cb22ba66130, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   jobInfo:

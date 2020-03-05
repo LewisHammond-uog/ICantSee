@@ -122,7 +122,7 @@ public class VRHand : MonoBehaviour
     public void DetachObject(Holdable obj)
     {
         //null Check
-        if (obj == null || obj != HeldObject)
+        if (obj == null || obj != HeldObject || HeldObject == null)
         {
             return;
         }

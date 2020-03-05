@@ -16,7 +16,7 @@ public class TapController : SoundInteractable
     private TwistInteractable[] tapComponents;
 
     //If tap is on or not
-    private bool tapOn = true;
+    private bool tapOn = false;
 
     //Time between blobs being created in seconds
     const float timeBetweenBlobs = 0.1f;

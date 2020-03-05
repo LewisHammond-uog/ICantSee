@@ -7,7 +7,22 @@ using UnityEngine;
 public class Holdable : Interactable
 {
 
-    protected bool isHeld = false;
+    //Property for if this object has
+    //a holder and thus is being held
+    protected bool IsHeld
+    {
+        get
+        {
+            if(currentHolder != null)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+    }
     private VRHand currentHolder = null;
 
     bool isBtnPressed = false;
@@ -25,22 +40,20 @@ public class Holdable : Interactable
         isBtnPressed = hand.GetActionState(vr.GrabAction);
 
         //Check if we should pickup or drop object
-        if (isBtnPressed && !isHeld && currentHolder == null)
+        if (isBtnPressed && !IsHeld && currentHolder == null)
         {
             //Pickup
             hand.AttachObject(this);
-            isHeld = true;
 
             //Register Job Info for Pickup
             JobActionInfo pickupJobInfo = jobInfo;
             pickupJobInfo.action = Job.JOB_ACTIONS.PICKUP;
             JobManager.RegisterJobAction(pickupJobInfo);
 
-        }else if(!isBtnPressed && isHeld)
+        }else if(!isBtnPressed && IsHeld)
         {
             //Drop
             hand.DetachObject(this);
-            isHeld = false;
         }
     }
 
