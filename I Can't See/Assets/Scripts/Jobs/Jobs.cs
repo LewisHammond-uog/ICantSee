@@ -81,8 +81,8 @@ public class Job
 
     public void PlayJobAudio()
     {
-        //[TO DO] Implement Playing Job Audio through and audio player
-        throw new NotImplementedException();
+        //Add to the jobs vo queue so that it is played in turn
+        JobsVOPlayer.AddVOToPlayQueue(voiceClip);
     }
 
 }
@@ -113,6 +113,12 @@ public static class JobManager
     /// <returns>If action and room were for the next job in the stack</returns>
     public static bool RegisterJobAction(JobActionInfo a_jobInfo)
     {
+        //Check that the job stack is not empty
+        if(remainingJobs.Count == 0)
+        {
+            return false;
+        }
+
         //Check if the action completed is the same as the next job, if it is
         //then register that job as completed
         Job currentJob = remainingJobs.Peek();
