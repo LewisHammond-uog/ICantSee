@@ -230,6 +230,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 996965653129599623}
+  - component: {fileID: 8094205963553577277}
   m_Layer: 0
   m_Name: Cupboard
   m_TagString: Untagged
@@ -246,7 +247,7 @@ Transform:
   m_GameObject: {fileID: 4291568853057071252}
   m_LocalRotation: {x: -0.5, y: -0.5, z: -0.5, w: 0.5}
   m_LocalPosition: {x: 15.33, y: 4.24, z: 43.18}
-  m_LocalScale: {x: 0.11695887, y: 0.15281, z: 0.12416271}
+  m_LocalScale: {x: 0.014263281, y: 0.018635366, z: 0.015141793}
   m_Children:
   - {fileID: 775506056157857147}
   - {fileID: 124021553428185332}
@@ -254,6 +255,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -90.00001, y: 0, z: -90}
+--- !u!64 &8094205963553577277
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4291568853057071252}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 0}
 --- !u!1 &6893738598367268644
 GameObject:
   m_ObjectHideFlags: 0
@@ -266,6 +281,8 @@ GameObject:
   - component: {fileID: 8522806005031158504}
   - component: {fileID: 2647455155329534326}
   - component: {fileID: 4405133592262896382}
+  - component: {fileID: 6685704906450702909}
+  - component: {fileID: 8446532342817017729}
   m_Layer: 0
   m_Name: Cupboard Door
   m_TagString: Untagged
@@ -346,3 +363,38 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: -4765131792115512729, guid: b9a4b85c7783c044eaff459606dc3e61, type: 3}
+--- !u!114 &6685704906450702909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6893738598367268644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4900db0a9d8440498e8ac30171bc291, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dropSound: {fileID: 0}
+  updateStep: 1
+  minEffectLoundness: 0.2
+  loudnessMultiplyer: 20
+--- !u!114 &8446532342817017729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6893738598367268644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfebfb91eac5da043a8493ad68e9f5fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jobInfo:
+    action: 0
+    objectType: 0
+    room: 0
+  interactableAudioSource: {fileID: 0}
+  rotateLimit: 0
+  chosenAxis: {x: 1, y: 0, z: 0}
