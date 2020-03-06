@@ -377,10 +377,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8289440349718565244}
-  - component: {fileID: 280676408493973744}
   - component: {fileID: 7612269568625198462}
   - component: {fileID: 9145103088137788355}
   - component: {fileID: 152364559818501066}
+  - component: {fileID: 3737098975517554842}
   m_Layer: 0
   m_Name: Lamp 2
   m_TagString: Untagged
@@ -407,20 +407,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -90.00001, y: 0, z: 89.941}
---- !u!64 &280676408493973744
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4994874396823069551}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 0}
 --- !u!54 &7612269568625198462
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -469,6 +455,19 @@ MonoBehaviour:
     action: 0
     objectType: 0
     room: 0
+--- !u!65 &3737098975517554842
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4994874396823069551}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.12, y: 0.13, z: 0.21}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7372526863354130272
 GameObject:
   m_ObjectHideFlags: 0

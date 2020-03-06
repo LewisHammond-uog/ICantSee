@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 4060054514647464853}
   - component: {fileID: 4972871941666324899}
   - component: {fileID: 1603204251084701018}
-  - component: {fileID: 6767703586609825681}
   - component: {fileID: 809810589066253003}
   - component: {fileID: 7610514894834882356}
   - component: {fileID: 7178262597781355518}
+  - component: {fileID: 6840178315489712794}
   m_Layer: 0
   m_Name: Loaf of bread
   m_TagString: Untagged
@@ -81,20 +81,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &6767703586609825681
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1009773650638702982}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 5060444177187149915, guid: 3c5956db3235c8a4c9187b49f28d72c3, type: 3}
 --- !u!54 &809810589066253003
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -143,3 +129,16 @@ MonoBehaviour:
     action: 0
     objectType: 0
     room: 0
+--- !u!65 &6840178315489712794
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1009773650638702982}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.20535648, y: 0.20648685, z: 0.40343753}
+  m_Center: {x: -0.000008489937, y: -0.0000888817, z: -0.18632676}

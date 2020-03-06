@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 5179940989751465111}
   - component: {fileID: 4231657818812329633}
   - component: {fileID: 7603579439109886552}
-  - component: {fileID: 2472854966190172307}
   - component: {fileID: 5795667516996212163}
   - component: {fileID: 4404027366318018028}
   - component: {fileID: 9004885528953094077}
+  - component: {fileID: 4979621910145075160}
   m_Layer: 0
   m_Name: Cutlery Spoon
   m_TagString: Untagged
@@ -81,20 +81,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &2472854966190172307
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8194723084495349380}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 5060444177187149915, guid: f9eb17cce7dc4e84da882ae88d66244d, type: 3}
 --- !u!54 &5795667516996212163
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -143,3 +129,16 @@ MonoBehaviour:
     action: 0
     objectType: 0
     room: 0
+--- !u!65 &4979621910145075160
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8194723084495349380}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.031317506, y: 0.18061134, z: 0.019180743}
+  m_Center: {x: 0, y: 0.0011819823, z: 0.0037866211}

@@ -193,10 +193,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1885605503254027115}
-  - component: {fileID: 7300539266653857278}
   - component: {fileID: 6521320923818002933}
   - component: {fileID: 5368549741261629808}
   - component: {fileID: 7432464112405866123}
+  - component: {fileID: 6067877242519201216}
   m_Layer: 0
   m_Name: Lightswitch
   m_TagString: Untagged
@@ -222,20 +222,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -90.00001, y: 0, z: -90}
---- !u!64 &7300539266653857278
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3202162612119579000}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 0}
 --- !u!82 &6521320923818002933
 AudioSource:
   m_ObjectHideFlags: 0
@@ -369,6 +355,19 @@ MonoBehaviour:
     type: 3}
   playOnStart: 0
   switchSoundClip: {fileID: 8300000, guid: 31bf9a49fa4b54d49935bd30bb099383, type: 3}
+--- !u!65 &6067877242519201216
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3202162612119579000}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 12.77, y: 4.2, z: 22.51}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4686788271834325798
 GameObject:
   m_ObjectHideFlags: 0
