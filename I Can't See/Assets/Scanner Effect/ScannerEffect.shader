@@ -74,7 +74,11 @@ Shader "Hidden/ScannerEffect"
 			float4 _TrailColor;
 			float4 _HBarColor;
 
-			
+			float4 vertBars(float2 p)
+			{
+				return 1 - saturate(round(abs(frac(p.y * 100) * 2)));
+			}
+
 			float4 horizBars(float2 p)
 			{
 				return 1 - saturate(round(abs(frac(p.x * 100) * 2)));
@@ -101,7 +105,7 @@ Shader "Hidden/ScannerEffect"
 					{
 						float diff = 1 - (_ScanDistance[j] - dist) / (_ScanWidth[j]);
 						half4 edge = lerp(_MidColor, _LeadColor, pow(diff, _LeadSharp));
-						a_scannerCol = lerp(_TrailColor, edge, diff) + horizBars(i.uv) * _HBarColor;
+						a_scannerCol = lerp(_TrailColor, edge, diff) + (horizBars(i.uv) + vertBars(i.uv)) * _HBarColor;
 						a_scannerCol *= diff;
 					}
 				}

@@ -15,8 +15,8 @@ public class EffectPoint : MonoBehaviour
         set { scanWidth = value;  }
     }
 
-    private const float scanSpd = 20f;
-    private const float maxDistance = 100f;
+    private const float scanSpd = 3f;
+    private const float maxDistance = 10f;
 
     // Start is called before the first frame update
     void Start()

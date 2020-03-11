@@ -38,7 +38,7 @@ Material:
     - _ScanWidth: 20
     - _Width: 16
     m_Colors:
-    - _HBarColor: {r: 0, g: 0, b: 0, a: 0}
+    - _HBarColor: {r: 0.1509434, g: 0.1509434, b: 0.1509434, a: 0}
     - _LeadColor: {r: 0.5943396, g: 0.2943663, b: 0.2943663, a: 1}
     - _MidColor: {r: 0.54082036, g: 0.1981577, b: 0.5754717, a: 1}
     - _TrailColor: {r: 0.6603774, g: 0.6603774, b: 0.6603774, a: 0}
