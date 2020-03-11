@@ -23,20 +23,20 @@ public class VRHand : MonoBehaviour
     private List<Interactable> collidingIteractables;
 
     //Info about objects we are holding
-    public Holdable HeldObject { get {
-            if (holdJoint != null)
+    public Holdable HeldObject
+    {
+        get
+        {
+
+            if (holdJoint.connectedBody?.GetComponent<Holdable>())
             {
-                if(holdJoint.connectedBody != null)
-                {
-                    if (holdJoint.connectedBody.GetComponent<Holdable>())
-                    {
-                        return holdJoint.connectedBody.GetComponent<Holdable>();
-                    }
-                }
+                return holdJoint.connectedBody.GetComponent<Holdable>();
             }
 
             return null;
-     } }
+
+        }
+    }
 
     [SerializeField]
     private Joint holdJoint = null;
@@ -49,7 +49,7 @@ public class VRHand : MonoBehaviour
         pose = GetComponent<SteamVR_Behaviour_Pose>();
 
         //Make sure that we have connected a joint and vr input controller
-        if(vrInputController == null)
+        if (vrInputController == null)
         {
             Debug.LogWarning("WARNING: VR Input Controller not assigned to: " + gameObject.name);
         }
@@ -64,12 +64,12 @@ public class VRHand : MonoBehaviour
     void Update()
     {
         //Do Actions for each action that we are collding with
-        foreach(Interactable obj in collidingIteractables)
+        foreach (Interactable obj in collidingIteractables)
         {
             obj.DoAction(this);
         }
 
-     
+
     }
 
     private void OnTriggerEnter(Collider other)
@@ -104,14 +104,14 @@ public class VRHand : MonoBehaviour
     public void AttachObject(Holdable obj)
     {
         //null Check
-        if(obj == null)
+        if (obj == null)
         {
-             return;
+            return;
         }
-        
+
 
         //If we are held by a different hand - detach the object from that hand
-        if(obj.CurrentHolder != null)
+        if (obj.CurrentHolder != null)
         {
             obj.CurrentHolder.DetachObject(obj);
         }
@@ -150,7 +150,7 @@ public class VRHand : MonoBehaviour
 
         //Null out vars
         obj.CurrentHolder = null;
-        
+
     }
 
     /// <summary>
