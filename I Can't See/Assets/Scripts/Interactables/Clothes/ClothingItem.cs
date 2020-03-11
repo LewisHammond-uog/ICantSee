@@ -5,7 +5,7 @@ using UnityEngine;
 /// <summary>
 /// Base Abstract class for a clothing item
 /// </summary>
-public abstract class ClothingItem : Holdable
+public class ClothingItem : Holdable
 {
 }
 
