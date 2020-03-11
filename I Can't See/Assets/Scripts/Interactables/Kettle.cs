@@ -56,6 +56,9 @@ public class Kettle : PourableHoldable
                     {
                         currentKettleState = KettleState.FILLED_BOILED;
 
+                        //Reset the time since boil
+                        timeSinceBoil = 0f;
+
                         //Call Job Manager to call that kettle has boiled
                         //Change Job Info to bolied
                         jobInfo.action = Job.JOB_ACTIONS.BOILED;
@@ -80,8 +83,18 @@ public class Kettle : PourableHoldable
                 }
             default:
                 break;
+        }
 
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            currentKettleState++;
+        }
 
+        //Reset back to empty from whatever state that we were in if 
+        //we run out of liquid
+        if(waterDropCount <= 0 && currentKettleState != KettleState.EMPTY)
+        {
+            currentKettleState = KettleState.EMPTY;
         }
     }
 
