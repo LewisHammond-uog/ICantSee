@@ -7,7 +7,8 @@ public class TwistInteractable : SoundInteractable
     //Starting Rotation of this twistable
     //so that we can get the amount that this object has been rotated
     private Quaternion startRotation;
-
+    
+    [Header("Twist Interactable")]
     //Axis to get the controller rotation from
     [SerializeField]
     private Vector3 controllerRotationAxis = new Vector3(1,0,0);

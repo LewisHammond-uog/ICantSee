@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class WaterDrop : MonoBehaviour
 {
+    [Header("Water")]
     //Object that created this water drop
     private GameObject creator;
     public GameObject dropCreatorObject
@@ -17,5 +18,14 @@ public class WaterDrop : MonoBehaviour
             }
         }
         get { return creator; }
+    }
+
+    //Time to wait until we destroy this drop
+    private float destroyTime = 10f;
+
+    private void Start()
+    {
+        //Set to Destory after time
+        Destroy(gameObject, destroyTime);
     }
 }

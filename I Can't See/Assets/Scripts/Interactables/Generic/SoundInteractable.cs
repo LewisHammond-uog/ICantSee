@@ -6,7 +6,7 @@ using UnityEngine;
 [RequireComponent(typeof(EffectGenerator))]
 public class SoundInteractable : Interactable
 {
-    //Audio
+    [Header("Audio")]
     [SerializeField]
     protected AudioSource interactableAudioSource;
     [SerializeField]

@@ -24,6 +24,7 @@ public class TapController : SoundInteractable
     float timeSinceBlob;
 
     //Prefab for the water object
+    [Header("Liquid")]
     [SerializeField]
     private GameObject waterPrefab;
 
