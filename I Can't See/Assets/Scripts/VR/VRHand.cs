@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using Valve.VR;
 
 
@@ -22,6 +23,12 @@ public class VRHand : MonoBehaviour
     //List of interactable that we are colliding with
     private List<Interactable> collidingIteractables;
 
+    //Store if the controller is being tracked by the base stations
+    ETrackingResult controllerTrackingState;
+
+    [SerializeField]
+    private Joint holdJoint = null;
+
     //Info about objects we are holding
     public Holdable HeldObject
     {
@@ -38,15 +45,10 @@ public class VRHand : MonoBehaviour
         }
     }
 
-    [SerializeField]
-    private Joint holdJoint = null;
     private void Start()
     {
         //Intialise list of colliding iteractables
         collidingIteractables = new List<Interactable>();
-
-        //Assign Pose
-        pose = GetComponent<SteamVR_Behaviour_Pose>();
 
         //Make sure that we have connected a joint and vr input controller
         if (vrInputController == null)
@@ -57,12 +59,19 @@ public class VRHand : MonoBehaviour
         {
             Debug.LogWarning("WARNING: Hold Joint not assigned to: " + gameObject.name);
         }
-
     }
+
+
 
     // Update is called once per frame
     void Update()
     {
+        //Check if controller is being tracked
+        if (controllerTrackingState != ETrackingResult.Running_OK)
+        {
+            return;
+        }
+
         //Do Actions for each action that we are collding with
         foreach (Interactable obj in collidingIteractables)
         {
@@ -103,6 +112,12 @@ public class VRHand : MonoBehaviour
     /// <param name="obj"></param>
     public void AttachObject(Holdable obj)
     {
+        //Check if controller is being tracked
+        if(controllerTrackingState != ETrackingResult.Running_OK)
+        {
+            return;
+        }
+
         //null Check
         if (obj == null)
         {
@@ -134,6 +149,12 @@ public class VRHand : MonoBehaviour
     /// <param name="obj"></param>
     public void DetachObject(Holdable obj)
     {
+        //Check if controller is being tracked
+        if (controllerTrackingState != ETrackingResult.Running_OK)
+        {
+            return;
+        }
+
         //null Check
         if (obj == null || obj != HeldObject || HeldObject == null)
         {
@@ -162,6 +183,34 @@ public class VRHand : MonoBehaviour
     {
         return action.GetState(pose.inputSource);
     }
+
+    /// <summary>
+    /// Updates the tracking state of the controller
+    /// Event called when SteamVR detected a tracking update change
+    /// </summary>
+    /// <param name="fromAction"></param>
+    /// <param name="fromSource"></param>
+    /// <param name="trackingState"></param>
+    void UpdateControllerTrackingState(SteamVR_Behaviour_Pose fromAction, SteamVR_Input_Sources fromSource, ETrackingResult trackingState)
+    {
+        controllerTrackingState = trackingState;
+    }
+
+    #region Event Subs/Unsubs
+    private void OnEnable()
+    {
+
+        //Assign Pose
+        pose = GetComponent<SteamVR_Behaviour_Pose>();
+
+        CurrentPose.onTrackingChangedEvent += UpdateControllerTrackingState;
+    }
+    private void OnDisable()
+    {
+        CurrentPose.onTrackingChangedEvent -= UpdateControllerTrackingState;
+    }
+    #endregion
+
 }
 
 //Lewis Hammond
