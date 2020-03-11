@@ -39,6 +39,9 @@ public class EffectGenerator : MonoBehaviour
     [SerializeField]
     private float loudnessMultiplyer = 20;
 
+    //Minimum velocity before a collision noise and effect is made
+    private const float minCollisionSoundVel = 7.5f;
+
     //Name of the object that we create when creating an effect
     private const string effectObjName = "EffectPoint";
 
@@ -143,11 +146,16 @@ public class EffectGenerator : MonoBehaviour
     {
         if (gameObject.GetComponent<Rigidbody>())
         {
-            //Create an effect as soon as we collide with something - don't wait
-            CreateEffect(gameObject.GetComponent<Rigidbody>().velocity.magnitude, transform.position);
+            float rbVelMagnitude = gameObject.GetComponent<Rigidbody>().velocity.magnitude;
 
-            //Play audio source sound
-            dropAudioSource.PlayOneShot(dropSound);
+            if (rbVelMagnitude > minCollisionSoundVel)
+            {
+                //Create an effect as soon as we collide with something - don't wait
+                CreateEffect(rbVelMagnitude, transform.position);
+
+                //Play audio source sound
+                dropAudioSource.PlayOneShot(dropSound);
+            }
         }
     }
 }
