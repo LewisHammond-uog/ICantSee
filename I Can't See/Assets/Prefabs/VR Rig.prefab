@@ -326,8 +326,8 @@ GameObject:
   - component: {fileID: 785956151166899542}
   - component: {fileID: 785956151166899541}
   - component: {fileID: 785956151166899539}
-  - component: {fileID: 570476613}
   - component: {fileID: 570476617}
+  - component: {fileID: 628687082}
   m_Layer: 0
   m_Name: Controller (left)
   m_TagString: Untagged
@@ -421,22 +421,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ac8c54a0a3dc454ca18e9ef141c3e5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vrInputController: {fileID: 0}
-  holdJoint: {fileID: 570476613}
---- !u!138 &570476613
-FixedJoint:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 785956151166899538}
-  m_ConnectedBody: {fileID: 0}
-  m_BreakForce: Infinity
-  m_BreakTorque: Infinity
-  m_EnableCollision: 0
-  m_EnablePreprocessing: 1
-  m_MassScale: 1
-  m_ConnectedMassScale: 1
+  vrInputController: {fileID: 1649735473265995086}
+  holdJoint: {fileID: 628687082}
 --- !u!135 &570476617
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -450,6 +436,20 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!138 &628687082
+FixedJoint:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 785956151166899538}
+  m_ConnectedBody: {fileID: 0}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_EnableCollision: 0
+  m_EnablePreprocessing: 1
+  m_MassScale: 1
+  m_ConnectedMassScale: 1
 --- !u!1 &785956151237216751
 GameObject:
   m_ObjectHideFlags: 0
@@ -865,7 +865,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ac8c54a0a3dc454ca18e9ef141c3e5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vrInputController: {fileID: 0}
+  vrInputController: {fileID: 1649735473265995086}
   holdJoint: {fileID: 591732303}
 --- !u!138 &591732303
 FixedJoint:
@@ -904,6 +904,7 @@ GameObject:
   m_Component:
   - component: {fileID: 785956152830004935}
   - component: {fileID: 785956152830004934}
+  - component: {fileID: 1649735473265995086}
   m_Layer: 0
   m_Name: VR Rig
   m_TagString: Untagged
@@ -933,7 +934,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 785956152830004933}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f58770fcbc959bf41b3085e89fadaf91, type: 3}
   m_Name: 
@@ -941,8 +942,29 @@ MonoBehaviour:
   rightHand: {fileID: 785956152180280607}
   leftHand: {fileID: 785956151166899539}
   vrRig: {fileID: 785956152830004933}
-  vrInputController: {fileID: 0}
+  vrInputController: {fileID: 1649735473265995086}
   walkSound: {fileID: 0}
+--- !u!114 &1649735473265995086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 785956152830004933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f988b5e54f6b3dc4992387a4617987c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grabAction:
+    actionPath: /actions/default/in/GrabPinch
+    needsReinit: 0
+  moveAction:
+    actionPath: /actions/default/in/GrabGrip
+    needsReinit: 0
+  specialDpadAction:
+    actionPath: /actions/default/in/DPadPress
+    needsReinit: 0
 --- !u!1 &2979151226350891368
 GameObject:
   m_ObjectHideFlags: 0

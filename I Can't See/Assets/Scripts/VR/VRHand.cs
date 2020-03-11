@@ -24,7 +24,7 @@ public class VRHand : MonoBehaviour
     private List<Interactable> collidingIteractables;
 
     //Store if the controller is being tracked by the base stations
-    ETrackingResult controllerTrackingState;
+    public ETrackingResult ControllerTrackingState { private set; get; }
 
     [SerializeField]
     private Joint holdJoint = null;
@@ -67,7 +67,7 @@ public class VRHand : MonoBehaviour
     void Update()
     {
         //Check if controller is being tracked
-        if (controllerTrackingState != ETrackingResult.Running_OK)
+        if (ControllerTrackingState != ETrackingResult.Running_OK)
         {
             return;
         }
@@ -113,7 +113,7 @@ public class VRHand : MonoBehaviour
     public void AttachObject(Holdable obj)
     {
         //Check if controller is being tracked
-        if(controllerTrackingState != ETrackingResult.Running_OK)
+        if(ControllerTrackingState != ETrackingResult.Running_OK)
         {
             return;
         }
@@ -150,7 +150,7 @@ public class VRHand : MonoBehaviour
     public void DetachObject(Holdable obj)
     {
         //Check if controller is being tracked
-        if (controllerTrackingState != ETrackingResult.Running_OK)
+        if (ControllerTrackingState != ETrackingResult.Running_OK)
         {
             return;
         }
@@ -193,7 +193,7 @@ public class VRHand : MonoBehaviour
     /// <param name="trackingState"></param>
     void UpdateControllerTrackingState(SteamVR_Behaviour_Pose fromAction, SteamVR_Input_Sources fromSource, ETrackingResult trackingState)
     {
-        controllerTrackingState = trackingState;
+        ControllerTrackingState = trackingState;
     }
 
     #region Event Subs/Unsubs

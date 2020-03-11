@@ -57,8 +57,8 @@ public class VRMove : MonoBehaviour
         }
 
         //Get the velocity of both controllers
-        rightVel = rightHand.CurrentPose.GetVelocity();
-        leftVel = leftHand.CurrentPose.GetVelocity();
+        rightVel = rightHand.ControllerTrackingState == Valve.VR.ETrackingResult.Running_OK ? rightHand.CurrentPose.GetVelocity() : new Vector3(0,0,0);
+        leftVel = leftHand.ControllerTrackingState == Valve.VR.ETrackingResult.Running_OK ? leftHand.CurrentPose.GetVelocity() : new Vector3(0, 0, 0);
 
         //Set Y Component to 0 so that we don't move in the Y Direction
         rightVel.y = 0f;
