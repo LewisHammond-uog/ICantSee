@@ -80,11 +80,15 @@ public class VRMove : MonoBehaviour
                 //Play Walk Sound
                 if (walkAudioSource != null)
                 {
-                    walkAudioSource.PlayOneShot(walkSound);
-                }
+                    //If walk sound is not already playing
+                    if (!walkAudioSource.isPlaying)
+                    {
+                        walkAudioSource.PlayOneShot(walkSound);
 
-                //Create world effect at the current position
-                EffectGenerator.CreateEffect(walkEffectWidth, vrRig.transform.position);
+                        //Create world effect at the current position
+                        EffectGenerator.CreateEffect(walkEffectWidth, vrRig.transform.position);
+                    }
+                }
                 
             }
         }
