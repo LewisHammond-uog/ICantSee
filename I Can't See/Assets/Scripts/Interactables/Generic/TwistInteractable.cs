@@ -15,6 +15,16 @@ public class TwistInteractable : SoundInteractable
     [SerializeField]
     private Vector3 objectRotationAxis;
 
+    [Header("Resetting Rotate")]
+    //Reset for twistable after a certian amount of time
+    [SerializeField]
+    private bool resetAfterTime = true;
+    //How long needs to pass until we twistable resets
+    [SerializeField]
+    private float timeToReset = 10f;
+    //Time since reset started
+    private float resetTimer;
+
     //Property for getting the difference in rotation between the start
     //and current rotation
     public Vector3 rotatedAmount { get { return (transform.rotation.eulerAngles - startRotation.eulerAngles); } }
@@ -23,10 +33,29 @@ public class TwistInteractable : SoundInteractable
     public delegate void TwistInteractableEvent();
     public static event TwistInteractableEvent TwistMoved;
 
-    private void Update()
-    {
+    private void Start()
+    {   
         //Initalise the start rotation
         startRotation = transform.rotation;
+
+        //Initalise Reset Timer
+        resetTimer = 0.0f;
+    }
+
+    private void Update()
+    {
+
+        //Increment Reset Timer
+        resetTimer += Time.deltaTime;
+
+        //Check if we should reset the interactable to it's start position
+        if(resetTimer >= timeToReset && transform.rotation != startRotation)
+        {
+            //Reset interactable to start pos
+            transform.rotation = startRotation;
+            //Reset Timer
+            resetTimer = 0.0f;
+        }
     }
 
     public override void DoAction(VRHand hand)
@@ -50,6 +79,10 @@ public class TwistInteractable : SoundInteractable
             if (Mathf.Abs(rotateAmount) > 0)
             {
                 TwistMoved();
+
+                //Reset the resetTimer as we have interacted with the taps
+                resetTimer = 0.0f;
+
             }
 
             // call job manager
