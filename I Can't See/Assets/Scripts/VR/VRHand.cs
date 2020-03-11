@@ -124,11 +124,10 @@ public class VRHand : MonoBehaviour
             return;
         }
 
-
-        //If we are held by a different hand - detach the object from that hand
+        //If we are held by a different hand - don't allow pickup
         if (obj.CurrentHolder != null)
         {
-            obj.CurrentHolder.DetachObject(obj);
+            return;
         }
 
         //Position object to controller
