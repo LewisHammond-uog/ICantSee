@@ -5,80 +5,145 @@ using System;
 
 public class MicrophoneAudioVolume : MonoBehaviour
 {
-    private string device;
+    private float micLoudness; //
 
-    private AudioClip micRecord;
+    //Device that we are uisng
+    private string micDevice;
 
-    private const int sampleWindow = 128;
-    private int sampleLength = 1;
-    private int sampleRate = 44100;
+    //Audio clip that stores the mic data
+    AudioClip clip;
+    private const int clipLen = 20;
+    private const int sampleDataLen = 1024; //Sample Rate in Hz (44100Hz)
 
-    private float[] waveData = new float[sampleWindow];
+    //Array to store mic data
+    private float[] micSampleData;
+
+    //How often the effect updates (i.e a new effect is created) in seconds
+    [SerializeField]
+    private float updateStep = 1f;
+    private float timeSinceLastUpdate = 0.0f;
+
+    //Min Value of mic volume before creating
+    [SerializeField]
+    private float minMicVolume = 0.3f;
+
+    //Amount to amplify the loudness when creating the effect width
+    [SerializeField]
+    private float loudnessMultiplyer = 20;
 
     private void Start()
     {
-        // Check if we have a microphone
-        if(device == null)
-        {
-            // if not then get the first active microphone
-            device = Microphone.devices[0];
-        }
+        //Intalise mic sample data array
+        micSampleData = new float[sampleDataLen * (int)updateStep];
     }
 
     private void Update()
     {
-        // Check if the mic is being recored
-        if(!Microphone.IsRecording(device))
+        //Increase time since last update
+        timeSinceLastUpdate += Time.deltaTime;
+
+        //Check if we should get a new reading from the mic
+        if (timeSinceLastUpdate >= updateStep)
         {
-            // If not then start recording
-            StartRecording();
+            float micLevel = GetMaxMicLevel();
+
+            if (micLevel > minMicVolume)
+            {
+                //Calculate the width of the effect
+                float effectWidth = GetMaxMicLevel() * loudnessMultiplyer;
+
+                //Create an effect
+                EffectGenerator.CreateEffect(effectWidth, transform.position);
+
+                //Reset Timer
+                timeSinceLastUpdate = 0.0f;
+            }
+        }
+    }
+
+    /// <summary>
+    /// Get the maximum volume of the current mic volume
+    /// </summary>
+    /// <returns></returns>
+    private float GetMaxMicLevel()
+    {
+        int micPos = Microphone.GetPosition(null) - (sampleDataLen + 1);
+        if (micPos < 0) return 0;
+
+        clip.GetData(micSampleData, micPos);
+
+        //Loop and get the max of all samples in the sample array
+        float maxLoundness = 0.0f;
+        for (int i = 0; i < micSampleData.Length; i++)
+        {
+            //if the current sample loudness is greater than the
+            //then est it to the current sample loudness
+            float currentSampleLoudness = Mathf.Abs(micSampleData[i]);
+            if (maxLoundness < currentSampleLoudness)
+            {
+                maxLoundness = currentSampleLoudness;
+            }
+        }
+        return maxLoundness;
+    }
+
+    /// <summary>
+    /// Initalise the microphone
+    /// </summary>
+    private void InitaliseMic()
+    {
+        if(micDevice == null)
+        {
+            micDevice = Microphone.devices[0];
+            clip = Microphone.Start(micDevice, true, clipLen, sampleDataLen);
+        }
+    }
+
+    /// <summary>
+    /// Stop the Mic Clip
+    /// </summary>
+    private void StopMic()
+    {
+        if (micDevice != null)
+        {
+            Microphone.End(micDevice);
+            micDevice = null;
+        }
+    }
+
+    #region Enable/Disable Microphone OnEnable/OnDisable
+    private void OnEnable()
+    {
+        InitaliseMic();
+    }
+    private void OnDisable()
+    {
+        StopMic();
+    }
+
+    //Start/Stop the mic from playing on application focus
+    private void OnApplicationFocus(bool focus)
+    {
+        if (focus)
+        {
+            //if focused then initalise mic
+            if(micDevice == null)
+            {
+                InitaliseMic();
+            }
         }
         else
         {
-            // Make sure the microphone has stopped recording
-            StopRecording();
-            // Send the sound data to the effect generator, with the players current position
-            EffectGenerator.CreateEffect(GetCurrentClipLoundness(), this.transform.position);
+            if(micDevice != null)
+            {
+                StopMic();
+            }
         }
     }
 
-    /// <summary>
-    /// Tell the Mircophone to start recording the mic
-    /// </summary>
-    private void StartRecording()
-    {
-        micRecord = Microphone.Start(device, true, sampleLength, sampleRate);
-    }
+    #endregion
 
-    /// <summary>
-    /// Tell the Microphone to stop recording
-    /// </summary>
-    private void StopRecording()
-    {
-        Microphone.End(device);
-    }
-    /// <summary>
-    /// Calculate the average loudness of the mic's recording
-    /// </summary>
-    /// <returns>A float representing the loudness of the mic's recording in a linear format</returns>
-    private float GetCurrentClipLoundness()
-    {
-        // Get the wave data from the recording
-        micRecord.GetData(waveData, sampleRate);
-
-        float avgLoundess = 0.0f;
-        // Loop through the waveData array
-        for (int i = 0; i < waveData.Length; i++)
-        {
-            // Add the peak volume for each point in the wave data
-            avgLoundess += Mathf.Abs(waveData[i]);
-        }
-
-        // Divide by the total to get the average
-        avgLoundess /= sampleRate;
-
-        return avgLoundess;
-    }
 }
 
+// Lewis Hammond
 // Connor Done

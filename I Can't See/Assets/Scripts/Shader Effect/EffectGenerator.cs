@@ -91,6 +91,10 @@ public class EffectGenerator : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Get the average loudness of the current audio clip
+    /// </summary>
+    /// <returns></returns>
     private float GetCurrentClipLoundness()
     {
         //If there is no audio playing then there is no
@@ -133,6 +137,7 @@ public class EffectGenerator : MonoBehaviour
         effect.ScanWidth = effectWidth;
     }
 
+    //Create an instant effect when colliding with something
     private void OnCollisionEnter(Collision collision)
     {
         //Create an effect as soon as we collide with something - don't wait

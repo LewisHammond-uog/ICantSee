@@ -64,6 +64,5 @@ namespace Lewis.MathUtils
 
             return new Vector3(absX, absY, absZ);
         }
-
     }
 }

@@ -4,18 +4,17 @@ using UnityEngine;
 
 public class EffectPoint : MonoBehaviour
 {
+    //Distance that the front of the wave is away from the origin
+    public float ScanDistance { get; private set; } = 0.0f;
 
-    //Distance for the scan from its orign
-    private float scanDistance = 0.0f;
-    public float ScanDistance { get { return scanDistance; } }
+    //Current width of the scan
+    public float ScanWidth { get; set; } = 20f;
 
-    private float scanWidth = 20f;
-    public float ScanWidth { 
-        get { return scanWidth; }
-        set { scanWidth = value;  }
-    }
-
+    //Speed that the scan should progress at per frame
     private const float scanSpd = 3f;
+
+    //Max distance that the back of the wave should be 
+    //before destorying the wave
     private const float maxDistance = 10f;
 
     // Start is called before the first frame update
@@ -33,10 +32,10 @@ public class EffectPoint : MonoBehaviour
     void Update()
     {
         //Increase scan distance
-        scanDistance += Time.deltaTime * scanSpd;
+        ScanDistance += Time.deltaTime * scanSpd;
 
         //Destroy if over max scan distance
-        if(scanDistance > maxDistance)
+        if((ScanDistance - ScanWidth) > maxDistance)
         {
             Destroy(gameObject);
         }
