@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 4709406795990990817}
   - component: {fileID: 4323502064951182807}
   - component: {fileID: 8015461017244842286}
-  - component: {fileID: 2659564800158598117}
   - component: {fileID: 297686489821861119}
   - component: {fileID: 297686489821861117}
   - component: {fileID: 297686489821861116}
+  - component: {fileID: 2129541151415425062}
   m_Layer: 0
   m_Name: Toothbrush
   m_TagString: Untagged
@@ -29,9 +29,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8574982743112060402}
-  m_LocalRotation: {x: -0.494987, y: -0.5049633, z: -0.5049633, w: 0.494987}
+  m_LocalRotation: {x: -0.4949879, y: -0.5049624, z: -0.5049624, w: 0.4949879}
   m_LocalPosition: {x: -3.078, y: 1.67, z: 8.557}
-  m_LocalScale: {x: 1.5051622, y: 1.505162, z: 1.505162}
+  m_LocalScale: {x: 1.0385623, y: 1.038562, z: 1.0385624}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -81,20 +81,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &2659564800158598117
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8574982743112060402}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 5060444177187149915, guid: 3139e3fe7c180d74991ce50d35a1c4e9, type: 3}
 --- !u!54 &297686489821861119
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -143,3 +129,16 @@ MonoBehaviour:
   updateStep: 1
   minEffectLoundness: 0.2
   loudnessMultiplyer: 20
+--- !u!65 &2129541151415425062
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8574982743112060402}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.017585374, y: 0.25000006, z: 0.023800261}
+  m_Center: {x: -0.000000001418322, y: -0.000000001446908, z: 0.011900115}

@@ -11,6 +11,7 @@ public class BreakableHoldable : Holdable
     private GameObject objectBroken;
     [SerializeField]
     private AudioSource interactableAudioSource;
+    private float minBreakVel = 10.0f;
 
     private Vector3 velocity = new Vector3(0,0,0);
 
@@ -30,7 +31,7 @@ public class BreakableHoldable : Holdable
     private void OnCollisionEnter(Collision collision)
     {
         //Check if object is moving fast enough to smash
-        if(MathUtils.Abs(velocity).magnitude > 1.0f)
+        if(MathUtils.Abs(velocity).magnitude > minBreakVel)
         {
             //Get the position of breakpoint
             Transform breakPoint = objectWhole.transform;

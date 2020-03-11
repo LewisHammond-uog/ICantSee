@@ -317,6 +317,8 @@ MonoBehaviour:
   playOnStart: 0
   controllerRotationAxis: {x: 1, y: 0, z: 0}
   objectRotationAxis: {x: 0, y: 0, z: 0}
+  resetAfterTime: 1
+  timeToReset: 10
 --- !u!1 &1465625969416708055
 GameObject:
   m_ObjectHideFlags: 0
@@ -633,6 +635,8 @@ MonoBehaviour:
   playOnStart: 0
   controllerRotationAxis: {x: 1, y: 0, z: 0}
   objectRotationAxis: {x: 0, y: 0, z: 0}
+  resetAfterTime: 1
+  timeToReset: 10
 --- !u!1 &3955355200601077724
 GameObject:
   m_ObjectHideFlags: 0
@@ -1187,7 +1191,7 @@ Transform:
   m_GameObject: {fileID: 8994314759731322961}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -21.976, y: 12, z: 69.817}
-  m_LocalScale: {x: 1.0686607, y: 1.068661, z: 1.068661}
+  m_LocalScale: {x: 0.716003, y: 0.7160029, z: 0.7160032}
   m_Children:
   - {fileID: 5170752130413788301}
   - {fileID: 9060109895109046414}

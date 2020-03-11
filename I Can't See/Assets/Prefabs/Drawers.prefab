@@ -129,7 +129,7 @@ MonoBehaviour:
   interactableAudioSource: {fileID: 0}
   movementAudioClip: {fileID: 0}
   movementLimit: 30
-  chosenAxis: {x: 0, y: 1, z: 0}
+  chosenAxis: {x: 1, y: 0, z: 0}
 --- !u!1 &2448923912067621122
 GameObject:
   m_ObjectHideFlags: 0
@@ -398,7 +398,7 @@ MonoBehaviour:
   interactableAudioSource: {fileID: 0}
   movementAudioClip: {fileID: 0}
   movementLimit: 30
-  chosenAxis: {x: 0, y: 1, z: 0}
+  chosenAxis: {x: 1, y: 0, z: 0}
 --- !u!1 &6978740250894025603
 GameObject:
   m_ObjectHideFlags: 0
@@ -528,4 +528,4 @@ MonoBehaviour:
   interactableAudioSource: {fileID: 0}
   movementAudioClip: {fileID: 0}
   movementLimit: 30
-  chosenAxis: {x: 0, y: 1, z: 0}
+  chosenAxis: {x: 1, y: 1, z: 0}
