@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 66210802142524884}
   - component: {fileID: 7452501558492225079}
   m_Layer: 0
-  m_Name: Draw005
+  m_Name: Draw2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -127,8 +127,7 @@ MonoBehaviour:
     objectType: 0
     room: 0
   interactableAudioSource: {fileID: 0}
-  interactableAudioClip: {fileID: 8300000, guid: fc7d2cf4a40dd5141a2ff6652a184c47,
-    type: 3}
+  movementAudioClip: {fileID: 0}
   movementLimit: 30
   chosenAxis: {x: 0, y: 1, z: 0}
 --- !u!1 &2448923912067621122
@@ -142,9 +141,9 @@ GameObject:
   - component: {fileID: 8748588757666261427}
   - component: {fileID: 5175118814894513167}
   - component: {fileID: 4588119980445902780}
-  - component: {fileID: 581110138656080014}
+  - component: {fileID: 1905934542}
   m_Layer: 0
-  m_Name: Drawers 1
+  m_Name: DrawersShroud
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -209,8 +208,8 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &581110138656080014
-MeshCollider:
+--- !u!65 &1905934542
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -219,10 +218,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 6367393062581405847, guid: 1d6f76b9607d46a4f98cb8433b13a3c6, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 55.11343, y: 69.284424, z: 41.1547}
+  m_Center: {x: 137.09235, y: -45.771996, z: 29.42265}
 --- !u!1 &3226715496162585338
 GameObject:
   m_ObjectHideFlags: 0
@@ -249,7 +247,7 @@ Transform:
   m_GameObject: {fileID: 3226715496162585338}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -19.49549, y: 7.7886157, z: 43.830704}
-  m_LocalScale: {x: 0.0121951215, y: 0.0121951215, z: 0.0121951215}
+  m_LocalScale: {x: 0.0121951215, y: 0.012195136, z: 0.012195136}
   m_Children:
   - {fileID: 4647520280340966047}
   - {fileID: 1019006156525309952}
@@ -286,7 +284,7 @@ GameObject:
   - component: {fileID: 7537252907009763911}
   - component: {fileID: 4261159584415176613}
   m_Layer: 0
-  m_Name: Draw006
+  m_Name: Draw3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -398,8 +396,7 @@ MonoBehaviour:
     objectType: 0
     room: 0
   interactableAudioSource: {fileID: 0}
-  interactableAudioClip: {fileID: 8300000, guid: fc7d2cf4a40dd5141a2ff6652a184c47,
-    type: 3}
+  movementAudioClip: {fileID: 0}
   movementLimit: 30
   chosenAxis: {x: 0, y: 1, z: 0}
 --- !u!1 &6978740250894025603
@@ -417,7 +414,7 @@ GameObject:
   - component: {fileID: 8280146464153024160}
   - component: {fileID: 7549250848713110527}
   m_Layer: 0
-  m_Name: Draw004
+  m_Name: Draw1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -529,7 +526,6 @@ MonoBehaviour:
     objectType: 0
     room: 0
   interactableAudioSource: {fileID: 0}
-  interactableAudioClip: {fileID: 8300000, guid: fc7d2cf4a40dd5141a2ff6652a184c47,
-    type: 3}
+  movementAudioClip: {fileID: 0}
   movementLimit: 30
   chosenAxis: {x: 0, y: 1, z: 0}

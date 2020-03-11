@@ -17,6 +17,12 @@ public class BreakableHoldable : Holdable
     // Update is called once per frame
     void Update()
     {
+        //If the audio soruce has not been set in the inspector try and grab it from the object
+        if (interactableAudioSource == null)
+        {
+            interactableAudioSource = GetComponent<AudioSource>();
+        }
+
         //Get velocity of the object before it breaks
         velocity = objectWhole.GetComponent<Rigidbody>().velocity;
     }

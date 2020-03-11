@@ -56,6 +56,7 @@ public class EffectGenerator : MonoBehaviour
         dropAudioSource = gameObject.AddComponent<AudioSource>();
         dropAudioSource.playOnAwake = false;
         dropAudioSource.clip = dropSound;
+        dropAudioSource.spatialBlend = 1; //Set Spacial mode to 3D
 
         //Allocate the memory for the array
         clipSampleData = new float[sampleDataLen];
@@ -140,11 +141,14 @@ public class EffectGenerator : MonoBehaviour
     //Create an instant effect when colliding with something
     private void OnCollisionEnter(Collision collision)
     {
-        //Create an effect as soon as we collide with something - don't wait
-        CreateEffect(gameObject.GetComponent<Rigidbody>().velocity.magnitude, transform.position);
+        if (gameObject.GetComponent<Rigidbody>())
+        {
+            //Create an effect as soon as we collide with something - don't wait
+            CreateEffect(gameObject.GetComponent<Rigidbody>().velocity.magnitude, transform.position);
 
-        //Play audio source sound
-        dropAudioSource.PlayOneShot(dropSound);
+            //Play audio source sound
+            dropAudioSource.PlayOneShot(dropSound);
+        }
     }
 }
 

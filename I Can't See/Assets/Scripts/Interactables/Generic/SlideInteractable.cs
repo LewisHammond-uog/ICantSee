@@ -4,16 +4,22 @@ using UnityEngine;
 
 public class SlideInteractable : Interactable
 {
+    [Header("Audio Source")]
     [SerializeField]
     private AudioSource interactableAudioSource;
+    [Header("Audio Clip")]
     [SerializeField]
-    private AudioClip interactableAudioClip;
+    private AudioClip movementAudioClip;//Clip of the audio source moving
     private Vector3 moveAmount;
+
+    [Header("Movement")]
     [SerializeField]
     private float movementLimit;
     [SerializeField]
     private Vector3 chosenAxis;
     private Vector3 startPos;
+
+    private bool interactedLastFrame = false;
 
     private void Start()
     {
@@ -40,9 +46,12 @@ public class SlideInteractable : Interactable
             //Check if audio source is not null
             if (interactableAudioSource != null)
             {
-                interactableAudioSource.clip = interactableAudioClip;
-                //Play Interactable moving sound
-                interactableAudioSource.Play();
+                if (interactableAudioSource.isPlaying)
+                {
+                    interactableAudioSource.clip = movementAudioClip;
+                    //Play Interactable moving sound
+                    interactableAudioSource.Play();
+                }
             }
 
         }

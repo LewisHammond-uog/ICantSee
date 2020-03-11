@@ -44,6 +44,9 @@ GameObject:
   - component: {fileID: 3409627559228872603}
   - component: {fileID: 7638453896941396093}
   - component: {fileID: 4270141063882701364}
+  - component: {fileID: 5418054073641319785}
+  - component: {fileID: 2820407130431866032}
+  - component: {fileID: 5114045880000877794}
   m_Layer: 0
   m_Name: Right Sandal
   m_TagString: Untagged
@@ -123,6 +126,54 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.4971645, y: 0.20006357, z: 0.33768806}
   m_Center: {x: 0.008184142, y: -0.000031769283, z: 0.15568016}
+--- !u!54 &5418054073641319785
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3313725358930996635}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &2820407130431866032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3313725358930996635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4900db0a9d8440498e8ac30171bc291, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dropSound: {fileID: 0}
+  updateStep: 1
+  minEffectLoundness: 0.2
+  loudnessMultiplyer: 20
+--- !u!114 &5114045880000877794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3313725358930996635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64a2545a9c93de84d9b507a6393e53c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jobInfo:
+    action: 0
+    objectType: 0
+    room: 0
 --- !u!1 &3410333911872625572
 GameObject:
   m_ObjectHideFlags: 0
@@ -135,6 +186,9 @@ GameObject:
   - component: {fileID: 7886019716235248562}
   - component: {fileID: 4802630788258613300}
   - component: {fileID: 6845542514909188512}
+  - component: {fileID: 8719155654180480389}
+  - component: {fileID: 380058311154043420}
+  - component: {fileID: 5365919497933455260}
   m_Layer: 0
   m_Name: Left Sandal
   m_TagString: Untagged
@@ -214,3 +268,51 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.50576586, y: 0.20006357, z: 0.33768806}
   m_Center: {x: 0.0038834587, y: -0.000031769283, z: 0.15568016}
+--- !u!54 &8719155654180480389
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3410333911872625572}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &380058311154043420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3410333911872625572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4900db0a9d8440498e8ac30171bc291, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dropSound: {fileID: 0}
+  updateStep: 1
+  minEffectLoundness: 0.2
+  loudnessMultiplyer: 20
+--- !u!114 &5365919497933455260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3410333911872625572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64a2545a9c93de84d9b507a6393e53c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jobInfo:
+    action: 0
+    objectType: 0
+    room: 0

@@ -9,7 +9,7 @@ public abstract class Interactable : MonoBehaviour
 
     //Job Info - For Job Manager to register the associated job actions for the job manager
     [SerializeField]
-    protected JobActionInfo jobInfo;
+    public JobActionInfo jobInfo;
 
 }
 
