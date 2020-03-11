@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class MicrophoneAudioVolume : MonoBehaviour
+public class MicrophoneScream : MonoBehaviour
 {
     private float micLoudness; //
 
