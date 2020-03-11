@@ -1511,7 +1511,7 @@ PrefabInstance:
     - target: {fileID: 305404702602532168, guid: 953380e6e46a4d641af28cbd43d24ed4,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.9282652
+      value: 0.873
       objectReference: {fileID: 0}
     - target: {fileID: 305404702602532168, guid: 953380e6e46a4d641af28cbd43d24ed4,
         type: 3}
@@ -1779,11 +1779,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 651520237}
     m_Modifications:
-    - target: {fileID: 9037338215162022013, guid: afc4e2ded41016e4b88fc767c43f0d71,
-        type: 3}
-      propertyPath: m_Name
-      value: Plate Whole (2)
-      objectReference: {fileID: 0}
     - target: {fileID: 5417912683605097070, guid: afc4e2ded41016e4b88fc767c43f0d71,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1853,6 +1848,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.9088004
+      objectReference: {fileID: 0}
+    - target: {fileID: 9037338215162022013, guid: afc4e2ded41016e4b88fc767c43f0d71,
+        type: 3}
+      propertyPath: m_Name
+      value: Plate Whole (2)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: afc4e2ded41016e4b88fc767c43f0d71, type: 3}
@@ -2516,13 +2516,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 536977516}
-  m_LocalRotation: {x: -0.34568405, y: -0.7401444, z: 0.4849254, w: -0.31230807}
+  m_LocalRotation: {x: -0.6265283, y: 0.112623654, z: -0.16907452, w: -0.7524574}
   m_LocalPosition: {x: 0, y: 33.95, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 110.97299, y: -380.79, z: -144.30899}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 101.2, y: -527.4, z: -144.30899}
 --- !u!1001 &545694497
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3534,7 +3534,7 @@ Transform:
   - {fileID: 135494827}
   - {fileID: 255294893}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &810925530
 GameObject:
@@ -7655,6 +7655,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.015870202
       objectReference: {fileID: 0}
+    - target: {fileID: 58831232071602922, guid: 1f9e8f6f6d80e984b8d0b7825052c369,
+        type: 3}
+      propertyPath: maxRotateLimit
+      value: 90
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1f9e8f6f6d80e984b8d0b7825052c369, type: 3}
 --- !u!4 &1647014077 stripped
@@ -7670,11 +7675,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 651520237}
     m_Modifications:
-    - target: {fileID: 5441678881783257014, guid: 35224b552a993f341a3a9a45bc61377b,
-        type: 3}
-      propertyPath: m_Name
-      value: Bowl Whole (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 9070218607479842213, guid: 35224b552a993f341a3a9a45bc61377b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7739,6 +7739,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.4213674
+      objectReference: {fileID: 0}
+    - target: {fileID: 5441678881783257014, guid: 35224b552a993f341a3a9a45bc61377b,
+        type: 3}
+      propertyPath: m_Name
+      value: Bowl Whole (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 35224b552a993f341a3a9a45bc61377b, type: 3}
@@ -10090,11 +10095,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 651520237}
     m_Modifications:
-    - target: {fileID: 9037338215162022013, guid: afc4e2ded41016e4b88fc767c43f0d71,
-        type: 3}
-      propertyPath: m_Name
-      value: Plate Whole
-      objectReference: {fileID: 0}
     - target: {fileID: 5417912683605097070, guid: afc4e2ded41016e4b88fc767c43f0d71,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10164,6 +10164,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1.0106145
+      objectReference: {fileID: 0}
+    - target: {fileID: 9037338215162022013, guid: afc4e2ded41016e4b88fc767c43f0d71,
+        type: 3}
+      propertyPath: m_Name
+      value: Plate Whole
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: afc4e2ded41016e4b88fc767c43f0d71, type: 3}
@@ -10360,11 +10365,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 651520237}
     m_Modifications:
-    - target: {fileID: 5441678881783257014, guid: 35224b552a993f341a3a9a45bc61377b,
-        type: 3}
-      propertyPath: m_Name
-      value: Bowl Whole
-      objectReference: {fileID: 0}
     - target: {fileID: 9070218607479842213, guid: 35224b552a993f341a3a9a45bc61377b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10429,6 +10429,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.4213674
+      objectReference: {fileID: 0}
+    - target: {fileID: 5441678881783257014, guid: 35224b552a993f341a3a9a45bc61377b,
+        type: 3}
+      propertyPath: m_Name
+      value: Bowl Whole
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 35224b552a993f341a3a9a45bc61377b, type: 3}
@@ -10913,11 +10918,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 651520237}
     m_Modifications:
-    - target: {fileID: 9037338215162022013, guid: afc4e2ded41016e4b88fc767c43f0d71,
-        type: 3}
-      propertyPath: m_Name
-      value: Plate Whole (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 5417912683605097070, guid: afc4e2ded41016e4b88fc767c43f0d71,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10982,6 +10982,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.7100002
+      objectReference: {fileID: 0}
+    - target: {fileID: 9037338215162022013, guid: afc4e2ded41016e4b88fc767c43f0d71,
+        type: 3}
+      propertyPath: m_Name
+      value: Plate Whole (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: afc4e2ded41016e4b88fc767c43f0d71, type: 3}
@@ -11538,7 +11543,7 @@ Transform:
   m_LocalScale: {x: 0.59343, y: 0.59343, z: 0.59343}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &5672170629035044700
 MeshFilter:
@@ -11988,7 +11993,7 @@ PrefabInstance:
     - target: {fileID: 1885605503254027115, guid: d188ae6e317d8be46972836dc13e36c5,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1885605503254027115, guid: d188ae6e317d8be46972836dc13e36c5,
         type: 3}
@@ -12077,27 +12082,27 @@ PrefabInstance:
     - target: {fileID: 8214064412591784726, guid: 9db421b578c9ab84684019d534e1e317,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0.000000029802326
       objectReference: {fileID: 0}
     - target: {fileID: 8214064412591784726, guid: 9db421b578c9ab84684019d534e1e317,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8214064412591784726, guid: 9db421b578c9ab84684019d534e1e317,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0.9484921
       objectReference: {fileID: 0}
     - target: {fileID: 8214064412591784726, guid: 9db421b578c9ab84684019d534e1e317,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: -0.31680074
       objectReference: {fileID: 0}
     - target: {fileID: 8214064412591784726, guid: 9db421b578c9ab84684019d534e1e317,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: -216.939
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9db421b578c9ab84684019d534e1e317, type: 3}

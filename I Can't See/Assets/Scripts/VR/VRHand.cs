@@ -23,7 +23,20 @@ public class VRHand : MonoBehaviour
     private List<Interactable> collidingIteractables;
 
     //Info about objects we are holding
-    public Holdable HeldObject { get { return holdJoint.connectedBody.GetComponent<Holdable>();  } }
+    public Holdable HeldObject { get {
+            if (holdJoint != null)
+            {
+                if(holdJoint.connectedBody != null)
+                {
+                    if (holdJoint.connectedBody.GetComponent<Holdable>())
+                    {
+                        return holdJoint.connectedBody.GetComponent<Holdable>();
+                    }
+                }
+            }
+
+            return null;
+     } }
 
     [SerializeField]
     private Joint holdJoint = null;
