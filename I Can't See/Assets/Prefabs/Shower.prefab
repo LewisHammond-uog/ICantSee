@@ -175,8 +175,14 @@ MonoBehaviour:
     action: 0
     objectType: 0
     room: 0
+  interactableAudioSource: {fileID: 0}
+  interactableAudioEndClip: {fileID: 8300000, guid: 01848b4851b28b640b970581e284aeb8,
+    type: 3}
+  playOnStart: 0
   controllerRotationAxis: {x: 1, y: 0, z: 0}
   objectRotationAxis: {x: 0, y: 0, z: 0}
+  resetAfterTime: 1
+  timeToReset: 10
 --- !u!1 &6099105324674203576
 GameObject:
   m_ObjectHideFlags: 0

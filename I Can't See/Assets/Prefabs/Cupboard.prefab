@@ -133,7 +133,7 @@ MonoBehaviour:
     objectType: 0
     room: 0
   interactableAudioSource: {fileID: 0}
-  movementAudioClip: {fileID: 0}
+  movementAudioClip: {fileID: 8300000, guid: 96517ad138660b84da6596b975047026, type: 3}
   movementLimit: 30
   chosenAxis: {x: 1, y: 0, z: 0}
 --- !u!1 &2280750287934375078
@@ -592,11 +592,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 124021553428185332}
     m_Modifications:
-    - target: {fileID: 8194723084495349380, guid: c01dbe88efff1fe42b7481a47dc79a68,
-        type: 3}
-      propertyPath: m_Name
-      value: Cutlery Spoon
-      objectReference: {fileID: 0}
     - target: {fileID: 5179940989751465111, guid: c01dbe88efff1fe42b7481a47dc79a68,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -666,6 +661,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 104.25939
+      objectReference: {fileID: 0}
+    - target: {fileID: 8194723084495349380, guid: c01dbe88efff1fe42b7481a47dc79a68,
+        type: 3}
+      propertyPath: m_Name
+      value: Cutlery Spoon
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c01dbe88efff1fe42b7481a47dc79a68, type: 3}
@@ -772,11 +772,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 124021553428185332}
     m_Modifications:
-    - target: {fileID: 8194723084495349380, guid: c01dbe88efff1fe42b7481a47dc79a68,
-        type: 3}
-      propertyPath: m_Name
-      value: Cutlery Spoon (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 5179940989751465111, guid: c01dbe88efff1fe42b7481a47dc79a68,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -846,6 +841,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 104.25939
+      objectReference: {fileID: 0}
+    - target: {fileID: 8194723084495349380, guid: c01dbe88efff1fe42b7481a47dc79a68,
+        type: 3}
+      propertyPath: m_Name
+      value: Cutlery Spoon (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c01dbe88efff1fe42b7481a47dc79a68, type: 3}

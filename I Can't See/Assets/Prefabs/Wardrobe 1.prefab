@@ -113,6 +113,7 @@ MonoBehaviour:
     objectType: 0
     room: 0
   interactableAudioSource: {fileID: 0}
+  movementAudioClip: {fileID: 8300000, guid: fc7d2cf4a40dd5141a2ff6652a184c47, type: 3}
   movementLimit: 30
   chosenAxis: {x: 0, y: 1, z: 0}
 --- !u!64 &945401961407583035
@@ -242,6 +243,7 @@ MonoBehaviour:
     objectType: 0
     room: 0
   interactableAudioSource: {fileID: 0}
+  movementAudioClip: {fileID: 8300000, guid: fc7d2cf4a40dd5141a2ff6652a184c47, type: 3}
   movementLimit: 30
   chosenAxis: {x: 0, y: 1, z: 0}
 --- !u!64 &2944855842257286094
@@ -512,6 +514,7 @@ MonoBehaviour:
     objectType: 0
     room: 0
   interactableAudioSource: {fileID: 0}
+  movementAudioClip: {fileID: 8300000, guid: fc7d2cf4a40dd5141a2ff6652a184c47, type: 3}
   movementLimit: 30
   chosenAxis: {x: 0, y: 1, z: 0}
 --- !u!64 &4963122914304163002

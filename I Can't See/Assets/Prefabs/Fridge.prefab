@@ -127,7 +127,7 @@ MonoBehaviour:
     objectType: 0
     room: 0
   interactableAudioSource: {fileID: 0}
-  interactableAudioClip: {fileID: 0}
+  movementAudioClip: {fileID: 0}
   movementLimit: 30
   chosenAxis: {x: 0, y: 1, z: 0}
 --- !u!1 &5000484902864793997
@@ -480,7 +480,7 @@ MonoBehaviour:
     objectType: 0
     room: 0
   interactableAudioSource: {fileID: 0}
-  interactableAudioClip: {fileID: 0}
+  movementAudioClip: {fileID: 0}
   movementLimit: 30
   chosenAxis: {x: 0, y: 1, z: 0}
 --- !u!1 &7135411290809497266
@@ -610,7 +610,7 @@ MonoBehaviour:
     objectType: 0
     room: 0
   interactableAudioSource: {fileID: 0}
-  interactableAudioClip: {fileID: 0}
+  movementAudioClip: {fileID: 0}
   movementLimit: 30
   chosenAxis: {x: 0, y: 1, z: 0}
 --- !u!1 &7181205634977371510
@@ -719,7 +719,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4900db0a9d8440498e8ac30171bc291, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dropSound: {fileID: 0}
+  dropSound: {fileID: 8300000, guid: 296ac968cd4b4ff41a8e594fab4d35ac, type: 3}
   updateStep: 1
   minEffectLoundness: 0.2
   loudnessMultiplyer: 20

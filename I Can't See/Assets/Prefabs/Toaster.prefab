@@ -195,7 +195,7 @@ MonoBehaviour:
   toastTime: 5
   toastInsertOffest: {x: 0, y: 0, z: 0}
   toasterAudioSource: {fileID: 0}
-  toastReadyAudio: {fileID: 0}
+  toastReadyAudio: {fileID: 8300000, guid: b896538f353ce8f4294b09c2eba77953, type: 3}
 --- !u!1 &4747973784275859549
 GameObject:
   m_ObjectHideFlags: 0
@@ -616,5 +616,6 @@ MonoBehaviour:
     objectType: 0
     room: 0
   interactableAudioSource: {fileID: 0}
+  movementAudioClip: {fileID: 0}
   movementLimit: 0.3
   chosenAxis: {x: 0, y: 1, z: 0}

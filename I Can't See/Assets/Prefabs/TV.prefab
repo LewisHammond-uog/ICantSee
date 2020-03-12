@@ -348,5 +348,6 @@ MonoBehaviour:
     objectType: 0
     room: 0
   interactableAudioSource: {fileID: 0}
-  interactableAudioEndClip: {fileID: 0}
+  interactableAudioEndClip: {fileID: 8300000, guid: 52ba001ec8949ce4c9550ff48031b3ed,
+    type: 3}
   playOnStart: 0
