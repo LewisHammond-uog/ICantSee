@@ -16,9 +16,9 @@ public class PourableHoldable : Holdable
     float minRotation = 25f;
 
     //Time between blobs being created in seconds
-    const float timeBetweenBlobs = 0.1f;
+    private const float timeBetweenBlobs = 0.1f;
     //Time since the last blob was released
-    float timeSinceBlob;
+    private float timeSinceBlob;
 
     //Number of Water Drops that the object starts with
     [SerializeField]
@@ -58,6 +58,8 @@ public class PourableHoldable : Holdable
                     GameObject waterDrop = Instantiate(waterPrefab);
                     waterDrop.transform.position = pourCreatePoint.position;
                     waterDrop.GetComponent<WaterDrop>().dropCreatorObject = this.gameObject;
+
+                    JobManager.RegisterJobAction(jobInfo);
 
                     //Reduce the number of blobs that this object
                     //has
@@ -100,6 +102,11 @@ public class PourableHoldable : Holdable
             {
                 //Add to water drop count
                 waterDropCount++;
+
+                //Register that liqud has touched the holdable - usefull for 
+                //detecting stuff when making tea
+                JobActionInfo liquidTouchInfo = new JobActionInfo() { action = Job.JOB_ACTIONS.LIQUID_TOUCH_POURABLE, objectType = jobInfo.objectType, room = jobInfo.room };
+                JobManager.RegisterJobAction(liquidTouchInfo);
 
                 //Delete Water Drop
                 Destroy(waterDrop.gameObject);

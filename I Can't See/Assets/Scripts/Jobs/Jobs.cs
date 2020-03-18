@@ -33,6 +33,8 @@ public class Job
         PUT_ON, //FOR Putting Toothpaste on Toothbrush/CLOTHES
         FILLED,
         BOILED,
+        LIQUID_TOUCH_POURABLE,
+        POUR,
         ENTER_TRIGGER,
         EXIT_TRIGGER
     }
@@ -62,6 +64,8 @@ public class Job
         DOOR,
         KETTLE,
         SHOWER,
+        CUP,
+        MILK,
 
         //Clothing
         CLOTHING_SHIRT,
