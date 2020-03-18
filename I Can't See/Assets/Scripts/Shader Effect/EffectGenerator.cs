@@ -21,7 +21,7 @@ public class EffectGenerator : MonoBehaviour
     [SerializeField]
     private AudioClip dropSound;
     //Resources path of the generic drop sound
-    private const string genericDropSoundPath = "";
+    private const string genericDropSoundPath = "GenericDropSound";
 
     //How often the effect updates (i.e a new effect is created) in seconds
     [SerializeField]
