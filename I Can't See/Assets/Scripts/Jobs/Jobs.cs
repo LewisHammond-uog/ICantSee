@@ -35,6 +35,7 @@ public class Job
         BOILED,
         LIQUID_TOUCH_POURABLE,
         POUR,
+        EAT,
         ENTER_TRIGGER,
         EXIT_TRIGGER
     }

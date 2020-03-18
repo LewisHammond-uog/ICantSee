@@ -114,7 +114,7 @@ MonoBehaviour:
     room: 0
   waterPrefab: {fileID: 0}
   pourCreatePoint: {fileID: 0}
-  startingDropCount: 100
+  startingDropCount: 10000
 --- !u!1 &5424025373071904937
 GameObject:
   m_ObjectHideFlags: 0
