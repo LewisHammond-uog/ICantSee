@@ -100,6 +100,10 @@ public class Job
             //Add to the jobs vo queue so that it is played in turn
             JobsVOPlayer.AddVOToPlayQueue(voiceClip);
         }
+        else
+        {
+            Debug.Log("Attempted to Play Job Audio without a valid voice clip " + voiceClip.name);
+        }
     }
 
 }
