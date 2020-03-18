@@ -22,7 +22,7 @@ public class Kettle : PourableHoldable
     //Timer from when the kettle boil
     private float timeSinceBoil;
 
-    private void Start()
+    private new void Start()
     {
         //Call Base Start on pourable object
         base.Start();
