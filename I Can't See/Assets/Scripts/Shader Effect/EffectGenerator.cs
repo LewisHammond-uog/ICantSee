@@ -20,6 +20,8 @@ public class EffectGenerator : MonoBehaviour
     private AudioSource dropAudioSource;
     [SerializeField]
     private AudioClip dropSound;
+    //Resources path of the generic drop sound
+    private const string genericDropSoundPath = "";
 
     //How often the effect updates (i.e a new effect is created) in seconds
     [SerializeField]
@@ -58,18 +60,15 @@ public class EffectGenerator : MonoBehaviour
         //is played only when the object collides with another
         dropAudioSource = gameObject.AddComponent<AudioSource>();
         dropAudioSource.playOnAwake = false;
-        dropAudioSource.clip = dropSound;
+        //Set the drop sound to be the assigned drop sound if it is not null,
+        //otherwise load the generic drop sound
+        dropAudioSource.clip = dropSound != null ? dropSound : GetGenericDropSound();
         dropAudioSource.spatialBlend = 1; //Set Spacial mode to 3D
 
         //Allocate the memory for the array
         clipSampleData = new float[sampleDataLen];
 
-        if (hasExistingAudioSoruce)
-        {
-            //Create a clip straigtht away
-            CreateEffect(GetCurrentClipLoundness() * loudnessMultiplyer, transform.position);
-        }
-
+        
     }
 
     // Update is called once per frame
@@ -139,6 +138,15 @@ public class EffectGenerator : MonoBehaviour
         //Add the effect point 
         EffectPoint effect = effectObj.AddComponent<EffectPoint>();
         effect.ScanWidth = effectWidth;
+    }
+
+    /// <summary>
+    /// Loads the generic drop sound - for when we don't have a
+    /// drop sound specific to this object
+    /// </summary>
+    private AudioClip GetGenericDropSound()
+    {
+        return (AudioClip)Resources.Load(genericDropSoundPath);
     }
 
     //Create an instant effect when colliding with something
