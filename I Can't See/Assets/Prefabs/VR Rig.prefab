@@ -107,9 +107,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   brushingAudioSource: {fileID: 0}
   jobInfo:
-    action: 0
-    objectType: 0
-    room: 0
+    action: 5
+    objectType: 6
+    room: 1
 --- !u!82 &1664703167
 AudioSource:
   m_ObjectHideFlags: 0

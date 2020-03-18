@@ -110,8 +110,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jobInfo:
-    action: 4
-    objectType: 0
+    action: 6
+    objectType: 6
     room: 1
 --- !u!114 &297686489821861116
 MonoBehaviour:

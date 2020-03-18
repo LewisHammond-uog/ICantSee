@@ -68,7 +68,7 @@ public class Kettle : PourableHoldable
                 }
             case KettleState.EMPTY:
                 {
-                    //Check if we are ove the required number of 
+                    //Check if we are over the required number of 
                     //water blobs to the filled
                     if(waterDropCount >= requiredBlobsForFilled)
                     {

@@ -11,11 +11,11 @@ GameObject:
   - component: {fileID: 2867515250432873079}
   - component: {fileID: 6525842657776642113}
   - component: {fileID: 697207165728183480}
-  - component: {fileID: 4789848076793507443}
   - component: {fileID: 6205578524237481674}
   - component: {fileID: 5032572616075012234}
   - component: {fileID: 5483600132843562907}
   - component: {fileID: 546392362640724661}
+  - component: {fileID: 1841775700}
   m_Layer: 0
   m_Name: FoldedShirt
   m_TagString: Untagged
@@ -32,7 +32,7 @@ Transform:
   m_GameObject: {fileID: 1265560104078925924}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -5.51, y: -0.48, z: 22.73}
-  m_LocalScale: {x: 2.7896342, y: 2.7896342, z: 2.7896342}
+  m_LocalScale: {x: 1.6179878, y: 1.6179897, z: 1.6179897}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -82,20 +82,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &4789848076793507443
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1265560104078925924}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 5060444177187149915, guid: f9489870e9eff6d4d99047f2d55844de, type: 3}
 --- !u!114 &6205578524237481674
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -108,6 +94,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9e9010f6aac93349a93a9e9145c6691, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  jobInfo:
+    action: 6
+    objectType: 11
+    room: 0
   bypassJobOrder: 0
 --- !u!54 &5032572616075012234
 Rigidbody:
@@ -157,7 +147,16 @@ MonoBehaviour:
     action: 0
     objectType: 0
     room: 0
-  jobInfo:
-    action: 0
-    objectType: 0
-    room: 0
+--- !u!65 &1841775700
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1265560104078925924}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.2315546, y: 0.3048, z: 0.058432005}
+  m_Center: {x: -0.0014773011, y: -0.012700001, z: 0.027224962}
