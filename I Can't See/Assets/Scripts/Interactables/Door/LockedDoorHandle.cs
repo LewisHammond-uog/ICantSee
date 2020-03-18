@@ -49,7 +49,7 @@ public class LockedDoorHandle : DoorInteraction
     {
         if (doorLocked)
         {
-            if (JobManager.GetCurrentJob().JobRoom != doorRoom)
+            if (JobManager.GetCurrentJob().JobInfo.room != doorRoom)
             {
                 UnlockDoor();
             }
