@@ -82,7 +82,14 @@ public class TapController : SoundInteractable
             {
                 //Register Tap on and start sound
                 tapOn = true;
-                interactableAudioSource.Play();
+
+                if (interactableAudioSource != null)
+                {
+                    if (!interactableAudioSource.isPlaying)
+                    {
+                        interactableAudioSource.Play();
+                    }
+                }
 
                 //Register Job
                 JobManager.RegisterJobAction(jobInfo);
@@ -92,7 +99,6 @@ public class TapController : SoundInteractable
             //No taps have moved enough - tap off
             //stop playing audio
             tapOn = false;
-            interactableAudioSource.Stop();
         }
     }
 

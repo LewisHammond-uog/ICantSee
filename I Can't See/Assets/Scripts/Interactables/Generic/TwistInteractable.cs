@@ -73,21 +73,25 @@ public class TwistInteractable : SoundInteractable
             //Apply that rotation in the direction that we want to rotate
             gameObject.transform.Rotate(objectRotationAxis, rotateAmount);
             //Play twist sound
-            interactableAudioSource.Play();
+            if (interactableAudioSource != null)
+            {
+                interactableAudioSource.Play();
+            }
 
             //If rotation was > 0 then call the event that 
             //the object was twisted
             if (Mathf.Abs(rotateAmount) > 0)
             {
                 TwistMoved();
+                // call job manager
+                JobManager.RegisterJobAction(jobInfo);
 
                 //Reset the resetTimer as we have interacted with the taps
                 resetTimer = 0.0f;
 
             }
 
-            // call job manager
-            JobManager.RegisterJobAction(jobInfo);
+            
         }
     }
 }

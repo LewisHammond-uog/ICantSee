@@ -22,7 +22,7 @@ public class JobInitalisation : MonoBehaviour
         //Bedroom
         JobManager.AddJobToComplete(Job.JOB_ACTIONS.TURN_OFF, Job.JOB_ROOMS.BEDROOM, Job.JOB_OBJECTS.ALARM_CLOCK, (AudioClip)(Resources.Load("VoiceLine-Job-1")));
         JobManager.AddJobToComplete(Job.JOB_ACTIONS.OPEN, Job.JOB_ROOMS.BEDROOM, Job.JOB_OBJECTS.CURTAIN, (AudioClip)(Resources.Load("VoiceLine-Job-2")));
-        JobManager.AddJobToComplete(Job.JOB_ACTIONS.OPEN, Job.JOB_ROOMS.BATHROOM, Job.JOB_OBJECTS.DOOR, (AudioClip)(Resources.Load("VoiceLine-Job-3")));
+        //JobManager.AddJobToComplete(Job.JOB_ACTIONS.OPEN, Job.JOB_ROOMS.BATHROOM, Job.JOB_OBJECTS.DOOR, (AudioClip)(Resources.Load("VoiceLine-Job-3")));
 
         //Bathroom
         JobManager.AddJobToComplete(Job.JOB_ACTIONS.PUT_ON, Job.JOB_ROOMS.BATHROOM, Job.JOB_OBJECTS.TOOTH_BRUSH, (AudioClip)(Resources.Load("VoiceLine-Job-4")));
@@ -30,10 +30,9 @@ public class JobInitalisation : MonoBehaviour
         JobManager.AddJobToComplete(Job.JOB_ACTIONS.USE, Job.JOB_ROOMS.BATHROOM, Job.JOB_OBJECTS.TOOTH_BRUSH, (AudioClip)(Resources.Load("VoiceLine-Job-6")));
         JobManager.AddJobToComplete(Job.JOB_ACTIONS.USE, Job.JOB_ROOMS.BATHROOM, Job.JOB_OBJECTS.SHOWER, (AudioClip)(Resources.Load("VoiceLine-Job-7")));
         JobManager.AddJobToComplete(Job.JOB_ACTIONS.OPEN, Job.JOB_ROOMS.BATHROOM, Job.JOB_OBJECTS.DOOR, (AudioClip)(Resources.Load("VoiceLine-Job-8")));
-        JobManager.AddJobToComplete(Job.JOB_ACTIONS.PUT_ON, Job.JOB_ROOMS.BATHROOM, Job.JOB_OBJECTS.CLOTHING_SHIRT, (AudioClip)(Resources.Load("VoiceLine-Job-9")));
-        JobManager.AddJobToComplete(Job.JOB_ACTIONS.PUT_ON, Job.JOB_ROOMS.BATHROOM, Job.JOB_OBJECTS.CLOTHING_TROUSERS, (AudioClip)(Resources.Load("VoiceLine-Job-10")));
-        JobManager.AddJobToComplete(Job.JOB_ACTIONS.OPEN, Job.JOB_ROOMS.BEDROOM, Job.JOB_OBJECTS.DOOR, (AudioClip)(Resources.Load("VoiceLine-Job-11")));
-        //FORGET CLOTES AND SHOWER
+        JobManager.AddJobToComplete(Job.JOB_ACTIONS.PUT_ON, Job.JOB_ROOMS.BEDROOM, Job.JOB_OBJECTS.CLOTHING_SHIRT, (AudioClip)(Resources.Load("VoiceLine-Job-9")));
+        JobManager.AddJobToComplete(Job.JOB_ACTIONS.PUT_ON, Job.JOB_ROOMS.BEDROOM, Job.JOB_OBJECTS.CLOTHING_TROUSERS, (AudioClip)(Resources.Load("VoiceLine-Job-10")));
+        //JobManager.AddJobToComplete(Job.JOB_ACTIONS.OPEN, Job.JOB_ROOMS.BEDROOM, Job.JOB_OBJECTS.DOOR, (AudioClip)(Resources.Load("VoiceLine-Job-11")));
 
         //Kitchen
         //Tea
@@ -49,7 +48,7 @@ public class JobInitalisation : MonoBehaviour
         JobManager.AddJobToComplete(Job.JOB_ACTIONS.EAT, Job.JOB_ROOMS.KITCHEN, Job.JOB_OBJECTS.TOAST, (AudioClip)(Resources.Load("VoiceLine-Job-20")));
 
         //Porch
-        JobManager.AddJobToComplete(Job.JOB_ACTIONS.OPEN, Job.JOB_ROOMS.PORCH, Job.JOB_OBJECTS.DOOR, (AudioClip)(Resources.Load("VoiceLine-Job-21")));
+        //JobManager.AddJobToComplete(Job.JOB_ACTIONS.OPEN, Job.JOB_ROOMS.PORCH, Job.JOB_OBJECTS.DOOR, (AudioClip)(Resources.Load("VoiceLine-Job-21")));
 
         jobsInitalised = true;
         //---------End of Jobs Initalisation---------

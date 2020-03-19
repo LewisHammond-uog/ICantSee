@@ -21,24 +21,30 @@ public class HeadScript : MonoBehaviour
         if (brush)
         {
             //Check if brush is being moved within the head's collider
-            if (brush.GetComponent<Rigidbody>().velocity != new Vector3(0, 0, 0))
+            //Play brushing sound
+            if (brushingAudioSource)
             {
-                //Play brushing sound
                 brushingAudioSource.Play();
-                timeLeft -= Time.deltaTime;
-                if(timeLeft < 0)
-                {
-                    // call job manager
-                    JobManager.RegisterJobAction(jobInfo);
-                }
             }
-            else
+
+            timeLeft -= Time.deltaTime;
+            if (timeLeft < 0)
             {
-                //Stop brushing sound
-                brushingAudioSource.Stop();
+                // call job manager
+                JobManager.RegisterJobAction(jobInfo);
             }
         }
-
+        else
+        {
+            //Stop brushing sound
+            if (brushingAudioSource)
+            {
+                if (brushingAudioSource.isPlaying)
+                {
+                    brushingAudioSource.Stop();
+                }
+            }
+        }
     }
 }
 
