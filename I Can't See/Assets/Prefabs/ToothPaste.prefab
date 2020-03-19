@@ -141,9 +141,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jobInfo:
-    action: 0
-    objectType: 0
-    room: 0
+    action: 5
+    objectType: 7
+    room: 1
   interactableAudioSource: {fileID: 0}
   pasteSpawn: {fileID: 2926127516422537957}
   tpPaste: {fileID: 538173737821290302, guid: df32dfe2ccaff044986af535ca315579, type: 3}
