@@ -37,7 +37,7 @@ public class Curtain : Interactable
 
             // Check if the distance between the curtain's start position and position after moving, is more than the minimum movement limit
             // And check if the distance is less than the maximum movement limit
-            float distFromStart = Vector3.Distance(this.transform.position + Vector3.Scale(moveAmount, chosenAxis), startPos);
+            float distFromStart = Mathf.Abs(Vector3.Distance(this.transform.position + Vector3.Scale(moveAmount, chosenAxis), startPos));
             if (distFromStart > minMovementLimit ||
                 distFromStart < maxMovementLimit)
             {
