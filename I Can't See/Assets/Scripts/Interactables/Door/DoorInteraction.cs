@@ -62,6 +62,12 @@ public class DoorInteraction : Holdable
             if (doorRigidBody)
             {
                 doorRigidBody.angularVelocity = cross * angleDiff * forceMutiplier;
+
+                //Trigger Job Action complete once we move the door
+                if(doorRigidBody.angularVelocity != Vector3.zero)
+                {
+                    JobManager.RegisterJobAction(jobInfo);
+                }
             }
         }
     }
