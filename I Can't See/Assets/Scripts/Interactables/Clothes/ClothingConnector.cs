@@ -5,6 +5,8 @@ using UnityEngine;
 [RequireComponent(typeof(Collider))]
 public class ClothingConnector : MonoBehaviour
 {
+    [SerializeField]
+    protected JobActionInfo jobInfo;
 
     //Allow clothes to be put on when they are not the next job
     [SerializeField]

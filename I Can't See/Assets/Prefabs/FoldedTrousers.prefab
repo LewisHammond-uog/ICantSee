@@ -32,7 +32,7 @@ Transform:
   m_GameObject: {fileID: 3311340234580054235}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0.032316, y: -0.36, z: 22.73}
-  m_LocalScale: {x: 2.7896342, y: 2.7896342, z: 2.7896342}
+  m_LocalScale: {x: 1.6179878, y: 1.6179897, z: 1.6179897}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -93,7 +93,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 5060444177187149915, guid: 523262ff7867fcd4189dfbc0ff95301a, type: 3}
 --- !u!114 &6916103669613478047
@@ -108,6 +108,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9e9010f6aac93349a93a9e9145c6691, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  jobInfo:
+    action: 6
+    objectType: 12
+    room: 0
   bypassJobOrder: 0
 --- !u!54 &2972023043471672692
 Rigidbody:
@@ -153,10 +157,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62f7321eedbfa524bbfb6ec4aa08a2fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jobInfo:
-    action: 0
-    objectType: 0
-    room: 0
   jobInfo:
     action: 0
     objectType: 0

@@ -308,9 +308,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jobInfo:
-    action: 0
-    objectType: 0
-    room: 0
+    action: 1
+    objectType: 3
+    room: 1
   interactableAudioSource: {fileID: 0}
   interactableAudioEndClip: {fileID: 8300000, guid: 161177f3b5e0b2e4687f02fe2bcce0ec,
     type: 3}
@@ -626,9 +626,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jobInfo:
-    action: 0
-    objectType: 0
-    room: 0
+    action: 1
+    objectType: 3
+    room: 1
   interactableAudioSource: {fileID: 0}
   interactableAudioEndClip: {fileID: 8300000, guid: 161177f3b5e0b2e4687f02fe2bcce0ec,
     type: 3}

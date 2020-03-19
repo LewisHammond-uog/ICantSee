@@ -33,6 +33,9 @@ public class Job
         PUT_ON, //FOR Putting Toothpaste on Toothbrush/CLOTHES
         FILLED,
         BOILED,
+        LIQUID_TOUCH_POURABLE,
+        POUR,
+        EAT,
         ENTER_TRIGGER,
         EXIT_TRIGGER
     }
@@ -62,6 +65,8 @@ public class Job
         DOOR,
         KETTLE,
         SHOWER,
+        CUP,
+        MILK,
 
         //Clothing
         CLOTHING_SHIRT,
@@ -70,13 +75,7 @@ public class Job
     #endregion
 
     private AudioClip voiceClip;
-    private JobActionInfo jobInfo;
-    public JobActionInfo JobInfo { get { return jobInfo; } }
-
-    //Properties for actions and room
-    public JOB_ACTIONS JobAction { get { return jobInfo.action; } }
-    public JOB_OBJECTS JobObject { get { return jobInfo.objectType; } }
-    public JOB_ROOMS JobRoom { get { return jobInfo.room; } }
+    public JobActionInfo JobInfo { get; private set; }
 
     /// <summary>
     /// Create a Job and add it to the required jobs
@@ -87,10 +86,10 @@ public class Job
     public Job(JOB_ACTIONS a_action, JOB_ROOMS a_room, JOB_OBJECTS a_objectType, AudioClip a_voiceline)
     {
         //Assign properties of the job
-        jobInfo = new JobActionInfo();
-        jobInfo.action = a_action;
-        jobInfo.room = a_room;
-        jobInfo.objectType = a_objectType;
+        JobInfo = new JobActionInfo();
+        JobInfo.action = a_action;
+        JobInfo.room = a_room;
+        JobInfo.objectType = a_objectType;
         voiceClip = a_voiceline;
     }
 
@@ -101,6 +100,10 @@ public class Job
             //Add to the jobs vo queue so that it is played in turn
             JobsVOPlayer.AddVOToPlayQueue(voiceClip);
         }
+        else
+        {
+            Debug.Log("Attempted to Play Job Audio without a valid voice clip " + voiceClip.name);
+        }
     }
 
 }
@@ -108,7 +111,7 @@ public class Job
 public static class JobManager
 {
     //Stacks for remaining and completed jobs
-    private static Stack<Job> remainingJobs = new Stack<Job>();
+    private static Queue<Job> remainingJobs = new Queue<Job>();
     private static Stack<Job> completedJobs = new Stack<Job>();
 
     //Event Triggered when a job is complete
@@ -119,9 +122,20 @@ public static class JobManager
     /// <summary>
     /// Adds a job that the player has to complete to the manager list
     /// </summary>
+    public static void AddJobToComplete(Job.JOB_ACTIONS a_action, Job.JOB_ROOMS a_room, Job.JOB_OBJECTS a_objectType, AudioClip a_voiceline)
+    {
+        //Create a job to pass to the other function
+        Job newJob = new Job(a_action, a_room, a_objectType, a_voiceline);
+        //Call function with Job to add to queue
+        AddJobToComplete(newJob);
+    }
+
+    /// <summary>
+    /// Adds a job that the player has to complete to the manager list
+    /// </summary>
     public static void AddJobToComplete(Job a_job)
     {
-        remainingJobs.Push(a_job);
+        remainingJobs.Enqueue(a_job);
     }
 
     /// <summary>
@@ -141,7 +155,7 @@ public static class JobManager
         //Check if the action completed is the same as the next job, if it is
         //then register that job as completed
         Job currentJob = remainingJobs.Peek();
-        if (currentJob.JobAction == a_jobInfo.action && currentJob.JobRoom == a_jobInfo.room && currentJob.JobObject == a_jobInfo.objectType)
+        if (currentJob.JobInfo.action == a_jobInfo.action && currentJob.JobInfo.room == a_jobInfo.room && currentJob.JobInfo.objectType == a_jobInfo.objectType)
         {
             CompleteJob(currentJob);
             return true;
@@ -170,7 +184,7 @@ public static class JobManager
         //Remove the current job from the remaining jobs list
         if (a_job == remainingJobs.Peek())
         {
-            Job completedJob = remainingJobs.Pop();
+            Job completedJob = remainingJobs.Dequeue();
 
             //Call Job Complete Event
             JobComplete?.Invoke();
@@ -183,10 +197,10 @@ public static class JobManager
             {
                 Job nextJob = remainingJobs.Peek();
                 nextJob.PlayJobAudio();
-            }
 
-            //Call New Job Started Events
-            JobComplete?.Invoke();
+                //Call new Job event
+                JobStarted?.Invoke();
+            }
         }
     }
 }

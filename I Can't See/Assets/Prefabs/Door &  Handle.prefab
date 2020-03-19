@@ -194,7 +194,6 @@ GameObject:
   m_Component:
   - component: {fileID: 425661899753208788}
   - component: {fileID: 6848913949666264374}
-  - component: {fileID: 4294418133328006714}
   m_Layer: 0
   m_Name: Door &  Handle
   m_TagString: Untagged
@@ -210,7 +209,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3725348697025006023}
   m_LocalRotation: {x: -0.0034185024, y: 0.70709854, z: 0.70709854, w: 0.0034185024}
-  m_LocalPosition: {x: -12.33, y: 11.21, z: 46.11}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.015528306, y: 0.015528306, z: 0.015528306}
   m_Children:
   - {fileID: 230855018039597181}
@@ -235,22 +234,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 0}
---- !u!114 &4294418133328006714
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3725348697025006023}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4900db0a9d8440498e8ac30171bc291, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dropSound: {fileID: 0}
-  updateStep: 1
-  minEffectLoundness: 0.2
-  loudnessMultiplyer: 20
 --- !u!1 &5352730526217979164
 GameObject:
   m_ObjectHideFlags: 0
@@ -278,7 +261,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5352730526217979164}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0.7542801, z: -79.99999}
+  m_LocalPosition: {x: -0, y: 0, z: -79.99999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 425661899753208788}
@@ -448,7 +431,6 @@ GameObject:
   - component: {fileID: 2223445101453929138}
   - component: {fileID: 3839425709815783388}
   - component: {fileID: 6796157715612778321}
-  - component: {fileID: 9049426650405674682}
   m_Layer: 0
   m_Name: Cylinder007 (1)
   m_TagString: Untagged
@@ -545,20 +527,3 @@ MonoBehaviour:
   updateStep: 1
   minEffectLoundness: 0.2
   loudnessMultiplyer: 20
---- !u!114 &9049426650405674682
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6027748465469518337}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fbe6d7476ac27ec45bc9515418701a63, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  jobInfo:
-    action: 0
-    objectType: 0
-    room: 0
-  doorForceMultiplier: 1

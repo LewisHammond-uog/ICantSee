@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LockedDoorHandle : InteractableDoorHandle
+
+public class LockedDoorHandle : DoorInteraction
 {
 
     //Door joint so that we can stop the door from moving
@@ -13,9 +14,7 @@ public class LockedDoorHandle : InteractableDoorHandle
     [SerializeField]
     private Job.JOB_ROOMS doorRoom;
 
-
     private bool doorLocked = false;
-
 
     // Start is called before the first frame update
     void Start()
@@ -50,7 +49,7 @@ public class LockedDoorHandle : InteractableDoorHandle
     {
         if (doorLocked)
         {
-            if (JobManager.GetCurrentJob().JobRoom != doorRoom)
+            if (JobManager.GetCurrentJob().JobInfo.room != doorRoom)
             {
                 UnlockDoor();
             }
@@ -62,8 +61,8 @@ public class LockedDoorHandle : InteractableDoorHandle
     /// </summary>
     private void UnlockDoor()
     {
-        doorJoint.useLimits = true;
         doorJoint.limits = unlockedJointLimits;
+        doorLocked = false;
     }
 
 

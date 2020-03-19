@@ -172,9 +172,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jobInfo:
-    action: 0
-    objectType: 0
-    room: 0
+    action: 1
+    objectType: 10
+    room: 1
   interactableAudioSource: {fileID: 0}
   interactableAudioEndClip: {fileID: 8300000, guid: 01848b4851b28b640b970581e284aeb8,
     type: 3}
@@ -474,6 +474,6 @@ MonoBehaviour:
   showerTap: {fileID: 6001775788957868870}
   timer: 6
   jobInfo:
-    action: 0
-    objectType: 0
-    room: 0
+    action: 5
+    objectType: 10
+    room: 1

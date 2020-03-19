@@ -22,7 +22,7 @@ public class Kettle : PourableHoldable
     //Timer from when the kettle boil
     private float timeSinceBoil;
 
-    private void Start()
+    private new void Start()
     {
         //Call Base Start on pourable object
         base.Start();
@@ -68,7 +68,7 @@ public class Kettle : PourableHoldable
                 }
             case KettleState.EMPTY:
                 {
-                    //Check if we are ove the required number of 
+                    //Check if we are over the required number of 
                     //water blobs to the filled
                     if(waterDropCount >= requiredBlobsForFilled)
                     {
