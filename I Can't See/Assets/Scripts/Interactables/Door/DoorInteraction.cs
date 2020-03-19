@@ -24,6 +24,25 @@ public class DoorInteraction : Holdable
         doorRigidBody = GetComponent<Rigidbody>();
     }
 
+    public override void DoAction(VRHand hand)
+    {
+        //Get the vr controller
+        VRInput vr = hand.VRInputController;
+
+        //Check if we should pickup or drop object
+        if (hand.GetActionState(vr.GrabAction) && !IsHeld )
+        {
+            //Pickup
+            CurrentHolder = hand;
+
+        }
+        else if (IsHeld)
+        {
+            //Drop
+            CurrentHolder = null;
+        }
+    }
+
     void Update()
     {
         if (IsHeld)
