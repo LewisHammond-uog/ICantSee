@@ -102,7 +102,7 @@ public class Job
         }
         else
         {
-            Debug.Log("Attempted to Play Job Audio without a valid voice clip " + voiceClip.name);
+            Debug.Log("Attempted to Play Job Audio without a valid voice clip ");
         }
     }
 
@@ -185,6 +185,7 @@ public static class JobManager
         if (a_job == remainingJobs.Peek())
         {
             Job completedJob = remainingJobs.Dequeue();
+            Debug.Log("JOB COMPLETED: " + completedJob.JobInfo.action + " " + completedJob.JobInfo.objectType);
 
             //Call Job Complete Event
             JobComplete?.Invoke();
