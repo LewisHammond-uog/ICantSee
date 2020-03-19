@@ -31,8 +31,11 @@ public class ToothPaste : Holdable
             //Check if audio source is not null
             if (interactableAudioSource != null)
             {
-                //Play Interactable moving sound
-                interactableAudioSource.Play();
+                if (!interactableAudioSource.isPlaying)
+                {
+                    //Play Interactable moving sound
+                    interactableAudioSource.Play();
+                }
             }
 
             //Increase time since blob
@@ -58,7 +61,6 @@ public class ToothPaste : Holdable
             
 
         }
-        interactableAudioSource.Stop();
     }
 }
 

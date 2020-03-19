@@ -14,7 +14,7 @@ public class GetInShowerScript : MonoBehaviour
 
     private void OnTriggerStay(Collider collision)
     {
-        if(collision.gameObject.GetComponent<VRMove>() == true)
+        if(collision.gameObject.GetComponent<HeadScript>() == true)
         {
             if(showerTap.rotatedAmount.x > 1.0f ||
                 showerTap.rotatedAmount.y > 0.0f ||

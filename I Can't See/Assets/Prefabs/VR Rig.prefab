@@ -434,7 +434,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.2
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!138 &628687082
 FixedJoint:
@@ -461,7 +461,6 @@ GameObject:
   - component: {fileID: 785956151237216656}
   - component: {fileID: 785956151237216658}
   - component: {fileID: 2741475637660712770}
-  - component: {fileID: 3332381504809125921}
   - component: {fileID: 785956151237216657}
   - component: {fileID: 2526038045754966210}
   - component: {fileID: 306819486}
@@ -548,19 +547,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 3
---- !u!135 &3332381504809125921
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 785956151237216751}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.39
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!81 &785956151237216657
 AudioListener:
   m_ObjectHideFlags: 0
@@ -923,7 +909,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.2
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &785956152830004933
 GameObject:
@@ -1008,6 +994,7 @@ GameObject:
   - component: {fileID: 8617190947959872809}
   - component: {fileID: 1865891874665057975}
   - component: {fileID: 7938834705772643747}
+  - component: {fileID: 2344296430525823111}
   m_Layer: 0
   m_Name: Body Collider
   m_TagString: Untagged
@@ -1087,3 +1074,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2344296430525823111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2979151226350891368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9e9010f6aac93349a93a9e9145c6691, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jobInfo:
+    action: 0
+    objectType: 0
+    room: 0
+  bypassJobOrder: 0

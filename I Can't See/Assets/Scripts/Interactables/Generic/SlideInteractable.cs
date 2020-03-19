@@ -46,7 +46,7 @@ public class SlideInteractable : Interactable
             //Check if audio source is not null
             if (interactableAudioSource != null)
             {
-                if (interactableAudioSource.isPlaying)
+                if (!interactableAudioSource.isPlaying)
                 {
                     interactableAudioSource.clip = movementAudioClip;
                     //Play Interactable moving sound
@@ -55,7 +55,18 @@ public class SlideInteractable : Interactable
             }
 
         }
-        interactableAudioSource.Stop();
+        else
+        {
+            //Check if audio source is not null
+            if (interactableAudioSource != null)
+            {
+                if (interactableAudioSource.isPlaying)
+                {
+                    //Stop Interactable moving sound
+                    interactableAudioSource.Stop();
+                }
+            }
+        }
 
         //Reset Moveamount incase we are not interacting next
         //frame

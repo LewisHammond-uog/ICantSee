@@ -24,6 +24,25 @@ public class DoorInteraction : Holdable
         doorRigidBody = GetComponent<Rigidbody>();
     }
 
+    public override void DoAction(VRHand hand)
+    {
+        //Get the vr controller
+        VRInput vr = hand.VRInputController;
+
+        //Check if we should pickup or drop object
+        if (hand.GetActionState(vr.GrabAction) && !IsHeld )
+        {
+            //Pickup
+            CurrentHolder = hand;
+
+        }
+        else if (IsHeld)
+        {
+            //Drop
+            CurrentHolder = null;
+        }
+    }
+
     void Update()
     {
         if (IsHeld)
@@ -43,6 +62,12 @@ public class DoorInteraction : Holdable
             if (doorRigidBody)
             {
                 doorRigidBody.angularVelocity = cross * angleDiff * forceMutiplier;
+
+                //Trigger Job Action complete once we move the door
+                if(doorRigidBody.angularVelocity != Vector3.zero)
+                {
+                    JobManager.RegisterJobAction(jobInfo);
+                }
             }
         }
     }

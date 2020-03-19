@@ -42,7 +42,7 @@ public class EffectGenerator : MonoBehaviour
     private float loudnessMultiplyer = 20;
 
     //Minimum velocity before a collision noise and effect is made
-    private const float minCollisionSoundVel = 7.5f;
+    private const float minCollisionSoundVel = 1f;
 
     //Name of the object that we create when creating an effect
     private const string effectObjName = "EffectPoint";

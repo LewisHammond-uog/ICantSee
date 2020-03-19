@@ -5,7 +5,7 @@
       "app_key": "application.generated.unity.icantsee.exe",
       "launch_type": "url",
       "url": "steam://launch/",
-      "action_manifest_path": "N:\\GitHub\\ICantSee\\I Can't See\\Assets\\StreamingAssets\\SteamVR\\actions.json",
+      "action_manifest_path": "E:\\Uni\\Github\\ICantSee\\I Can't See\\Assets\\StreamingAssets\\SteamVR\\actions.json",
       "strings": {
         "en_us": {
           "name": "I Can't See [Testing]"
