@@ -8,8 +8,8 @@ public class Curtain : Interactable
     private AudioSource interactableAudioSource;
     private Vector3 moveAmount;
     [SerializeField]
-    private float minMovementLimit = 150;
-    const private float maxMovementLimit = 0;
+    private float minMovementLimit = 0;
+    private float maxMovementLimit = 150;
     [SerializeField]
     private Vector3 chosenAxis;
     private Vector3 startPos;
@@ -75,3 +75,4 @@ public class Curtain : Interactable
 }
 
 // Connor Done
+//Lewis Hammond
