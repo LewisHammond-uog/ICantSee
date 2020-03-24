@@ -29,7 +29,7 @@ public class JobInitalisation : MonoBehaviour
         JobManager.AddJobToComplete(Job.JOB_ACTIONS.TURN_ON, Job.JOB_ROOMS.BATHROOM, Job.JOB_OBJECTS.TAP, (AudioClip)(Resources.Load("VoiceLine-Job-5")));
         JobManager.AddJobToComplete(Job.JOB_ACTIONS.USE, Job.JOB_ROOMS.BATHROOM, Job.JOB_OBJECTS.TOOTH_BRUSH, (AudioClip)(Resources.Load("VoiceLine-Job-6")));
         JobManager.AddJobToComplete(Job.JOB_ACTIONS.USE, Job.JOB_ROOMS.BATHROOM, Job.JOB_OBJECTS.SHOWER, (AudioClip)(Resources.Load("VoiceLine-Job-7")));
-        JobManager.AddJobToComplete(Job.JOB_ACTIONS.OPEN, Job.JOB_ROOMS.BATHROOM, Job.JOB_OBJECTS.DOOR, (AudioClip)(Resources.Load("VoiceLine-Job-8")));
+        //JobManager.AddJobToComplete(Job.JOB_ACTIONS.OPEN, Job.JOB_ROOMS.BATHROOM, Job.JOB_OBJECTS.DOOR, (AudioClip)(Resources.Load("VoiceLine-Job-8")));
         JobManager.AddJobToComplete(Job.JOB_ACTIONS.PUT_ON, Job.JOB_ROOMS.BEDROOM, Job.JOB_OBJECTS.CLOTHING_SHIRT, (AudioClip)(Resources.Load("VoiceLine-Job-9")));
         JobManager.AddJobToComplete(Job.JOB_ACTIONS.PUT_ON, Job.JOB_ROOMS.BEDROOM, Job.JOB_OBJECTS.CLOTHING_TROUSERS, (AudioClip)(Resources.Load("VoiceLine-Job-10")));
         //JobManager.AddJobToComplete(Job.JOB_ACTIONS.OPEN, Job.JOB_ROOMS.BEDROOM, Job.JOB_OBJECTS.DOOR, (AudioClip)(Resources.Load("VoiceLine-Job-11")));
@@ -43,7 +43,7 @@ public class JobInitalisation : MonoBehaviour
         JobManager.AddJobToComplete(Job.JOB_ACTIONS.POUR, Job.JOB_ROOMS.KITCHEN, Job.JOB_OBJECTS.MILK, (AudioClip)(Resources.Load("VoiceLine-Job-16")));
         //Toast
         JobManager.AddJobToComplete(Job.JOB_ACTIONS.PICKUP, Job.JOB_ROOMS.KITCHEN, Job.JOB_OBJECTS.TOAST, (AudioClip)(Resources.Load("VoiceLine-Job-17")));
-        JobManager.AddJobToComplete(Job.JOB_ACTIONS.PICKUP, Job.JOB_ROOMS.KITCHEN, Job.JOB_OBJECTS.TOASTER, (AudioClip)(Resources.Load("VoiceLine-Job-18")));
+        JobManager.AddJobToComplete(Job.JOB_ACTIONS.USE, Job.JOB_ROOMS.KITCHEN, Job.JOB_OBJECTS.TOASTER, (AudioClip)(Resources.Load("VoiceLine-Job-18")));
         JobManager.AddJobToComplete(Job.JOB_ACTIONS.PICKUP, Job.JOB_ROOMS.KITCHEN, Job.JOB_OBJECTS.TOAST, (AudioClip)(Resources.Load("VoiceLine-Job-19")));
         JobManager.AddJobToComplete(Job.JOB_ACTIONS.EAT, Job.JOB_ROOMS.KITCHEN, Job.JOB_OBJECTS.TOAST, (AudioClip)(Resources.Load("VoiceLine-Job-20")));
 
