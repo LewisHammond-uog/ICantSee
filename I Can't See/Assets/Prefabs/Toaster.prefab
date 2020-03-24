@@ -177,11 +177,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jobInfo:
-    action: 4
-    objectType: 4
+    action: 5
+    objectType: 5
     room: 3
   toastTime: 5
-  toastInsertOffest: {x: 0, y: 0, z: 0}
+  toastInsertOffest: {x: 0, y: 0.748, z: 0}
   toasterAudioSource: {fileID: 998919255466317762}
   toastReadyAudio: {fileID: 8300000, guid: b896538f353ce8f4294b09c2eba77953, type: 3}
 --- !u!82 &998919255466317762

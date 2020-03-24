@@ -78,15 +78,7 @@ public class Toaster : Interactable
             toast = other.gameObject.GetComponent<Toast>();
         }
     }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.GetComponent<Toast>() != null)
-        {
-            toasterState = ToasterStates.IDLE;
-            toast = null;
-        }
-    }
 }
 
 // connor done
+//lewis hammond
