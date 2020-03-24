@@ -180,7 +180,7 @@ MonoBehaviour:
     type: 3}
   playOnStart: 0
   controllerRotationAxis: {x: 1, y: 0, z: 0}
-  objectRotationAxis: {x: 0, y: 0, z: 0}
+  objectRotationAxis: {x: 0, y: 0, z: 1}
   resetAfterTime: 1
   timeToReset: 10
 --- !u!1 &6099105324674203576
