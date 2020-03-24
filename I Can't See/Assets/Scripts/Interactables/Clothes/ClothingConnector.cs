@@ -12,7 +12,7 @@ public class ClothingConnector : MonoBehaviour
     [SerializeField]
     private bool bypassJobOrder = false;
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         //Check the we are connecting a clothing item
         if (other.gameObject.GetComponent<ClothingItem>())
@@ -22,10 +22,11 @@ public class ClothingConnector : MonoBehaviour
             ClothingItem clothing = other.gameObject.GetComponent<ClothingItem>();
             if (clothing.CurrentHolder != null)
             {
-                if (JobManager.GetCurrentJob().JobInfo == clothing.jobInfo || bypassJobOrder)
+                //Check if puting thos clothing on completes the curreny job
+                //If it does then delete it
+                if (JobManager.RegisterJobAction(clothing.jobInfo) || bypassJobOrder)
                 {
                     //Register that we have connected some clothing
-                    JobManager.RegisterJobAction(clothing.jobInfo);
                     Destroy(clothing.gameObject);
                 }
             }

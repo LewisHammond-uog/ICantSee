@@ -88,10 +88,10 @@ GameObject:
   - component: {fileID: 1053614316803243452}
   - component: {fileID: 5468922926378718893}
   - component: {fileID: 5468922926378718890}
-  - component: {fileID: 841506115}
   - component: {fileID: 841506121}
   - component: {fileID: 841506116}
   - component: {fileID: 998919255466317762}
+  - component: {fileID: 64209304}
   m_Layer: 0
   m_Name: Toaster
   m_TagString: Untagged
@@ -151,19 +151,6 @@ MonoBehaviour:
   updateStep: 1
   minEffectLoundness: 0.2
   loudnessMultiplyer: 20
---- !u!65 &841506115
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4090510340251733935}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!135 &841506121
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -190,9 +177,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jobInfo:
-    action: 0
-    objectType: 0
-    room: 0
+    action: 4
+    objectType: 4
+    room: 3
   toastTime: 5
   toastInsertOffest: {x: 0, y: 0, z: 0}
   toasterAudioSource: {fileID: 998919255466317762}
@@ -217,7 +204,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
+  MinDistance: 1.4707456
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
@@ -293,6 +280,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!65 &64209304
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4090510340251733935}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.4725838, z: 1}
+  m_Center: {x: -0, y: 0.2637081, z: 0}
 --- !u!1 &4747973784275859549
 GameObject:
   m_ObjectHideFlags: 0
