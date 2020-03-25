@@ -65,9 +65,9 @@ Shader "Hidden/ScannerEffect"
 			sampler2D _DetailTex;
 			sampler2D_float _CameraDepthTexture;
 			float _NumOfEffectUpdates;
-			float4 _WorldSpaceScannerPos[25];
-			float _ScanDistance[25];
-			float _ScanWidth[25];
+			float4 _WorldSpaceScannerPos[100];
+			float _ScanDistance[100];
+			float _ScanWidth[100];
 			float _LeadSharp;
 			float4 _LeadColor;
 			float4 _MidColor;

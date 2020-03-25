@@ -11,7 +11,7 @@ public class EffectPoint : MonoBehaviour
     public float ScanWidth { get; set; } = 20f;
 
     //Speed that the scan should progress at per frame
-    private const float scanSpd = 3f;
+    private const float scanSpd = 2.5f;
 
     //Max distance that the back of the wave should be 
     //before destorying the wave

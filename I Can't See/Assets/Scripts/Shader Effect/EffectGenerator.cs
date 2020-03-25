@@ -35,7 +35,7 @@ public class EffectGenerator : MonoBehaviour
 
     //Minimum Loudness to create an effect
     [SerializeField]
-    private float minEffectLoundness = 0.2f;
+    private float minEffectLoundness = 0.0f;
 
     //Amount to amplify the loudness when creating the effect width
     [SerializeField]

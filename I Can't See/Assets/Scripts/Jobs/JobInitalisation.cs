@@ -45,7 +45,7 @@ public class JobInitalisation : MonoBehaviour
         JobManager.AddJobToComplete(Job.JOB_ACTIONS.PICKUP, Job.JOB_ROOMS.KITCHEN, Job.JOB_OBJECTS.TOAST, (AudioClip)(Resources.Load("VoiceLine-Job-17")));
         JobManager.AddJobToComplete(Job.JOB_ACTIONS.USE, Job.JOB_ROOMS.KITCHEN, Job.JOB_OBJECTS.TOASTER, (AudioClip)(Resources.Load("VoiceLine-Job-18")));
         JobManager.AddJobToComplete(Job.JOB_ACTIONS.PICKUP, Job.JOB_ROOMS.KITCHEN, Job.JOB_OBJECTS.TOAST, (AudioClip)(Resources.Load("VoiceLine-Job-19")));
-        JobManager.AddJobToComplete(Job.JOB_ACTIONS.EAT, Job.JOB_ROOMS.KITCHEN, Job.JOB_OBJECTS.TOAST, (AudioClip)(Resources.Load("VoiceLine-Job-20")));
+        //JobManager.AddJobToComplete(Job.JOB_ACTIONS.EAT, Job.JOB_ROOMS.KITCHEN, Job.JOB_OBJECTS.TOAST, (AudioClip)(Resources.Load("VoiceLine-Job-20")));
 
         //Porch
         //JobManager.AddJobToComplete(Job.JOB_ACTIONS.OPEN, Job.JOB_ROOMS.PORCH, Job.JOB_OBJECTS.DOOR, (AudioClip)(Resources.Load("VoiceLine-Job-21")));

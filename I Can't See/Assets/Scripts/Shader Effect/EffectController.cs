@@ -14,9 +14,7 @@ public class EffectController : MonoBehaviour
     //Max number of effects to update at once - forced to <25,
     //as this is the size of the array within the shader which has
     //to be hard coded
-    [Range(0,25)]
-    [SerializeField]
-    private volatile int maxEffectUpdates = 20;
+    private volatile int maxEffectUpdates = 100;
 
     //Effect Points
     public static List<EffectPoint> ePoints;
