@@ -22,7 +22,7 @@ public class TwistInteractable : SoundInteractable
     private bool resetAfterTime = true;
     //How long needs to pass until we twistable resets
     [SerializeField]
-    private float timeToReset = 10f;
+    private float timeToReset = 5.0f;
     //Time since reset started
     private float resetTimer;
 
@@ -97,3 +97,4 @@ public class TwistInteractable : SoundInteractable
 }
 
 //Lewis Hammond
+//Rhys Wareham

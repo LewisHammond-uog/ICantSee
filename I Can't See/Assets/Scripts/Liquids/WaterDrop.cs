@@ -21,7 +21,7 @@ public class WaterDrop : MonoBehaviour
     }
 
     //Time to wait until we destroy this drop
-    private float destroyTime = 10f;
+    private float destroyTime = 5.0f;
 
     private void Start()
     {
@@ -29,3 +29,5 @@ public class WaterDrop : MonoBehaviour
         Destroy(gameObject, destroyTime);
     }
 }
+
+//Rhys Wareham

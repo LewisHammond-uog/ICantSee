@@ -11,7 +11,7 @@ public class BreakableHoldable : Holdable
     private GameObject objectBroken;
     [SerializeField]
     private AudioSource interactableAudioSource;
-    private float minBreakVel = 10.0f;
+    private float minBreakVel = 5.0f;
 
     private Vector3 velocity = new Vector3(0,0,0);
 
