@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 3766964173542123062}
   - component: {fileID: 7329537544539857528}
   - component: {fileID: 2718833763361229020}
-  - component: {fileID: 7168499442255121466}
   - component: {fileID: 557801662066805806}
   - component: {fileID: 6011305562801721212}
+  - component: {fileID: 1483886355133626055}
+  - component: {fileID: 5059224195542353066}
   m_Layer: 0
   m_Name: Freezer1
   m_TagString: Untagged
@@ -80,20 +81,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &7168499442255121466
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1366261418446184864}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 6522108862945324352, guid: 507552c4cb423b140bb975571da66d8f, type: 3}
 --- !u!114 &557801662066805806
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -130,6 +117,32 @@ MonoBehaviour:
   movementAudioClip: {fileID: 0}
   movementLimit: 30
   chosenAxis: {x: 0, y: 1, z: 0}
+--- !u!65 &1483886355133626055
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1366261418446184864}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 56, y: 49.184734, z: 1.9809725}
+  m_Center: {x: 0, y: 0, z: -5.8919144}
+--- !u!65 &5059224195542353066
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1366261418446184864}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 56, y: 4.0175786, z: 13.764801}
+  m_Center: {x: -0.000000006178432, y: -22.583565, z: -0.0000037008126}
 --- !u!1 &5000484902864793997
 GameObject:
   m_ObjectHideFlags: 0
@@ -364,9 +377,10 @@ GameObject:
   - component: {fileID: 627586534036869230}
   - component: {fileID: 4421402327846946080}
   - component: {fileID: 5624583966599271430}
-  - component: {fileID: 7753575959681170204}
   - component: {fileID: 674033913308276604}
   - component: {fileID: 5838505494187898659}
+  - component: {fileID: 9004654212275653595}
+  - component: {fileID: 8537277392219841215}
   m_Layer: 0
   m_Name: Freezer2
   m_TagString: Untagged
@@ -433,20 +447,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &7753575959681170204
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5602329065341892389}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: -658263588062742146, guid: 507552c4cb423b140bb975571da66d8f, type: 3}
 --- !u!114 &674033913308276604
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -483,6 +483,32 @@ MonoBehaviour:
   movementAudioClip: {fileID: 0}
   movementLimit: 30
   chosenAxis: {x: 0, y: 1, z: 0}
+--- !u!65 &9004654212275653595
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5602329065341892389}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 56, y: 49.292362, z: 2.4366455}
+  m_Center: {x: -2.7763341e-14, y: -0.000091780144, z: -10.998651}
+--- !u!65 &8537277392219841215
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5602329065341892389}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 56, y: 3.4833825, z: 24.433971}
+  m_Center: {x: -0.000000010425493, y: -22.904526, z: -0.0000059213003}
 --- !u!1 &7135411290809497266
 GameObject:
   m_ObjectHideFlags: 0
@@ -494,9 +520,10 @@ GameObject:
   - component: {fileID: 2954812774525904398}
   - component: {fileID: 4573228996821493818}
   - component: {fileID: 3262056184178467797}
-  - component: {fileID: 1621290789905279712}
   - component: {fileID: 7820667807803078789}
   - component: {fileID: 1964192387241926581}
+  - component: {fileID: 264413175344158044}
+  - component: {fileID: 7822403907716037788}
   m_Layer: 0
   m_Name: Freezer3
   m_TagString: Untagged
@@ -563,20 +590,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &1621290789905279712
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7135411290809497266}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 5404400633343366462, guid: 507552c4cb423b140bb975571da66d8f, type: 3}
 --- !u!114 &7820667807803078789
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -613,6 +626,32 @@ MonoBehaviour:
   movementAudioClip: {fileID: 0}
   movementLimit: 30
   chosenAxis: {x: 0, y: 1, z: 0}
+--- !u!65 &264413175344158044
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7135411290809497266}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 56, y: 49.359993, z: 2.1601999}
+  m_Center: {x: 0.00006217365, y: -0.000059212998, z: -9.467383}
+--- !u!65 &7822403907716037788
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7135411290809497266}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 56, y: 1.5052538, z: 21.094988}
+  m_Center: {x: 0.00006215762, y: -23.927397, z: -0.00000074016253}
 --- !u!1 &7181205634977371510
 GameObject:
   m_ObjectHideFlags: 0
@@ -641,13 +680,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7181205634977371510}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: 0.000000011175871, z: -0.60654616, w: 0.79504836}
   m_LocalPosition: {x: -28.867695, y: -25.000017, z: 32.215622}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6368473509899405216}
   m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -74.68}
 --- !u!33 &152636175685937428
 MeshFilter:
   m_ObjectHideFlags: 0

@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: 1779230556003498932}
   - component: {fileID: 1647333993677697059}
   - component: {fileID: 5717956698501329071}
-  - component: {fileID: 945401961407583035}
+  - component: {fileID: 6540021877160372635}
+  - component: {fileID: 8839261377680145171}
   m_Layer: 0
   m_Name: Draw3
   m_TagString: Untagged
@@ -115,9 +116,9 @@ MonoBehaviour:
   interactableAudioSource: {fileID: 0}
   movementAudioClip: {fileID: 8300000, guid: fc7d2cf4a40dd5141a2ff6652a184c47, type: 3}
   movementLimit: 30
-  chosenAxis: {x: 0, y: 1, z: 0}
---- !u!64 &945401961407583035
-MeshCollider:
+  chosenAxis: {x: 0, y: 0, z: 1}
+--- !u!65 &6540021877160372635
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -126,10 +127,22 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 1612644875751449316, guid: 0e64cb8d35a0e114eb48b9fe24b299e2, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 52.285027, y: 1.4475313, z: 41.00003}
+  m_Center: {x: 0.000034601017, y: -10.352264, z: -0.00003398403}
+--- !u!65 &8839261377680145171
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 306117775841203410}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 52.285027, y: 22.152016, z: 6.5352902}
+  m_Center: {x: 0.000034601017, y: -0.000016739701, z: 17.232344}
 --- !u!1 &1453579495680616041
 GameObject:
   m_ObjectHideFlags: 0
@@ -143,7 +156,8 @@ GameObject:
   - component: {fileID: 7246092520645091151}
   - component: {fileID: 1831342387020240932}
   - component: {fileID: 795497473918173508}
-  - component: {fileID: 2944855842257286094}
+  - component: {fileID: 577499694842949442}
+  - component: {fileID: 6043337619687296717}
   m_Layer: 0
   m_Name: Draw1
   m_TagString: Untagged
@@ -245,9 +259,9 @@ MonoBehaviour:
   interactableAudioSource: {fileID: 0}
   movementAudioClip: {fileID: 8300000, guid: fc7d2cf4a40dd5141a2ff6652a184c47, type: 3}
   movementLimit: 30
-  chosenAxis: {x: 0, y: 1, z: 0}
---- !u!64 &2944855842257286094
-MeshCollider:
+  chosenAxis: {x: 0, y: 0, z: 1}
+--- !u!65 &577499694842949442
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -256,10 +270,22 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: -7479457300289699999, guid: 0e64cb8d35a0e114eb48b9fe24b299e2, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 52.285027, y: 2.043361, z: 41.00003}
+  m_Center: {x: 0.000034601017, y: -10.054339, z: -0.00003400179}
+--- !u!65 &6043337619687296717
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1453579495680616041}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 52.285027, y: 22.152016, z: 5.8395786}
+  m_Center: {x: 0.000034601017, y: -0.000010428021, z: 17.5802}
 --- !u!1 &3327844009295138043
 GameObject:
   m_ObjectHideFlags: 0
@@ -286,7 +312,7 @@ Transform:
   m_GameObject: {fileID: 3327844009295138043}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0.7071068, w: 0}
   m_LocalPosition: {x: 1.233, y: 1.169, z: 8.527277}
-  m_LocalScale: {x: 0.016364908, y: 0.016364908, z: 0.016364908}
+  m_LocalScale: {x: 0.016364953, y: 0.01636493, z: 0.01636493}
   m_Children:
   - {fileID: 9017503592825411194}
   - {fileID: 384778830753673091}
@@ -414,7 +440,8 @@ GameObject:
   - component: {fileID: 3365006489018018686}
   - component: {fileID: 7083906789645790621}
   - component: {fileID: 3675458998599478033}
-  - component: {fileID: 4963122914304163002}
+  - component: {fileID: 6531955839373342611}
+  - component: {fileID: 4963739418307772868}
   m_Layer: 0
   m_Name: Draw2
   m_TagString: Untagged
@@ -516,9 +543,9 @@ MonoBehaviour:
   interactableAudioSource: {fileID: 0}
   movementAudioClip: {fileID: 8300000, guid: fc7d2cf4a40dd5141a2ff6652a184c47, type: 3}
   movementLimit: 30
-  chosenAxis: {x: 0, y: 1, z: 0}
---- !u!64 &4963122914304163002
-MeshCollider:
+  chosenAxis: {x: 0, y: 0, z: 1}
+--- !u!65 &6531955839373342611
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -527,7 +554,19 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 586673554151463731, guid: 0e64cb8d35a0e114eb48b9fe24b299e2, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 52.285027, y: 1.8322015, z: 41.00003}
+  m_Center: {x: 0.000034601017, y: -10.159928, z: -0.000033995493}
+--- !u!65 &4963739418307772868
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8676349735405665053}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 52.285027, y: 22.152016, z: 5.4011693}
+  m_Center: {x: 0.000034601017, y: -0.00001501999, z: 17.799408}
