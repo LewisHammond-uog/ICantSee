@@ -33,6 +33,9 @@ public class TwistInteractable : SoundInteractable
     //Event for when the state of the twistable is changed
     public delegate void TwistInteractableEvent();
     public static event TwistInteractableEvent TwistMoved;
+    //Event for twist being reset
+    public static event TwistInteractableEvent TwistReset;
+
 
     private void Start()
     {   
@@ -56,6 +59,10 @@ public class TwistInteractable : SoundInteractable
             transform.rotation = startRotation;
             //Reset Timer
             resetTimer = 0.0f;
+
+            //Trigger event that twist has been reset so that any that uses the twist
+            //can also reset
+            TwistReset?.Invoke();
         }
     }
 

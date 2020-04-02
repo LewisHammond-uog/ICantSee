@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Lewis.MathUtils;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 [RequireComponent(typeof(AudioSource))]
@@ -106,10 +107,12 @@ public class TapController : SoundInteractable
     private void OnEnable()
     {
         TwistInteractable.TwistMoved += ToggleTapState;
+        TwistInteractable.TwistReset += ToggleTapState;
     }
     private void OnDisable()
     {
         TwistInteractable.TwistMoved -= ToggleTapState;
+        TwistInteractable.TwistReset -= ToggleTapState;
     }
     #endregion
 }
