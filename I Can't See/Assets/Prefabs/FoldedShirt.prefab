@@ -126,8 +126,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jobInfo:
-    action: 0
-    objectType: 0
+    action: 6
+    objectType: 13
     room: 0
 --- !u!65 &1841775700
 BoxCollider:
