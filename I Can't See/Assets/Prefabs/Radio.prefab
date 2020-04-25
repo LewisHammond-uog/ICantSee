@@ -956,7 +956,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dropSound: {fileID: 0}
   updateStep: 1
-  minEffectLoundness: 0.2
+  minEffectLoundness: 0
   loudnessMultiplyer: 20
 --- !u!82 &3251768387693192705
 AudioSource:
@@ -968,11 +968,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 45db825827bc3994d8c58e2dbcdf6756, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 0001b57e089f2b44da0623d1ea645a9c, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
